@@ -1,12 +1,12 @@
 {
   "name": "cuboderubik",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "serve:ssr:cuboderubik": "node dist/cuboderubik/server/server.mjs"
+    "start": "ng serve -o",
+    "start:public": "ng serve -o --host 0.0.0.0 --port 80",
+    "start:prod": "mv dist/cuboderubik dist/dist && mv dist/dist/browser dist/dist/como-resolver-el-cubo-de-rubik && cd dist/dist/ && live-server . --open=como-resolver-el-cubo-de-rubik",
+    "build": "ng build --base-href /como-resolver-el-cubo-de-rubik/",
+    "icons": "ng run project-name:icons"
   },
   "private": true,
   "packageManager": "npm@11.13.0",
@@ -19,6 +19,8 @@
     "@angular/platform-server": "^22.0.0",
     "@angular/router": "^22.0.0",
     "@angular/ssr": "^22.0.3",
+    "@jaimemartinmartin15/jei-devkit-angular-shared": "^8.1.0",
+    "@jaimemartinmartin15/svg-icons": "^1.7.0",
     "express": "^5.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
@@ -27,6 +29,7 @@
     "@angular/build": "^22.0.3",
     "@angular/cli": "^22.0.3",
     "@angular/compiler-cli": "^22.0.0",
+    "@jaimemartinmartin15/jei-devkit-angular-builders": "^4.0.0",
     "@types/express": "^5.0.1",
     "@types/node": "^20.17.19",
     "prettier": "^3.8.1",
