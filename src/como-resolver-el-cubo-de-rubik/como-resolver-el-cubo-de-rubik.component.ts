@@ -12,12 +12,12 @@ export class ComoResolverElCuboDeRubikComponent {
     WHITE: '#FFFFFF',
     YELLOW: '#FFFF00',
     BLUE: '#0000FF',
-    GREEN: '#008000',
+    GREEN: '#4bb911',
     RED: '#FF0000',
     ORANGE: '#FFA500',
 
     ARROW: '#ffffff',
-    SELECTED: '#025FCB',
+    SELECTED: '#ffffff',
     SELECTED_LIGHT: '#b0d5ff',
   };
   public readonly COLORS_DARK = {
