@@ -1,0 +1,6 @@
+{
+  "inputDirs": ["src/svg-assets"],
+  "outputDir": "src/svg-output",
+  "prefix": "app",
+  "modules": []
+}

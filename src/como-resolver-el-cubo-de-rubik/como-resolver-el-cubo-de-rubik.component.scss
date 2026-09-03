@@ -1,0 +1,12 @@
+:host {
+  display: block;
+}
+
+svg[appCuboDeRubikSvg] {
+  max-width: 150px;
+}
+
+.multiple-cubes {
+  display: flex;
+  gap: 20px;
+}

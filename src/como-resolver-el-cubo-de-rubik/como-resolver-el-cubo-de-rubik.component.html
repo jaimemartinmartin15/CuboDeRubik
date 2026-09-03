@@ -1,0 +1,243 @@
+<!-- TODO revert this link -->
+https://www.youtube.com/watch?v=GVzR06EEG9M
+
+<h1>Introducción</h1>
+
+<p>El color de cada una de las caras del cubo viene indicado por el color del cuadrado central.</p>
+
+<svg
+  appCuboDeRubikSvg
+  [left_2_2]="COLORS.SELECTED"
+  [right_2_2]="COLORS.SELECTED"
+  [top_2_2]="COLORS.SELECTED"
+></svg>
+
+<p>Para rotar las caras del cubo, tendremos siempre la cara blanca hacia arriba.</p>
+
+<h1>Conseguir la cruz blanca</h1>
+
+<svg
+  appCuboDeRubikSvg
+  [left_2_1]="COLORS.SELECTED_LIGHT"
+  [left_2_2]="COLORS.SELECTED_LIGHT"
+  [right_2_1]="COLORS.SELECTED_LIGHT"
+  [right_2_2]="COLORS.SELECTED_LIGHT"
+  [top_1_2]="COLORS.SELECTED"
+  [top_2_1]="COLORS.SELECTED"
+  [top_2_2]="COLORS.SELECTED"
+  [top_2_3]="COLORS.SELECTED"
+  [top_3_2]="COLORS.SELECTED"
+></svg>
+
+<p>
+  Primero conseguir un lateral blanco en la cara superior (da igual como, es fácil), y rotar la cara
+  superior para que el otro color del lateral coincida con el color de la cara del cubo, tal que
+  así:
+</p>
+
+<svg
+  appCuboDeRubikSvg
+  [right_2_1]="COLORS.SELECTED_LIGHT"
+  [right_2_2]="COLORS.SELECTED_LIGHT"
+  [top_2_2]="COLORS.SELECTED"
+  [top_3_2]="COLORS.SELECTED"
+></svg>
+
+<p>Ahora hay varias posibilidades para colocar el resto de laterales blancos en su posición.</p>
+
+<p>
+  Si un lateral blanco está en la cara inferior, rotar la cara inferior para colocar el otro color
+  del lateral en su cara del cubo. Después se rota la cara frontal para dejar el blanco hacia
+  arriba.
+</p>
+
+<div class="multiple-cubes">
+  <svg
+    appCuboDeRubikSvg
+    [top_2_2]="COLORS.SELECTED"
+    [top_3_2]="COLORS.SELECTED"
+    [left_2_2]="COLORS.SELECTED_LIGHT"
+    [right_2_3]="COLORS.SELECTED_LIGHT"
+  ></svg>
+
+  <svg
+    appCuboDeRubikSvg
+    [top_2_2]="COLORS.SELECTED"
+    [top_3_2]="COLORS.SELECTED"
+    [left_2_2]="COLORS.SELECTED_LIGHT"
+    [left_2_3]="COLORS.SELECTED_LIGHT"
+  ></svg>
+
+  <svg
+    appCuboDeRubikSvg
+    [top_2_2]="COLORS.SELECTED"
+    [top_2_3]="COLORS.SELECTED"
+    [top_3_2]="COLORS.SELECTED"
+    [left_2_1]="COLORS.SELECTED_LIGHT"
+    [left_2_2]="COLORS.SELECTED_LIGHT"
+  ></svg>
+</div>
+
+<p>
+  Si el lateral blanco está en una cara vertical del cubo, en la parte inferior, se rota la parte
+  inferior hasta dejar el lateral blanco en la cara del cubo del otro color del lateral. Se rota la
+  cara inferior a la izquierda, se rota la cara izquierda hacia arriba y por último la cara frontal
+  a la derecha.
+</p>
+
+<div class="multiple-cubes">
+  <svg
+    appCuboDeRubikSvg
+    [top_2_1]="COLORS.SELECTED"
+    [top_2_2]="COLORS.SELECTED"
+    [right_2_2]="COLORS.SELECTED_LIGHT"
+  ></svg>
+
+  <svg
+    appCuboDeRubikSvg
+    [top_2_1]="COLORS.SELECTED"
+    [top_2_2]="COLORS.SELECTED"
+    [right_2_3]="COLORS.SELECTED"
+    [right_2_2]="COLORS.SELECTED_LIGHT"
+  ></svg>
+
+  <svg
+    appCuboDeRubikSvg
+    [top_2_1]="COLORS.SELECTED"
+    [top_2_2]="COLORS.SELECTED"
+    [left_2_3]="COLORS.SELECTED"
+    [right_2_2]="COLORS.SELECTED_LIGHT"
+  ></svg>
+
+  <svg
+    appCuboDeRubikSvg
+    [top_2_1]="COLORS.SELECTED"
+    [top_2_2]="COLORS.SELECTED"
+    [left_3_2]="COLORS.SELECTED"
+    [right_1_2]="COLORS.SELECTED_LIGHT"
+    [right_2_2]="COLORS.SELECTED_LIGHT"
+  ></svg>
+
+  <svg
+    appCuboDeRubikSvg
+    [top_2_1]="COLORS.SELECTED"
+    [top_2_2]="COLORS.SELECTED"
+    [top_3_2]="COLORS.SELECTED"
+    [right_2_1]="COLORS.SELECTED_LIGHT"
+    [right_2_2]="COLORS.SELECTED_LIGHT"
+  ></svg>
+</div>
+
+<p>
+  Si uno de los laterales que ya estaba colocado queda descolocado al hacer estos pasos, se puede
+  recolocar fácilmente rotando hacia abajo la cara izquierda.
+</p>
+
+<div class="multiple-cubes">
+  <svg
+    appCuboDeRubikSvg
+    [top_2_1]="COLORS.SELECTED"
+    [top_2_2]="COLORS.SELECTED"
+    [top_3_2]="COLORS.SELECTED"
+    [left_1_2]="COLORS.SELECTED_LIGHT"
+    [left_2_2]="COLORS.SELECTED_LIGHT"
+    [right_2_1]="COLORS.SELECTED_LIGHT"
+    [right_2_2]="COLORS.SELECTED_LIGHT"
+  ></svg>
+
+  <svg
+    appCuboDeRubikSvg
+    [top_2_1]="COLORS.SELECTED"
+    [top_2_2]="COLORS.SELECTED"
+    [top_2_3]="COLORS.SELECTED"
+    [top_3_2]="COLORS.SELECTED"
+    [left_2_1]="COLORS.SELECTED_LIGHT"
+    [left_2_2]="COLORS.SELECTED_LIGHT"
+    [right_2_1]="COLORS.SELECTED_LIGHT"
+    [right_2_2]="COLORS.SELECTED_LIGHT"
+  ></svg>
+</div>
+
+<p>
+  Si el lateral blanco está en una cara vertical del cubo, en la parte superior, girar la cara
+  frontal para que quede abajo, y repetir el proceso anterior.
+</p>
+
+<div class="multiple-cubes">
+  <svg
+    appCuboDeRubikSvg
+    [top_2_1]="COLORS.SELECTED"
+    [top_2_2]="COLORS.SELECTED"
+    [top_2_3]="COLORS.SELECTED_LIGHT"
+    [right_2_2]="COLORS.SELECTED_LIGHT"
+    [left_2_1]="COLORS.SELECTED"
+  ></svg>
+
+  <svg
+    appCuboDeRubikSvg
+    [top_2_1]="COLORS.SELECTED"
+    [top_2_2]="COLORS.SELECTED"
+    [right_2_2]="COLORS.SELECTED_LIGHT"
+    [left_2_3]="COLORS.SELECTED"
+  ></svg>
+</div>
+
+<p>
+  Si el lateral blanco está en una cara vertical del cubo, en el nivel medio, rotar la cara frontal
+  para bajar el cuadro blanco (izquierda o derecha). Si se descolocó un cuadro blanco de la cruz
+  blanca, rotar la cara inferior (izquierda o derecha, da igual) y rotar la cara frontal hacia el
+  lado contrario que antes, para dejar el cuadro blanco colocado en su sitio de nuevo. Después
+  seguir los pasos anteriores.
+</p>
+
+<div class="multiple-cubes">
+  <svg
+    appCuboDeRubikSvg
+    [top_2_1]="COLORS.SELECTED"
+    [top_2_2]="COLORS.SELECTED"
+    [top_2_3]="COLORS.SELECTED"
+    [top_3_2]="COLORS.SELECTED"
+    [left_2_1]="COLORS.SELECTED_LIGHT"
+    [left_2_2]="COLORS.SELECTED_LIGHT"
+    [left_3_2]="COLORS.SELECTED"
+    [right_2_1]="COLORS.SELECTED_LIGHT"
+    [right_2_2]="COLORS.SELECTED_LIGHT"
+  ></svg>
+
+  <svg
+    appCuboDeRubikSvg
+    [top_2_1]="COLORS.SELECTED"
+    [top_2_2]="COLORS.SELECTED"
+    [top_3_2]="COLORS.SELECTED"
+    [left_2_2]="COLORS.SELECTED_LIGHT"
+    [left_2_3]="COLORS.SELECTED"
+    [left_3_2]="COLORS.SELECTED_LIGHT"
+    [right_1_2]="COLORS.SELECTED"
+    [right_2_1]="COLORS.SELECTED_LIGHT"
+    [right_2_2]="COLORS.SELECTED_LIGHT"
+  ></svg>
+
+  <svg
+    appCuboDeRubikSvg
+    [top_2_1]="COLORS.SELECTED"
+    [top_2_2]="COLORS.SELECTED"
+    [top_3_2]="COLORS.SELECTED"
+    [left_2_2]="COLORS.SELECTED_LIGHT"
+    [left_3_2]="COLORS.SELECTED_LIGHT"
+    [right_1_2]="COLORS.SELECTED"
+    [right_2_1]="COLORS.SELECTED_LIGHT"
+    [right_2_2]="COLORS.SELECTED_LIGHT"
+  ></svg>
+
+  <svg
+    appCuboDeRubikSvg
+    [top_2_1]="COLORS.SELECTED"
+    [top_2_2]="COLORS.SELECTED"
+    [top_2_3]="COLORS.SELECTED"
+    [top_3_2]="COLORS.SELECTED"
+    [left_2_1]="COLORS.SELECTED_LIGHT"
+    [left_2_2]="COLORS.SELECTED_LIGHT"
+    [right_2_1]="COLORS.SELECTED_LIGHT"
+    [right_2_2]="COLORS.SELECTED_LIGHT"
+  ></svg>
+</div>

@@ -1,16 +1,9 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { ComoResolverElCuboDeRubikComponent } from '../como-resolver-el-cubo-de-rubik/como-resolver-el-cubo-de-rubik.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  template: `
-    <h1>Hello, {{ title() }}</h1>
-
-    <router-outlet />
-  `,
-  styles: [],
+  imports: [ComoResolverElCuboDeRubikComponent],
+  template: `<app-como-resolver-el-cubo-de-rubik></app-como-resolver-el-cubo-de-rubik>`,
 })
-export class App {
-  protected readonly title = signal('cuboderubik');
-}
+export class App {}
