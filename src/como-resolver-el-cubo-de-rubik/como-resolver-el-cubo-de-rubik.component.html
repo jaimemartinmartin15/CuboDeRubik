@@ -47,21 +47,41 @@
   </nav>
 </aside>
 
-<main>
-  <h1 #stepSection id="introduccion">Introducción</h1>
+<main class="content">
+  <section #stepSection id="introduccion" class="section">
+    <h1 class="section-title">
+      <span class="section-number">1</span>
+      Introducción
+    </h1>
 
-  <p>
-    El color de cada una de las caras del cubo viene indicado por el color del cuadrado central.
-  </p>
+    <div class="section-content">
+      <svg
+        appCuboDeRubikSvg
+        [left_2_2]="COLORS.GREEN"
+        [right_2_2]="COLORS.RED"
+        [top_2_2]="COLORS.WHITE"
+      ></svg>
 
-  <svg
-    appCuboDeRubikSvg
-    [left_2_2]="COLORS.GREEN"
-    [right_2_2]="COLORS.RED"
-    [top_2_2]="COLORS.WHITE"
-  ></svg>
+      <div>
+        <p>
+          El color de cada una de las caras del cubo viene indicado por el color del cuadrado
+          central.
+        </p>
 
-  <p>Para rotar las caras del cubo, tendremos siempre la cara blanca hacia arriba.</p>
+        <p>
+          Para rotar las caras, al principio tendremos la cara blanca hacia arriba. Pero a partir
+          del paso 6, le daremos la vuelta y la cara blanca quedará abajo y la amarilla hacia
+          arriba.
+        </p>
+
+        <p>
+          En cada paso estaremos mirando de frente a una de las caras verde, roja, azul o naranja. Y
+          rotaremos las caras derecha, izquierda, superior, inferior o frontal con respecto a esa
+          cara.
+        </p>
+      </div>
+    </div>
+  </section>
 
   <h1 #stepSection id="cruz-blanca">Cruz blanca</h1>
 
