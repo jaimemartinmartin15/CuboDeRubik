@@ -665,174 +665,190 @@
     </div>
   </section>
 
-  <h1 #stepSection id="segunda-fila">Segunda fila</h1>
+  <section #stepSection id="segunda-fila" class="section">
+    <h1 class="section-title">
+      <span class="section-number">4</span>
+      Segunda fila
+    </h1>
 
-  <svg
-    appCuboDeRubikSvg
-    [top_1_1]="COLORS.WHITE"
-    [top_1_2]="COLORS.WHITE"
-    [top_1_3]="COLORS.WHITE"
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_2_3]="COLORS.WHITE"
-    [top_3_1]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [top_3_3]="COLORS.WHITE"
-    [left_1_1]="COLORS.RED"
-    [left_1_2]="COLORS.RED"
-    [left_2_1]="COLORS.RED"
-    [left_2_2]="COLORS.RED"
-    [left_3_1]="COLORS.RED"
-    [left_3_2]="COLORS.RED"
-    [right_1_1]="COLORS.GREEN"
-    [right_1_2]="COLORS.GREEN"
-    [right_2_1]="COLORS.GREEN"
-    [right_2_2]="COLORS.GREEN"
-    [right_3_1]="COLORS.GREEN"
-    [right_3_2]="COLORS.GREEN"
-  ></svg>
+    <div class="section-content">
+      <div class="cube-and-description">
+        <svg
+          appCuboDeRubikSvg
+          [top_1_1]="COLORS.WHITE"
+          [top_1_2]="COLORS.WHITE"
+          [top_1_3]="COLORS.WHITE"
+          [top_2_1]="COLORS.WHITE"
+          [top_2_2]="COLORS.WHITE"
+          [top_2_3]="COLORS.WHITE"
+          [top_3_1]="COLORS.WHITE"
+          [top_3_2]="COLORS.WHITE"
+          [top_3_3]="COLORS.WHITE"
+          [left_1_1]="COLORS.RED"
+          [left_1_2]="COLORS.RED"
+          [left_2_1]="COLORS.RED"
+          [left_2_2]="COLORS.RED"
+          [left_3_1]="COLORS.RED"
+          [left_3_2]="COLORS.RED"
+          [right_1_1]="COLORS.GREEN"
+          [right_1_2]="COLORS.GREEN"
+          [right_2_1]="COLORS.GREEN"
+          [right_2_2]="COLORS.GREEN"
+          [right_3_1]="COLORS.GREEN"
+          [right_3_2]="COLORS.GREEN"
+        ></svg>
 
-  <p>Buscamos los laterales que no tienen color amarillo.</p>
+        <p>
+          El objetivo de ese paso es colocar los laterales de las caras de los lados, es decir,
+          completar la segunda fila.
+        </p>
+      </div>
 
-  <p>
-    Si el lateral está abajo, rotamos la cara inferior para llevarlo al color de su cara. Después
-    giramos la cara inferior al lado contrario de la esquina que la queremos colocar. Baja el
-    lateral de la posición que estás colocando. Vuelve a girar la parte inferior al sentido
-    contrario que antes, y vuelve a subir el lateral. Se nos va a descolocar una esquina, pero la
-    podemos volver a colocar con los pasos que ya hemos visto, y al hacerlo, se colocará tambien el
-    cuadro que queríamos de la segunda fila.
-  </p>
+      <p>Buscamos los laterales que no tienen color amarillo.</p>
 
-  <div class="multiple-cubes">
-    <svg
-      appCuboDeRubikSvg
-      [top_1_1]="COLORS.WHITE"
-      [top_1_2]="COLORS.WHITE"
-      [top_1_3]="COLORS.WHITE"
-      [top_2_1]="COLORS.WHITE"
-      [top_2_2]="COLORS.WHITE"
-      [top_2_3]="COLORS.WHITE"
-      [top_3_1]="COLORS.WHITE"
-      [top_3_2]="COLORS.WHITE"
-      [top_3_3]="COLORS.WHITE"
-      [left_1_1]="COLORS.RED"
-      [left_2_1]="COLORS.RED"
-      [left_2_2]="COLORS.RED"
-      [left_3_1]="COLORS.RED"
-      [right_1_1]="COLORS.GREEN"
-      [right_2_1]="COLORS.GREEN"
-      [right_2_2]="COLORS.GREEN"
-      [right_3_1]="COLORS.GREEN"
-    ></svg>
+      <p>
+        Si el lateral está abajo, rotamos la cara inferior para llevarlo al color de su cara.
+        Después giramos la cara inferior al lado contrario de la esquina que la queremos colocar.
+        Baja el lateral de la posición que estás colocando. Vuelve a girar la parte inferior al
+        sentido contrario que antes, y vuelve a subir el lateral. Se nos va a descolocar una
+        esquina, pero la podemos volver a colocar con los pasos que ya hemos visto, y al hacerlo, se
+        colocará tambien el cuadro que queríamos de la segunda fila.
+      </p>
 
-    <svg
-      appCuboDeRubikSvg
-      [top_1_1]="COLORS.WHITE"
-      [top_1_2]="COLORS.WHITE"
-      [top_1_3]="COLORS.WHITE"
-      [top_2_1]="COLORS.WHITE"
-      [top_2_2]="COLORS.WHITE"
-      [top_2_3]="COLORS.WHITE"
-      [top_3_1]="COLORS.WHITE"
-      [top_3_2]="COLORS.WHITE"
-      [top_3_3]="COLORS.WHITE"
-      [left_1_1]="COLORS.RED"
-      [left_2_1]="COLORS.RED"
-      [left_2_2]="COLORS.RED"
-      [left_3_1]="COLORS.RED"
-      [right_1_1]="COLORS.GREEN"
-      [right_2_1]="COLORS.GREEN"
-      [right_2_2]="COLORS.GREEN"
-      [right_2_3]="COLORS.GREEN"
-      [right_3_1]="COLORS.GREEN"
-    ></svg>
+      <div class="multiple-cubes">
+        <svg
+          appCuboDeRubikSvg
+          [top_1_1]="COLORS.WHITE"
+          [top_1_2]="COLORS.WHITE"
+          [top_1_3]="COLORS.WHITE"
+          [top_2_1]="COLORS.WHITE"
+          [top_2_2]="COLORS.WHITE"
+          [top_2_3]="COLORS.WHITE"
+          [top_3_1]="COLORS.WHITE"
+          [top_3_2]="COLORS.WHITE"
+          [top_3_3]="COLORS.WHITE"
+          [left_1_1]="COLORS.RED"
+          [left_2_1]="COLORS.RED"
+          [left_2_2]="COLORS.RED"
+          [left_3_1]="COLORS.RED"
+          [right_1_1]="COLORS.GREEN"
+          [right_2_1]="COLORS.GREEN"
+          [right_2_2]="COLORS.GREEN"
+          [right_3_1]="COLORS.GREEN"
+        ></svg>
 
-    <svg
-      appCuboDeRubikSvg
-      [top_1_1]="COLORS.WHITE"
-      [top_1_2]="COLORS.WHITE"
-      [top_1_3]="COLORS.WHITE"
-      [top_2_1]="COLORS.WHITE"
-      [top_2_2]="COLORS.WHITE"
-      [top_2_3]="COLORS.WHITE"
-      [top_3_1]="COLORS.WHITE"
-      [top_3_2]="COLORS.WHITE"
-      [top_3_3]="COLORS.WHITE"
-      [left_1_1]="COLORS.RED"
-      [left_2_1]="COLORS.RED"
-      [left_2_2]="COLORS.RED"
-      [left_3_1]="COLORS.RED"
-      [right_1_1]="COLORS.GREEN"
-      [right_2_1]="COLORS.GREEN"
-      [right_2_2]="COLORS.GREEN"
-      [right_3_1]="COLORS.GREEN"
-    ></svg>
+        <svg
+          appCuboDeRubikSvg
+          [top_1_1]="COLORS.WHITE"
+          [top_1_2]="COLORS.WHITE"
+          [top_1_3]="COLORS.WHITE"
+          [top_2_1]="COLORS.WHITE"
+          [top_2_2]="COLORS.WHITE"
+          [top_2_3]="COLORS.WHITE"
+          [top_3_1]="COLORS.WHITE"
+          [top_3_2]="COLORS.WHITE"
+          [top_3_3]="COLORS.WHITE"
+          [left_1_1]="COLORS.RED"
+          [left_2_1]="COLORS.RED"
+          [left_2_2]="COLORS.RED"
+          [left_3_1]="COLORS.RED"
+          [right_1_1]="COLORS.GREEN"
+          [right_2_1]="COLORS.GREEN"
+          [right_2_2]="COLORS.GREEN"
+          [right_2_3]="COLORS.GREEN"
+          [right_3_1]="COLORS.GREEN"
+        ></svg>
 
-    <svg
-      appCuboDeRubikSvg
-      [top_1_1]="COLORS.WHITE"
-      [top_1_2]="COLORS.WHITE"
-      [top_2_1]="COLORS.WHITE"
-      [top_2_2]="COLORS.WHITE"
-      [top_3_1]="COLORS.WHITE"
-      [top_3_2]="COLORS.WHITE"
-      [left_2_2]="COLORS.RED"
-      [left_3_1]="COLORS.RED"
-      [left_3_2]="COLORS.RED"
-      [left_3_3]="COLORS.RED"
-      [right_1_1]="COLORS.WHITE"
-      [right_1_2]="COLORS.WHITE"
-      [right_1_3]="COLORS.WHITE"
-      [right_2_1]="COLORS.GREEN"
-      [right_2_2]="COLORS.GREEN"
-      [right_3_1]="COLORS.GREEN"
-    ></svg>
+        <svg
+          appCuboDeRubikSvg
+          [top_1_1]="COLORS.WHITE"
+          [top_1_2]="COLORS.WHITE"
+          [top_1_3]="COLORS.WHITE"
+          [top_2_1]="COLORS.WHITE"
+          [top_2_2]="COLORS.WHITE"
+          [top_2_3]="COLORS.WHITE"
+          [top_3_1]="COLORS.WHITE"
+          [top_3_2]="COLORS.WHITE"
+          [top_3_3]="COLORS.WHITE"
+          [left_1_1]="COLORS.RED"
+          [left_2_1]="COLORS.RED"
+          [left_2_2]="COLORS.RED"
+          [left_3_1]="COLORS.RED"
+          [right_1_1]="COLORS.GREEN"
+          [right_2_1]="COLORS.GREEN"
+          [right_2_2]="COLORS.GREEN"
+          [right_3_1]="COLORS.GREEN"
+        ></svg>
 
-    <svg
-      appCuboDeRubikSvg
-      [top_1_1]="COLORS.WHITE"
-      [top_1_2]="COLORS.WHITE"
-      [top_2_1]="COLORS.WHITE"
-      [top_2_2]="COLORS.WHITE"
-      [top_3_1]="COLORS.WHITE"
-      [top_3_2]="COLORS.WHITE"
-      [left_1_3]="COLORS.WHITE"
-      [left_2_2]="COLORS.RED"
-      [left_3_1]="COLORS.RED"
-      [left_3_2]="COLORS.RED"
-      [right_1_1]="COLORS.WHITE"
-      [right_1_2]="COLORS.WHITE"
-      [right_2_1]="COLORS.GREEN"
-      [right_2_2]="COLORS.GREEN"
-      [right_3_1]="COLORS.GREEN"
-    ></svg>
+        <svg
+          appCuboDeRubikSvg
+          [top_1_1]="COLORS.WHITE"
+          [top_1_2]="COLORS.WHITE"
+          [top_2_1]="COLORS.WHITE"
+          [top_2_2]="COLORS.WHITE"
+          [top_3_1]="COLORS.WHITE"
+          [top_3_2]="COLORS.WHITE"
+          [left_2_2]="COLORS.RED"
+          [left_3_1]="COLORS.RED"
+          [left_3_2]="COLORS.RED"
+          [left_3_3]="COLORS.RED"
+          [right_1_1]="COLORS.WHITE"
+          [right_1_2]="COLORS.WHITE"
+          [right_1_3]="COLORS.WHITE"
+          [right_2_1]="COLORS.GREEN"
+          [right_2_2]="COLORS.GREEN"
+          [right_3_1]="COLORS.GREEN"
+        ></svg>
 
-    <svg
-      appCuboDeRubikSvg
-      [top_1_1]="COLORS.WHITE"
-      [top_1_2]="COLORS.WHITE"
-      [top_1_3]="COLORS.WHITE"
-      [top_2_1]="COLORS.WHITE"
-      [top_2_2]="COLORS.WHITE"
-      [top_2_3]="COLORS.WHITE"
-      [top_3_1]="COLORS.WHITE"
-      [top_3_2]="COLORS.WHITE"
-      [left_1_1]="COLORS.RED"
-      [left_2_1]="COLORS.RED"
-      [left_2_2]="COLORS.RED"
-      [left_3_3]="COLORS.WHITE"
-      [right_2_1]="COLORS.GREEN"
-      [right_2_2]="COLORS.GREEN"
-      [right_3_1]="COLORS.GREEN"
-    ></svg>
-  </div>
+        <svg
+          appCuboDeRubikSvg
+          [top_1_1]="COLORS.WHITE"
+          [top_1_2]="COLORS.WHITE"
+          [top_2_1]="COLORS.WHITE"
+          [top_2_2]="COLORS.WHITE"
+          [top_3_1]="COLORS.WHITE"
+          [top_3_2]="COLORS.WHITE"
+          [left_1_3]="COLORS.WHITE"
+          [left_2_2]="COLORS.RED"
+          [left_3_1]="COLORS.RED"
+          [left_3_2]="COLORS.RED"
+          [right_1_1]="COLORS.WHITE"
+          [right_1_2]="COLORS.WHITE"
+          [right_2_1]="COLORS.GREEN"
+          [right_2_2]="COLORS.GREEN"
+          [right_3_1]="COLORS.GREEN"
+        ></svg>
 
-  <p>
-    Si los laterales que no tienen amarillo están en la segunda fila, pero no en su posición,
-    debemos remplazarlos con otros laterales que si tengan amarillo, siguiendo el mismo proceso. De
-    esta manera, al final el lateral que no estaba en su posición queda en la ultima fila, y podemos
-    repetir el proceso.
-  </p>
+        <svg
+          appCuboDeRubikSvg
+          [top_1_1]="COLORS.WHITE"
+          [top_1_2]="COLORS.WHITE"
+          [top_1_3]="COLORS.WHITE"
+          [top_2_1]="COLORS.WHITE"
+          [top_2_2]="COLORS.WHITE"
+          [top_2_3]="COLORS.WHITE"
+          [top_3_1]="COLORS.WHITE"
+          [top_3_2]="COLORS.WHITE"
+          [left_1_1]="COLORS.RED"
+          [left_2_1]="COLORS.RED"
+          [left_2_2]="COLORS.RED"
+          [left_3_3]="COLORS.WHITE"
+          [right_2_1]="COLORS.GREEN"
+          [right_2_2]="COLORS.GREEN"
+          [right_3_1]="COLORS.GREEN"
+        ></svg>
+
+        <!-- TODO detail all the steps like in the paper, also to re colocate the corner -->
+      </div>
+
+      <p>
+        Si los laterales que no tienen amarillo están en la segunda fila, pero no en su posición,
+        debemos remplazarlos con otros laterales que si tengan amarillo, siguiendo el mismo proceso.
+        De esta manera, al final el lateral que no estaba en su posición queda en la ultima fila, y
+        podemos repetir el proceso.
+      </p>
+    </div>
+  </section>
 
   <h1 #stepSection id="linea-amarilla">Linea amarilla</h1>
 
