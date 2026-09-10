@@ -371,284 +371,299 @@
     </div>
   </section>
 
-  <h1 #stepSection id="esquinas-blancas">Esquinas blancas.</h1>
+  <section #stepSection id="esquinas-blancas" class="section">
+    <h1 class="section-title">
+      <span class="section-number">3</span>
+      Esquinas blancas
+    </h1>
 
-  <svg
-    appCuboDeRubikSvg
-    [top_1_1]="COLORS.WHITE"
-    [top_1_2]="COLORS.WHITE"
-    [top_1_3]="COLORS.WHITE"
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_2_3]="COLORS.WHITE"
-    [top_3_1]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [top_3_3]="COLORS.WHITE"
-    [left_1_1]="COLORS.GREEN"
-    [left_2_1]="COLORS.GREEN"
-    [left_2_2]="COLORS.GREEN"
-    [left_3_1]="COLORS.GREEN"
-    [right_1_1]="COLORS.RED"
-    [right_2_1]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
-    [right_3_1]="COLORS.RED"
-  ></svg>
+    <div class="section-content">
+      <div class="cube-and-description">
+        <svg
+          appCuboDeRubikSvg
+          [top_1_1]="COLORS.WHITE"
+          [top_1_2]="COLORS.WHITE"
+          [top_1_3]="COLORS.WHITE"
+          [top_2_1]="COLORS.WHITE"
+          [top_2_2]="COLORS.WHITE"
+          [top_2_3]="COLORS.WHITE"
+          [top_3_1]="COLORS.WHITE"
+          [top_3_2]="COLORS.WHITE"
+          [top_3_3]="COLORS.WHITE"
+          [left_1_1]="COLORS.GREEN"
+          [left_2_1]="COLORS.GREEN"
+          [left_2_2]="COLORS.GREEN"
+          [left_3_1]="COLORS.GREEN"
+          [right_1_1]="COLORS.RED"
+          [right_2_1]="COLORS.RED"
+          [right_2_2]="COLORS.RED"
+          [right_3_1]="COLORS.RED"
+        ></svg>
 
-  <p>
-    Para esquinas que esten abajo y el blanco en una cara vertical, llevamos la esquina al color de
-    sus caras verticales. Gira la cara inferior al sentido contrario del lado que queda el cuadro
-    blanco. Baja el lado izquierdo o derecho, según donde quieras colocar la esquina, y gira de
-    nuevo la parte inferior en el sentido contrario para alinearla con las otras blancas. Por
-    último, sube de nuevo el lado que bajaste.
-  </p>
+        <div>
+          <p>
+            El objetivo de este paso terminar la cara blanca colocando es su lugar las esquinas.
+          </p>
+        </div>
+      </div>
 
-  <div class="multiple-cubes">
-    <svg
-      appCuboDeRubikSvg
-      [top_1_2]="COLORS.WHITE"
-      [top_2_1]="COLORS.WHITE"
-      [top_2_2]="COLORS.WHITE"
-      [top_2_3]="COLORS.WHITE"
-      [top_3_2]="COLORS.WHITE"
-      [left_2_1]="COLORS.GREEN"
-      [left_2_2]="COLORS.GREEN"
-      [left_3_3]="COLORS.GREEN"
-      [right_1_3]="COLORS.WHITE"
-      [right_2_1]="COLORS.RED"
-      [right_2_2]="COLORS.RED"
-    ></svg>
+      <p>
+        Para esquinas que esten abajo y el blanco en la cara frontal, giramos la cara inferior para
+        llevar la esquina al color de sus caras. Gira la cara inferior al sentido contrario del lado
+        que queda el cuadro blanco. Baja el lado izquierdo o derecho, según donde quieras colocar la
+        esquina, y gira de nuevo la parte inferior en el sentido contrario para alinearla con las
+        otras blancas. Por último, sube de nuevo el lado que bajaste.
+      </p>
 
-    <svg
-      appCuboDeRubikSvg
-      [top_1_2]="COLORS.WHITE"
-      [top_2_1]="COLORS.WHITE"
-      [top_2_2]="COLORS.WHITE"
-      [top_2_3]="COLORS.WHITE"
-      [top_3_2]="COLORS.WHITE"
-      [left_2_1]="COLORS.GREEN"
-      [left_2_2]="COLORS.GREEN"
-      [right_2_1]="COLORS.RED"
-      [right_2_2]="COLORS.RED"
-      [right_3_3]="COLORS.GREEN"
-    ></svg>
+      <div class="multiple-cubes">
+        <svg
+          appCuboDeRubikSvg
+          [top_1_2]="COLORS.WHITE"
+          [top_2_1]="COLORS.WHITE"
+          [top_2_2]="COLORS.WHITE"
+          [top_2_3]="COLORS.WHITE"
+          [top_3_2]="COLORS.WHITE"
+          [left_2_1]="COLORS.GREEN"
+          [left_2_2]="COLORS.GREEN"
+          [left_3_3]="COLORS.GREEN"
+          [right_1_3]="COLORS.WHITE"
+          [right_2_1]="COLORS.RED"
+          [right_2_2]="COLORS.RED"
+        ></svg>
 
-    <svg
-      appCuboDeRubikSvg
-      [top_1_2]="COLORS.WHITE"
-      [top_2_1]="COLORS.WHITE"
-      [top_2_2]="COLORS.WHITE"
-      [top_3_2]="COLORS.WHITE"
-      [left_2_2]="COLORS.GREEN"
-      [left_3_2]="COLORS.GREEN"
-      [right_1_2]="COLORS.WHITE"
-      [right_2_1]="COLORS.RED"
-      [right_2_2]="COLORS.RED"
-      [right_3_3]="COLORS.GREEN"
-    ></svg>
+        <svg
+          appCuboDeRubikSvg
+          [top_1_2]="COLORS.WHITE"
+          [top_2_1]="COLORS.WHITE"
+          [top_2_2]="COLORS.WHITE"
+          [top_2_3]="COLORS.WHITE"
+          [top_3_2]="COLORS.WHITE"
+          [left_2_1]="COLORS.GREEN"
+          [left_2_2]="COLORS.GREEN"
+          [right_2_1]="COLORS.RED"
+          [right_2_2]="COLORS.RED"
+          [right_3_3]="COLORS.GREEN"
+        ></svg>
 
-    <svg
-      appCuboDeRubikSvg
-      [top_1_2]="COLORS.WHITE"
-      [top_2_1]="COLORS.WHITE"
-      [top_2_2]="COLORS.WHITE"
-      [top_3_2]="COLORS.WHITE"
-      [left_2_2]="COLORS.GREEN"
-      [left_3_2]="COLORS.GREEN"
-      [left_3_3]="COLORS.GREEN"
-      [right_1_2]="COLORS.WHITE"
-      [right_1_3]="COLORS.WHITE"
-      [right_2_1]="COLORS.RED"
-      [right_2_2]="COLORS.RED"
-    ></svg>
+        <svg
+          appCuboDeRubikSvg
+          [top_1_2]="COLORS.WHITE"
+          [top_2_1]="COLORS.WHITE"
+          [top_2_2]="COLORS.WHITE"
+          [top_3_2]="COLORS.WHITE"
+          [left_2_2]="COLORS.GREEN"
+          [left_3_2]="COLORS.GREEN"
+          [right_1_2]="COLORS.WHITE"
+          [right_2_1]="COLORS.RED"
+          [right_2_2]="COLORS.RED"
+          [right_3_3]="COLORS.GREEN"
+        ></svg>
 
-    <svg
-      appCuboDeRubikSvg
-      [top_1_2]="COLORS.WHITE"
-      [top_2_1]="COLORS.WHITE"
-      [top_2_2]="COLORS.WHITE"
-      [top_2_3]="COLORS.WHITE"
-      [top_3_2]="COLORS.WHITE"
-      [top_3_3]="COLORS.WHITE"
-      [left_2_1]="COLORS.GREEN"
-      [left_2_2]="COLORS.GREEN"
-      [left_3_1]="COLORS.GREEN"
-      [right_1_1]="COLORS.RED"
-      [right_2_1]="COLORS.RED"
-      [right_2_2]="COLORS.RED"
-    ></svg>
-  </div>
+        <svg
+          appCuboDeRubikSvg
+          [top_1_2]="COLORS.WHITE"
+          [top_2_1]="COLORS.WHITE"
+          [top_2_2]="COLORS.WHITE"
+          [top_3_2]="COLORS.WHITE"
+          [left_2_2]="COLORS.GREEN"
+          [left_3_2]="COLORS.GREEN"
+          [left_3_3]="COLORS.GREEN"
+          [right_1_2]="COLORS.WHITE"
+          [right_1_3]="COLORS.WHITE"
+          [right_2_1]="COLORS.RED"
+          [right_2_2]="COLORS.RED"
+        ></svg>
 
-  <p>
-    Si la esquina tiene el cuadro blanco abajo, el proceso es el mismo, pero la esquina quedará
-    girada.
-  </p>
+        <svg
+          appCuboDeRubikSvg
+          [top_1_2]="COLORS.WHITE"
+          [top_2_1]="COLORS.WHITE"
+          [top_2_2]="COLORS.WHITE"
+          [top_2_3]="COLORS.WHITE"
+          [top_3_2]="COLORS.WHITE"
+          [top_3_3]="COLORS.WHITE"
+          [left_2_1]="COLORS.GREEN"
+          [left_2_2]="COLORS.GREEN"
+          [left_3_1]="COLORS.GREEN"
+          [right_1_1]="COLORS.RED"
+          [right_2_1]="COLORS.RED"
+          [right_2_2]="COLORS.RED"
+        ></svg>
+      </div>
 
-  <div class="multiple-cubes">
-    <svg
-      appCuboDeRubikSvg
-      [top_1_2]="COLORS.WHITE"
-      [top_2_1]="COLORS.WHITE"
-      [top_2_2]="COLORS.WHITE"
-      [top_2_3]="COLORS.WHITE"
-      [top_3_2]="COLORS.WHITE"
-      [left_2_1]="COLORS.GREEN"
-      [left_2_2]="COLORS.GREEN"
-      [left_3_3]="COLORS.RED"
-      [right_1_3]="COLORS.GREEN"
-      [right_2_1]="COLORS.RED"
-      [right_2_2]="COLORS.RED"
-    ></svg>
+      <p>
+        Si la esquina tiene el cuadro blanco abajo, el proceso es el mismo, pero la esquina quedará
+        girada.
+      </p>
 
-    <svg
-      appCuboDeRubikSvg
-      [top_1_2]="COLORS.WHITE"
-      [top_2_1]="COLORS.WHITE"
-      [top_2_2]="COLORS.WHITE"
-      [top_2_3]="COLORS.WHITE"
-      [top_3_2]="COLORS.WHITE"
-      [top_3_3]="COLORS.RED"
-      [left_2_1]="COLORS.GREEN"
-      [left_2_2]="COLORS.GREEN"
-      [left_3_1]="COLORS.WHITE"
-      [right_1_1]="COLORS.GREEN"
-      [right_2_1]="COLORS.RED"
-      [right_2_2]="COLORS.RED"
-    ></svg>
-  </div>
+      <div class="multiple-cubes">
+        <svg
+          appCuboDeRubikSvg
+          [top_1_2]="COLORS.WHITE"
+          [top_2_1]="COLORS.WHITE"
+          [top_2_2]="COLORS.WHITE"
+          [top_2_3]="COLORS.WHITE"
+          [top_3_2]="COLORS.WHITE"
+          [left_2_1]="COLORS.GREEN"
+          [left_2_2]="COLORS.GREEN"
+          [left_3_3]="COLORS.RED"
+          [right_1_3]="COLORS.GREEN"
+          [right_2_1]="COLORS.RED"
+          [right_2_2]="COLORS.RED"
+        ></svg>
 
-  <p>
-    Si la esquina tiene el cuadro blanco arriba en una cara vertical, se rota la cara frontal para
-    bajarla (izquierda o derecha), despues se rota la cara inferior hacia el lado que queda el
-    cuadro blanco, y se revierte el giro de la cara frontal. Entonces, ya podemos seguir los pasos
-    anteriores.
-  </p>
+        <svg
+          appCuboDeRubikSvg
+          [top_1_2]="COLORS.WHITE"
+          [top_2_1]="COLORS.WHITE"
+          [top_2_2]="COLORS.WHITE"
+          [top_2_3]="COLORS.WHITE"
+          [top_3_2]="COLORS.WHITE"
+          [top_3_3]="COLORS.RED"
+          [left_2_1]="COLORS.GREEN"
+          [left_2_2]="COLORS.GREEN"
+          [left_3_1]="COLORS.WHITE"
+          [right_1_1]="COLORS.GREEN"
+          [right_2_1]="COLORS.RED"
+          [right_2_2]="COLORS.RED"
+        ></svg>
+      </div>
 
-  <div class="multiple-cubes">
-    <svg
-      appCuboDeRubikSvg
-      [top_1_2]="COLORS.WHITE"
-      [top_2_1]="COLORS.WHITE"
-      [top_2_2]="COLORS.WHITE"
-      [top_2_3]="COLORS.WHITE"
-      [top_3_2]="COLORS.WHITE"
-      [top_3_3]="COLORS.RED"
-      [left_2_1]="COLORS.GREEN"
-      [left_2_2]="COLORS.GREEN"
-      [left_3_1]="COLORS.WHITE"
-      [right_1_1]="COLORS.GREEN"
-      [right_2_1]="COLORS.RED"
-      [right_2_2]="COLORS.RED"
-    ></svg>
+      <p>
+        Si la esquina tiene el cuadro blanco arriba en la cara frontal, se rota la cara frontal para
+        bajarla (izquierda o derecha), despues se rota la cara inferior hacia el lado que queda el
+        cuadro blanco, y se revierte el giro de la cara frontal. Entonces, ya podemos seguir los
+        pasos anteriores.
+      </p>
 
-    <svg
-      appCuboDeRubikSvg
-      [top_1_2]="COLORS.WHITE"
-      [top_2_1]="COLORS.WHITE"
-      [top_2_2]="COLORS.WHITE"
-      [top_3_2]="COLORS.WHITE"
-      [left_2_2]="COLORS.GREEN"
-      [left_3_2]="COLORS.GREEN"
-      [left_3_3]="COLORS.WHITE"
-      [right_1_2]="COLORS.WHITE"
-      [right_1_3]="COLORS.RED"
-      [right_2_1]="COLORS.RED"
-      [right_2_2]="COLORS.RED"
-    ></svg>
+      <div class="multiple-cubes">
+        <svg
+          appCuboDeRubikSvg
+          [top_1_2]="COLORS.WHITE"
+          [top_2_1]="COLORS.WHITE"
+          [top_2_2]="COLORS.WHITE"
+          [top_2_3]="COLORS.WHITE"
+          [top_3_2]="COLORS.WHITE"
+          [top_3_3]="COLORS.RED"
+          [left_2_1]="COLORS.GREEN"
+          [left_2_2]="COLORS.GREEN"
+          [left_3_1]="COLORS.WHITE"
+          [right_1_1]="COLORS.GREEN"
+          [right_2_1]="COLORS.RED"
+          [right_2_2]="COLORS.RED"
+        ></svg>
 
-    <svg
-      appCuboDeRubikSvg
-      [top_1_2]="COLORS.WHITE"
-      [top_2_1]="COLORS.WHITE"
-      [top_2_2]="COLORS.WHITE"
-      [top_3_2]="COLORS.WHITE"
-      [left_2_2]="COLORS.GREEN"
-      [left_3_2]="COLORS.GREEN"
-      [right_1_2]="COLORS.WHITE"
-      [right_2_1]="COLORS.RED"
-      [right_2_2]="COLORS.RED"
-      [right_3_3]="COLORS.WHITE"
-    ></svg>
+        <svg
+          appCuboDeRubikSvg
+          [top_1_2]="COLORS.WHITE"
+          [top_2_1]="COLORS.WHITE"
+          [top_2_2]="COLORS.WHITE"
+          [top_3_2]="COLORS.WHITE"
+          [left_2_2]="COLORS.GREEN"
+          [left_3_2]="COLORS.GREEN"
+          [left_3_3]="COLORS.WHITE"
+          [right_1_2]="COLORS.WHITE"
+          [right_1_3]="COLORS.RED"
+          [right_2_1]="COLORS.RED"
+          [right_2_2]="COLORS.RED"
+        ></svg>
 
-    <svg
-      appCuboDeRubikSvg
-      [top_1_2]="COLORS.WHITE"
-      [top_2_1]="COLORS.WHITE"
-      [top_2_2]="COLORS.WHITE"
-      [top_2_3]="COLORS.WHITE"
-      [top_3_2]="COLORS.WHITE"
-      [left_2_1]="COLORS.GREEN"
-      [left_2_2]="COLORS.GREEN"
-      [right_2_1]="COLORS.RED"
-      [right_2_2]="COLORS.RED"
-      [right_3_3]="COLORS.WHITE"
-    ></svg>
-  </div>
+        <svg
+          appCuboDeRubikSvg
+          [top_1_2]="COLORS.WHITE"
+          [top_2_1]="COLORS.WHITE"
+          [top_2_2]="COLORS.WHITE"
+          [top_3_2]="COLORS.WHITE"
+          [left_2_2]="COLORS.GREEN"
+          [left_3_2]="COLORS.GREEN"
+          [right_1_2]="COLORS.WHITE"
+          [right_2_1]="COLORS.RED"
+          [right_2_2]="COLORS.RED"
+          [right_3_3]="COLORS.WHITE"
+        ></svg>
 
-  <p>
-    Si la esquina blanca ya está arriba pero no en su posición, se rota el frontal, la cara inferior
-    y se revierte la rotación del frontal. Así tenemos de nuevo un caso ya conocido.
-  </p>
+        <svg
+          appCuboDeRubikSvg
+          [top_1_2]="COLORS.WHITE"
+          [top_2_1]="COLORS.WHITE"
+          [top_2_2]="COLORS.WHITE"
+          [top_2_3]="COLORS.WHITE"
+          [top_3_2]="COLORS.WHITE"
+          [left_2_1]="COLORS.GREEN"
+          [left_2_2]="COLORS.GREEN"
+          [right_2_1]="COLORS.RED"
+          [right_2_2]="COLORS.RED"
+          [right_3_3]="COLORS.WHITE"
+        ></svg>
+      </div>
 
-  <div class="multiple-cubes">
-    <svg
-      appCuboDeRubikSvg
-      [top_1_2]="COLORS.WHITE"
-      [top_2_1]="COLORS.WHITE"
-      [top_2_2]="COLORS.WHITE"
-      [top_2_3]="COLORS.WHITE"
-      [top_3_2]="COLORS.WHITE"
-      [top_3_3]="COLORS.WHITE"
-      [left_2_1]="COLORS.GREEN"
-      [left_2_2]="COLORS.GREEN"
-      [left_3_1]="COLORS.ORANGE"
-      [right_1_1]="COLORS.BLUE"
-      [right_2_1]="COLORS.RED"
-      [right_2_2]="COLORS.RED"
-    ></svg>
+      <p>
+        Si la esquina blanca ya está arriba pero no en su posición, se rota el frontal, la cara
+        inferior y se revierte la rotación del frontal. Así tenemos de nuevo un caso ya conocido.
+      </p>
 
-    <svg
-      appCuboDeRubikSvg
-      [top_1_2]="COLORS.WHITE"
-      [top_2_1]="COLORS.WHITE"
-      [top_2_2]="COLORS.WHITE"
-      [top_3_2]="COLORS.WHITE"
-      [left_2_2]="COLORS.GREEN"
-      [left_3_2]="COLORS.GREEN"
-      [left_3_3]="COLORS.ORANGE"
-      [right_1_2]="COLORS.WHITE"
-      [right_1_3]="COLORS.WHITE"
-      [right_2_1]="COLORS.RED"
-      [right_2_2]="COLORS.RED"
-    ></svg>
+      <div class="multiple-cubes">
+        <svg
+          appCuboDeRubikSvg
+          [top_1_2]="COLORS.WHITE"
+          [top_2_1]="COLORS.WHITE"
+          [top_2_2]="COLORS.WHITE"
+          [top_2_3]="COLORS.WHITE"
+          [top_3_2]="COLORS.WHITE"
+          [top_3_3]="COLORS.WHITE"
+          [left_2_1]="COLORS.GREEN"
+          [left_2_2]="COLORS.GREEN"
+          [left_3_1]="COLORS.ORANGE"
+          [right_1_1]="COLORS.BLUE"
+          [right_2_1]="COLORS.RED"
+          [right_2_2]="COLORS.RED"
+        ></svg>
 
-    <svg
-      appCuboDeRubikSvg
-      [top_1_2]="COLORS.WHITE"
-      [top_2_1]="COLORS.WHITE"
-      [top_2_2]="COLORS.WHITE"
-      [top_3_2]="COLORS.WHITE"
-      [left_1_3]="COLORS.WHITE"
-      [left_2_2]="COLORS.GREEN"
-      [left_3_2]="COLORS.GREEN"
-      [right_1_2]="COLORS.WHITE"
-      [right_2_1]="COLORS.RED"
-      [right_2_2]="COLORS.RED"
-    ></svg>
+        <svg
+          appCuboDeRubikSvg
+          [top_1_2]="COLORS.WHITE"
+          [top_2_1]="COLORS.WHITE"
+          [top_2_2]="COLORS.WHITE"
+          [top_3_2]="COLORS.WHITE"
+          [left_2_2]="COLORS.GREEN"
+          [left_3_2]="COLORS.GREEN"
+          [left_3_3]="COLORS.ORANGE"
+          [right_1_2]="COLORS.WHITE"
+          [right_1_3]="COLORS.WHITE"
+          [right_2_1]="COLORS.RED"
+          [right_2_2]="COLORS.RED"
+        ></svg>
 
-    <svg
-      appCuboDeRubikSvg
-      [top_1_2]="COLORS.WHITE"
-      [top_2_1]="COLORS.WHITE"
-      [top_2_2]="COLORS.WHITE"
-      [top_2_3]="COLORS.WHITE"
-      [top_3_2]="COLORS.WHITE"
-      [left_2_1]="COLORS.GREEN"
-      [left_2_2]="COLORS.GREEN"
-      [left_3_3]="COLORS.WHITE"
-      [right_2_1]="COLORS.RED"
-      [right_2_2]="COLORS.RED"
-    ></svg>
-  </div>
+        <svg
+          appCuboDeRubikSvg
+          [top_1_2]="COLORS.WHITE"
+          [top_2_1]="COLORS.WHITE"
+          [top_2_2]="COLORS.WHITE"
+          [top_3_2]="COLORS.WHITE"
+          [left_1_3]="COLORS.WHITE"
+          [left_2_2]="COLORS.GREEN"
+          [left_3_2]="COLORS.GREEN"
+          [right_1_2]="COLORS.WHITE"
+          [right_2_1]="COLORS.RED"
+          [right_2_2]="COLORS.RED"
+        ></svg>
+
+        <svg
+          appCuboDeRubikSvg
+          [top_1_2]="COLORS.WHITE"
+          [top_2_1]="COLORS.WHITE"
+          [top_2_2]="COLORS.WHITE"
+          [top_2_3]="COLORS.WHITE"
+          [top_3_2]="COLORS.WHITE"
+          [left_2_1]="COLORS.GREEN"
+          [left_2_2]="COLORS.GREEN"
+          [left_3_3]="COLORS.WHITE"
+          [right_2_1]="COLORS.RED"
+          [right_2_2]="COLORS.RED"
+        ></svg>
+      </div>
+    </div>
+  </section>
 
   <h1 #stepSection id="segunda-fila">Segunda fila</h1>
 
