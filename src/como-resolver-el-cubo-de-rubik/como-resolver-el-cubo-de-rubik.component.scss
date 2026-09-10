@@ -1,5 +1,5 @@
 :host {
-  display: block;
+  display: flex;
 }
 
 svg[appCuboDeRubikSvg] {
@@ -9,4 +9,62 @@ svg[appCuboDeRubikSvg] {
 .multiple-cubes {
   display: flex;
   gap: 20px;
+}
+
+.sidebar {
+  flex-shrink: 0;
+  width: 280px;
+  padding: 24px 18px;
+  background: #101d36;
+  color: white;
+  position: relative;
+
+  .steps-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 24px;
+    position: sticky;
+    top: calc(24px + 24px); // sidebar padding + padding
+
+    .step-link {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 10px;
+      border-radius: 10px;
+      color: #dce5f7;
+      text-decoration: none;
+      font-weight: bold;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.08);
+        color: white;
+        transform: scale(1.01);
+      }
+
+      &.active {
+        color: white;
+        background: linear-gradient(135deg, #1976f3, #2865db);
+        box-shadow: 0 8px 20px #1976f340;
+
+        .step-number {
+          background: white;
+          color: #1769df;
+        }
+      }
+
+      .step-number {
+        flex-shrink: 0;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: #edf3ff;
+        color: #162642;
+        font-weight: 800;
+      }
+    }
+  }
 }

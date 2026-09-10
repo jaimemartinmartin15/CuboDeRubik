@@ -1,852 +1,905 @@
-<h1>Introducción</h1>
+<aside class="sidebar">
+  <nav class="steps-nav">
+    <a #stepLink href="#introduccion" class="step-link">
+      <span class="step-number">1</span>
+      <span>Introducción</span>
+    </a>
 
-<p>El color de cada una de las caras del cubo viene indicado por el color del cuadrado central.</p>
+    <a #stepLink href="#cruz-blanca" class="step-link">
+      <span class="step-number">2</span>
+      <span>Cruz blanca</span>
+    </a>
 
-<svg
-  appCuboDeRubikSvg
-  [left_2_2]="COLORS.GREEN"
-  [right_2_2]="COLORS.RED"
-  [top_2_2]="COLORS.WHITE"
-></svg>
+    <a #stepLink href="#esquinas-blancas" class="step-link">
+      <span class="step-number">3</span>
+      <span>Esquinas blancas</span>
+    </a>
 
-<p>Para rotar las caras del cubo, tendremos siempre la cara blanca hacia arriba.</p>
+    <a #stepLink href="#segunda-fila" class="step-link">
+      <span class="step-number">5</span>
+      <span>Segunda fila</span>
+    </a>
 
-<h1>Conseguir la cruz blanca</h1>
+    <a #stepLink href="#linea-amarilla" class="step-link">
+      <span class="step-number">5</span>
+      <span>Línea amarilla</span>
+    </a>
 
-<svg
-  appCuboDeRubikSvg
-  [left_2_1]="COLORS.GREEN"
-  [left_2_2]="COLORS.GREEN"
-  [right_2_1]="COLORS.RED"
-  [right_2_2]="COLORS.RED"
-  [top_1_2]="COLORS.WHITE"
-  [top_2_1]="COLORS.WHITE"
-  [top_2_2]="COLORS.WHITE"
-  [top_2_3]="COLORS.WHITE"
-  [top_3_2]="COLORS.WHITE"
-></svg>
+    <a #stepLink href="#cruz-amarilla" class="step-link">
+      <span class="step-number">6</span>
+      <span>Cruz amarilla</span>
+    </a>
 
-<p>
-  Primero conseguir un lateral blanco en la cara superior (da igual como, es fácil), y rotar la cara
-  superior para que el otro color del lateral coincida con el color de la cara del cubo, tal que
-  así:
-</p>
+    <a #stepLink href="#laterales-amarillos" class="step-link">
+      <span class="step-number">7</span>
+      <span>Laterales amarillos</span>
+    </a>
 
-<svg
-  appCuboDeRubikSvg
-  [right_2_1]="COLORS.RED"
-  [right_2_2]="COLORS.RED"
-  [top_2_2]="COLORS.WHITE"
-  [top_3_2]="COLORS.WHITE"
-></svg>
+    <a #stepLink href="#esquinas-finales-1" class="step-link">
+      <span class="step-number">8</span>
+      <span>Esquinas finales 1</span>
+    </a>
 
-<p>Ahora hay varias posibilidades para colocar el resto de laterales blancos en su posición.</p>
+    <a #stepLink href="#esquinas-finales-2" class="step-link">
+      <span class="step-number">9</span>
+      <span>Esquinas finales 2</span>
+    </a>
+  </nav>
+</aside>
 
-<p>
-  Si un lateral blanco está en la cara inferior, rotar la cara inferior para colocar el otro color
-  del lateral en su cara del cubo. Después se rota la cara frontal para dejar el blanco hacia
-  arriba.
-</p>
+<main>
+  <h1 #stepSection id="introduccion">Introducción</h1>
 
-<div class="multiple-cubes">
+  <p>
+    El color de cada una de las caras del cubo viene indicado por el color del cuadrado central.
+  </p>
+
   <svg
     appCuboDeRubikSvg
-    [top_2_2]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [right_2_1]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
     [left_2_2]="COLORS.GREEN"
-    [right_2_3]="COLORS.GREEN"
-  ></svg>
-
-  <svg
-    appCuboDeRubikSvg
-    [top_2_2]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [right_2_1]="COLORS.RED"
     [right_2_2]="COLORS.RED"
-    [left_2_2]="COLORS.GREEN"
-    [left_2_3]="COLORS.GREEN"
+    [top_2_2]="COLORS.WHITE"
   ></svg>
+
+  <p>Para rotar las caras del cubo, tendremos siempre la cara blanca hacia arriba.</p>
+
+  <h1 #stepSection id="cruz-blanca">Cruz blanca</h1>
 
   <svg
     appCuboDeRubikSvg
-    [top_2_2]="COLORS.WHITE"
-    [top_2_3]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [right_2_1]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
-    [left_2_1]="COLORS.GREEN"
-    [left_2_2]="COLORS.GREEN"
-  ></svg>
-</div>
-
-<p>
-  Si el lateral blanco está en una cara vertical del cubo, en la parte inferior, se rota la parte
-  inferior hasta dejar el lateral blanco en la cara del cubo del otro color del lateral. Se rota la
-  cara inferior a la izquierda, se rota la cara izquierda hacia arriba y por último la cara frontal
-  a la derecha.
-</p>
-
-<div class="multiple-cubes">
-  <svg
-    appCuboDeRubikSvg
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [right_2_2]="COLORS.RED"
-  ></svg>
-
-  <svg
-    appCuboDeRubikSvg
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [right_2_3]="COLORS.WHITE"
-    [right_2_2]="COLORS.RED"
-  ></svg>
-
-  <svg
-    appCuboDeRubikSvg
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [left_2_3]="COLORS.WHITE"
-    [right_2_2]="COLORS.RED"
-  ></svg>
-
-  <svg
-    appCuboDeRubikSvg
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [left_3_2]="COLORS.WHITE"
-    [right_1_2]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
-  ></svg>
-
-  <svg
-    appCuboDeRubikSvg
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [right_2_1]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
-  ></svg>
-</div>
-
-<p>
-  Si uno de los laterales que ya estaba colocado queda descolocado al hacer estos pasos, se puede
-  recolocar fácilmente rotando hacia abajo la cara izquierda.
-</p>
-
-<div class="multiple-cubes">
-  <svg
-    appCuboDeRubikSvg
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [left_1_2]="COLORS.GREEN"
-    [left_2_2]="COLORS.GREEN"
-    [right_2_1]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
-  ></svg>
-
-  <svg
-    appCuboDeRubikSvg
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_2_3]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
     [left_2_1]="COLORS.GREEN"
     [left_2_2]="COLORS.GREEN"
     [right_2_1]="COLORS.RED"
     [right_2_2]="COLORS.RED"
-  ></svg>
-</div>
-
-<p>
-  Si el lateral blanco está en una cara vertical del cubo, en la parte superior, girar la cara
-  frontal para que quede abajo, y repetir el proceso anterior.
-</p>
-
-<div class="multiple-cubes">
-  <svg
-    appCuboDeRubikSvg
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_2_3]="COLORS.BLUE"
-    [right_2_2]="COLORS.RED"
-    [left_2_1]="COLORS.WHITE"
-  ></svg>
-
-  <svg
-    appCuboDeRubikSvg
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [right_2_2]="COLORS.RED"
-    [left_2_3]="COLORS.WHITE"
-  ></svg>
-</div>
-
-<p>
-  Si el lateral blanco está en una cara vertical del cubo, en el nivel medio, rotar la cara frontal
-  para bajar el cuadro blanco (izquierda o derecha). Si se descolocó un cuadro blanco de la cruz
-  blanca, rotar la cara inferior (izquierda o derecha, da igual) y rotar la cara frontal hacia el
-  lado contrario que antes, para dejar el cuadro blanco colocado en su sitio de nuevo. Después
-  seguir los pasos anteriores.
-</p>
-
-<div class="multiple-cubes">
-  <svg
-    appCuboDeRubikSvg
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_2_3]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [left_2_1]="COLORS.GREEN"
-    [left_2_2]="COLORS.GREEN"
-    [left_3_2]="COLORS.WHITE"
-    [right_2_1]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
-  ></svg>
-
-  <svg
-    appCuboDeRubikSvg
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [left_2_2]="COLORS.GREEN"
-    [left_2_3]="COLORS.WHITE"
-    [left_3_2]="COLORS.GREEN"
-    [right_1_2]="COLORS.WHITE"
-    [right_2_1]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
-  ></svg>
-
-  <svg
-    appCuboDeRubikSvg
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [left_2_2]="COLORS.GREEN"
-    [left_3_2]="COLORS.GREEN"
-    [right_1_2]="COLORS.WHITE"
-    [right_2_1]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
-  ></svg>
-
-  <svg
-    appCuboDeRubikSvg
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_2_3]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [left_2_1]="COLORS.GREEN"
-    [left_2_2]="COLORS.GREEN"
-    [right_2_1]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
-  ></svg>
-</div>
-
-<h1>Colocar las esquinas blancas en su sitio.</h1>
-
-<svg
-  appCuboDeRubikSvg
-  [top_1_1]="COLORS.WHITE"
-  [top_1_2]="COLORS.WHITE"
-  [top_1_3]="COLORS.WHITE"
-  [top_2_1]="COLORS.WHITE"
-  [top_2_2]="COLORS.WHITE"
-  [top_2_3]="COLORS.WHITE"
-  [top_3_1]="COLORS.WHITE"
-  [top_3_2]="COLORS.WHITE"
-  [top_3_3]="COLORS.WHITE"
-  [left_1_1]="COLORS.GREEN"
-  [left_2_1]="COLORS.GREEN"
-  [left_2_2]="COLORS.GREEN"
-  [left_3_1]="COLORS.GREEN"
-  [right_1_1]="COLORS.RED"
-  [right_2_1]="COLORS.RED"
-  [right_2_2]="COLORS.RED"
-  [right_3_1]="COLORS.RED"
-></svg>
-
-<p>
-  Para esquinas que esten abajo y el blanco en una cara vertical, llevamos la esquina al color de
-  sus caras verticales. Gira la cara inferior al sentido contrario del lado que queda el cuadro
-  blanco. Baja el lado izquierdo o derecho, según donde quieras colocar la esquina, y gira de nuevo
-  la parte inferior en el sentido contrario para alinearla con las otras blancas. Por último, sube
-  de nuevo el lado que bajaste.
-</p>
-
-<div class="multiple-cubes">
-  <svg
-    appCuboDeRubikSvg
     [top_1_2]="COLORS.WHITE"
     [top_2_1]="COLORS.WHITE"
     [top_2_2]="COLORS.WHITE"
     [top_2_3]="COLORS.WHITE"
     [top_3_2]="COLORS.WHITE"
-    [left_2_1]="COLORS.GREEN"
-    [left_2_2]="COLORS.GREEN"
-    [left_3_3]="COLORS.GREEN"
-    [right_1_3]="COLORS.WHITE"
-    [right_2_1]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
   ></svg>
+
+  <p>
+    Primero conseguir un lateral blanco en la cara superior (da igual como, es fácil), y rotar la
+    cara superior para que el otro color del lateral coincida con el color de la cara del cubo, tal
+    que así:
+  </p>
 
   <svg
     appCuboDeRubikSvg
+    [right_2_1]="COLORS.RED"
+    [right_2_2]="COLORS.RED"
+    [top_2_2]="COLORS.WHITE"
+    [top_3_2]="COLORS.WHITE"
+  ></svg>
+
+  <p>Ahora hay varias posibilidades para colocar el resto de laterales blancos en su posición.</p>
+
+  <p>
+    Si un lateral blanco está en la cara inferior, rotar la cara inferior para colocar el otro color
+    del lateral en su cara del cubo. Después se rota la cara frontal para dejar el blanco hacia
+    arriba.
+  </p>
+
+  <div class="multiple-cubes">
+    <svg
+      appCuboDeRubikSvg
+      [top_2_2]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+      [left_2_2]="COLORS.GREEN"
+      [right_2_3]="COLORS.GREEN"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_2_2]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+      [left_2_2]="COLORS.GREEN"
+      [left_2_3]="COLORS.GREEN"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_2_2]="COLORS.WHITE"
+      [top_2_3]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+      [left_2_1]="COLORS.GREEN"
+      [left_2_2]="COLORS.GREEN"
+    ></svg>
+  </div>
+
+  <p>
+    Si el lateral blanco está en una cara vertical del cubo, en la parte inferior, se rota la parte
+    inferior hasta dejar el lateral blanco en la cara del cubo del otro color del lateral. Se rota
+    la cara inferior a la izquierda, se rota la cara izquierda hacia arriba y por último la cara
+    frontal a la derecha.
+  </p>
+
+  <div class="multiple-cubes">
+    <svg
+      appCuboDeRubikSvg
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [right_2_2]="COLORS.RED"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [right_2_3]="COLORS.WHITE"
+      [right_2_2]="COLORS.RED"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [left_2_3]="COLORS.WHITE"
+      [right_2_2]="COLORS.RED"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [left_3_2]="COLORS.WHITE"
+      [right_1_2]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+    ></svg>
+  </div>
+
+  <p>
+    Si uno de los laterales que ya estaba colocado queda descolocado al hacer estos pasos, se puede
+    recolocar fácilmente rotando hacia abajo la cara izquierda.
+  </p>
+
+  <div class="multiple-cubes">
+    <svg
+      appCuboDeRubikSvg
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [left_1_2]="COLORS.GREEN"
+      [left_2_2]="COLORS.GREEN"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_2_3]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [left_2_1]="COLORS.GREEN"
+      [left_2_2]="COLORS.GREEN"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+    ></svg>
+  </div>
+
+  <p>
+    Si el lateral blanco está en una cara vertical del cubo, en la parte superior, girar la cara
+    frontal para que quede abajo, y repetir el proceso anterior.
+  </p>
+
+  <div class="multiple-cubes">
+    <svg
+      appCuboDeRubikSvg
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_2_3]="COLORS.BLUE"
+      [right_2_2]="COLORS.RED"
+      [left_2_1]="COLORS.WHITE"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [right_2_2]="COLORS.RED"
+      [left_2_3]="COLORS.WHITE"
+    ></svg>
+  </div>
+
+  <p>
+    Si el lateral blanco está en una cara vertical del cubo, en el nivel medio, rotar la cara
+    frontal para bajar el cuadro blanco (izquierda o derecha). Si se descolocó un cuadro blanco de
+    la cruz blanca, rotar la cara inferior (izquierda o derecha, da igual) y rotar la cara frontal
+    hacia el lado contrario que antes, para dejar el cuadro blanco colocado en su sitio de nuevo.
+    Después seguir los pasos anteriores.
+  </p>
+
+  <div class="multiple-cubes">
+    <svg
+      appCuboDeRubikSvg
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_2_3]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [left_2_1]="COLORS.GREEN"
+      [left_2_2]="COLORS.GREEN"
+      [left_3_2]="COLORS.WHITE"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [left_2_2]="COLORS.GREEN"
+      [left_2_3]="COLORS.WHITE"
+      [left_3_2]="COLORS.GREEN"
+      [right_1_2]="COLORS.WHITE"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [left_2_2]="COLORS.GREEN"
+      [left_3_2]="COLORS.GREEN"
+      [right_1_2]="COLORS.WHITE"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_2_3]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [left_2_1]="COLORS.GREEN"
+      [left_2_2]="COLORS.GREEN"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+    ></svg>
+  </div>
+
+  <h1 #stepSection id="esquinas-blancas">Esquinas blancas.</h1>
+
+  <svg
+    appCuboDeRubikSvg
+    [top_1_1]="COLORS.WHITE"
     [top_1_2]="COLORS.WHITE"
+    [top_1_3]="COLORS.WHITE"
     [top_2_1]="COLORS.WHITE"
     [top_2_2]="COLORS.WHITE"
     [top_2_3]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [left_2_1]="COLORS.GREEN"
-    [left_2_2]="COLORS.GREEN"
-    [right_2_1]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
-    [right_3_3]="COLORS.GREEN"
-  ></svg>
-
-  <svg
-    appCuboDeRubikSvg
-    [top_1_2]="COLORS.WHITE"
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [left_2_2]="COLORS.GREEN"
-    [left_3_2]="COLORS.GREEN"
-    [right_1_2]="COLORS.WHITE"
-    [right_2_1]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
-    [right_3_3]="COLORS.GREEN"
-  ></svg>
-
-  <svg
-    appCuboDeRubikSvg
-    [top_1_2]="COLORS.WHITE"
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [left_2_2]="COLORS.GREEN"
-    [left_3_2]="COLORS.GREEN"
-    [left_3_3]="COLORS.GREEN"
-    [right_1_2]="COLORS.WHITE"
-    [right_1_3]="COLORS.WHITE"
-    [right_2_1]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
-  ></svg>
-
-  <svg
-    appCuboDeRubikSvg
-    [top_1_2]="COLORS.WHITE"
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_2_3]="COLORS.WHITE"
+    [top_3_1]="COLORS.WHITE"
     [top_3_2]="COLORS.WHITE"
     [top_3_3]="COLORS.WHITE"
+    [left_1_1]="COLORS.GREEN"
     [left_2_1]="COLORS.GREEN"
     [left_2_2]="COLORS.GREEN"
     [left_3_1]="COLORS.GREEN"
     [right_1_1]="COLORS.RED"
     [right_2_1]="COLORS.RED"
     [right_2_2]="COLORS.RED"
+    [right_3_1]="COLORS.RED"
   ></svg>
-</div>
 
-<p>
-  Si la esquina tiene el cuadro blanco abajo, el proceso es el mismo, pero la esquina quedará
-  girada.
-</p>
+  <p>
+    Para esquinas que esten abajo y el blanco en una cara vertical, llevamos la esquina al color de
+    sus caras verticales. Gira la cara inferior al sentido contrario del lado que queda el cuadro
+    blanco. Baja el lado izquierdo o derecho, según donde quieras colocar la esquina, y gira de
+    nuevo la parte inferior en el sentido contrario para alinearla con las otras blancas. Por
+    último, sube de nuevo el lado que bajaste.
+  </p>
 
-<div class="multiple-cubes">
+  <div class="multiple-cubes">
+    <svg
+      appCuboDeRubikSvg
+      [top_1_2]="COLORS.WHITE"
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_2_3]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [left_2_1]="COLORS.GREEN"
+      [left_2_2]="COLORS.GREEN"
+      [left_3_3]="COLORS.GREEN"
+      [right_1_3]="COLORS.WHITE"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_1_2]="COLORS.WHITE"
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_2_3]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [left_2_1]="COLORS.GREEN"
+      [left_2_2]="COLORS.GREEN"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+      [right_3_3]="COLORS.GREEN"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_1_2]="COLORS.WHITE"
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [left_2_2]="COLORS.GREEN"
+      [left_3_2]="COLORS.GREEN"
+      [right_1_2]="COLORS.WHITE"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+      [right_3_3]="COLORS.GREEN"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_1_2]="COLORS.WHITE"
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [left_2_2]="COLORS.GREEN"
+      [left_3_2]="COLORS.GREEN"
+      [left_3_3]="COLORS.GREEN"
+      [right_1_2]="COLORS.WHITE"
+      [right_1_3]="COLORS.WHITE"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_1_2]="COLORS.WHITE"
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_2_3]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [top_3_3]="COLORS.WHITE"
+      [left_2_1]="COLORS.GREEN"
+      [left_2_2]="COLORS.GREEN"
+      [left_3_1]="COLORS.GREEN"
+      [right_1_1]="COLORS.RED"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+    ></svg>
+  </div>
+
+  <p>
+    Si la esquina tiene el cuadro blanco abajo, el proceso es el mismo, pero la esquina quedará
+    girada.
+  </p>
+
+  <div class="multiple-cubes">
+    <svg
+      appCuboDeRubikSvg
+      [top_1_2]="COLORS.WHITE"
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_2_3]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [left_2_1]="COLORS.GREEN"
+      [left_2_2]="COLORS.GREEN"
+      [left_3_3]="COLORS.RED"
+      [right_1_3]="COLORS.GREEN"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_1_2]="COLORS.WHITE"
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_2_3]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [top_3_3]="COLORS.RED"
+      [left_2_1]="COLORS.GREEN"
+      [left_2_2]="COLORS.GREEN"
+      [left_3_1]="COLORS.WHITE"
+      [right_1_1]="COLORS.GREEN"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+    ></svg>
+  </div>
+
+  <p>
+    Si la esquina tiene el cuadro blanco arriba en una cara vertical, se rota la cara frontal para
+    bajarla (izquierda o derecha), despues se rota la cara inferior hacia el lado que queda el
+    cuadro blanco, y se revierte el giro de la cara frontal. Entonces, ya podemos seguir los pasos
+    anteriores.
+  </p>
+
+  <div class="multiple-cubes">
+    <svg
+      appCuboDeRubikSvg
+      [top_1_2]="COLORS.WHITE"
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_2_3]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [top_3_3]="COLORS.RED"
+      [left_2_1]="COLORS.GREEN"
+      [left_2_2]="COLORS.GREEN"
+      [left_3_1]="COLORS.WHITE"
+      [right_1_1]="COLORS.GREEN"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_1_2]="COLORS.WHITE"
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [left_2_2]="COLORS.GREEN"
+      [left_3_2]="COLORS.GREEN"
+      [left_3_3]="COLORS.WHITE"
+      [right_1_2]="COLORS.WHITE"
+      [right_1_3]="COLORS.RED"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_1_2]="COLORS.WHITE"
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [left_2_2]="COLORS.GREEN"
+      [left_3_2]="COLORS.GREEN"
+      [right_1_2]="COLORS.WHITE"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+      [right_3_3]="COLORS.WHITE"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_1_2]="COLORS.WHITE"
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_2_3]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [left_2_1]="COLORS.GREEN"
+      [left_2_2]="COLORS.GREEN"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+      [right_3_3]="COLORS.WHITE"
+    ></svg>
+  </div>
+
+  <p>
+    Si la esquina blanca ya está arriba pero no en su posición, se rota el frontal, la cara inferior
+    y se revierte la rotación del frontal. Así tenemos de nuevo un caso ya conocido.
+  </p>
+
+  <div class="multiple-cubes">
+    <svg
+      appCuboDeRubikSvg
+      [top_1_2]="COLORS.WHITE"
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_2_3]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [top_3_3]="COLORS.WHITE"
+      [left_2_1]="COLORS.GREEN"
+      [left_2_2]="COLORS.GREEN"
+      [left_3_1]="COLORS.ORANGE"
+      [right_1_1]="COLORS.BLUE"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_1_2]="COLORS.WHITE"
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [left_2_2]="COLORS.GREEN"
+      [left_3_2]="COLORS.GREEN"
+      [left_3_3]="COLORS.ORANGE"
+      [right_1_2]="COLORS.WHITE"
+      [right_1_3]="COLORS.WHITE"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_1_2]="COLORS.WHITE"
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [left_1_3]="COLORS.WHITE"
+      [left_2_2]="COLORS.GREEN"
+      [left_3_2]="COLORS.GREEN"
+      [right_1_2]="COLORS.WHITE"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_1_2]="COLORS.WHITE"
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_2_3]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [left_2_1]="COLORS.GREEN"
+      [left_2_2]="COLORS.GREEN"
+      [left_3_3]="COLORS.WHITE"
+      [right_2_1]="COLORS.RED"
+      [right_2_2]="COLORS.RED"
+    ></svg>
+  </div>
+
+  <h1 #stepSection id="segunda-fila">Segunda fila</h1>
+
   <svg
     appCuboDeRubikSvg
+    [top_1_1]="COLORS.WHITE"
     [top_1_2]="COLORS.WHITE"
+    [top_1_3]="COLORS.WHITE"
     [top_2_1]="COLORS.WHITE"
     [top_2_2]="COLORS.WHITE"
     [top_2_3]="COLORS.WHITE"
+    [top_3_1]="COLORS.WHITE"
     [top_3_2]="COLORS.WHITE"
-    [left_2_1]="COLORS.GREEN"
-    [left_2_2]="COLORS.GREEN"
-    [left_3_3]="COLORS.RED"
-    [right_1_3]="COLORS.GREEN"
-    [right_2_1]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
-  ></svg>
-
-  <svg
-    appCuboDeRubikSvg
-    [top_1_2]="COLORS.WHITE"
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_2_3]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [top_3_3]="COLORS.RED"
-    [left_2_1]="COLORS.GREEN"
-    [left_2_2]="COLORS.GREEN"
-    [left_3_1]="COLORS.WHITE"
+    [top_3_3]="COLORS.WHITE"
+    [left_1_1]="COLORS.RED"
+    [left_1_2]="COLORS.RED"
+    [left_2_1]="COLORS.RED"
+    [left_2_2]="COLORS.RED"
+    [left_3_1]="COLORS.RED"
+    [left_3_2]="COLORS.RED"
     [right_1_1]="COLORS.GREEN"
-    [right_2_1]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
-  ></svg>
-</div>
-
-<p>
-  Si la esquina tiene el cuadro blanco arriba en una cara vertical, se rota la cara frontal para
-  bajarla (izquierda o derecha), despues se rota la cara inferior hacia el lado que queda el cuadro
-  blanco, y se revierte el giro de la cara frontal. Entonces, ya podemos seguir los pasos
-  anteriores.
-</p>
-
-<div class="multiple-cubes">
-  <svg
-    appCuboDeRubikSvg
-    [top_1_2]="COLORS.WHITE"
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_2_3]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [top_3_3]="COLORS.RED"
-    [left_2_1]="COLORS.GREEN"
-    [left_2_2]="COLORS.GREEN"
-    [left_3_1]="COLORS.WHITE"
-    [right_1_1]="COLORS.GREEN"
-    [right_2_1]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
+    [right_1_2]="COLORS.GREEN"
+    [right_2_1]="COLORS.GREEN"
+    [right_2_2]="COLORS.GREEN"
+    [right_3_1]="COLORS.GREEN"
+    [right_3_2]="COLORS.GREEN"
   ></svg>
 
+  <p>Buscamos los laterales que no tienen color amarillo.</p>
+
+  <p>
+    Si el lateral está abajo, rotamos la cara inferior para llevarlo al color de su cara. Después
+    giramos la cara inferior al lado contrario de la esquina que la queremos colocar. Baja el
+    lateral de la posición que estás colocando. Vuelve a girar la parte inferior al sentido
+    contrario que antes, y vuelve a subir el lateral. Se nos va a descolocar una esquina, pero la
+    podemos volver a colocar con los pasos que ya hemos visto, y al hacerlo, se colocará tambien el
+    cuadro que queríamos de la segunda fila.
+  </p>
+
+  <div class="multiple-cubes">
+    <svg
+      appCuboDeRubikSvg
+      [top_1_1]="COLORS.WHITE"
+      [top_1_2]="COLORS.WHITE"
+      [top_1_3]="COLORS.WHITE"
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_2_3]="COLORS.WHITE"
+      [top_3_1]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [top_3_3]="COLORS.WHITE"
+      [left_1_1]="COLORS.RED"
+      [left_2_1]="COLORS.RED"
+      [left_2_2]="COLORS.RED"
+      [left_3_1]="COLORS.RED"
+      [right_1_1]="COLORS.GREEN"
+      [right_2_1]="COLORS.GREEN"
+      [right_2_2]="COLORS.GREEN"
+      [right_3_1]="COLORS.GREEN"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_1_1]="COLORS.WHITE"
+      [top_1_2]="COLORS.WHITE"
+      [top_1_3]="COLORS.WHITE"
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_2_3]="COLORS.WHITE"
+      [top_3_1]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [top_3_3]="COLORS.WHITE"
+      [left_1_1]="COLORS.RED"
+      [left_2_1]="COLORS.RED"
+      [left_2_2]="COLORS.RED"
+      [left_3_1]="COLORS.RED"
+      [right_1_1]="COLORS.GREEN"
+      [right_2_1]="COLORS.GREEN"
+      [right_2_2]="COLORS.GREEN"
+      [right_2_3]="COLORS.GREEN"
+      [right_3_1]="COLORS.GREEN"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_1_1]="COLORS.WHITE"
+      [top_1_2]="COLORS.WHITE"
+      [top_1_3]="COLORS.WHITE"
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_2_3]="COLORS.WHITE"
+      [top_3_1]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [top_3_3]="COLORS.WHITE"
+      [left_1_1]="COLORS.RED"
+      [left_2_1]="COLORS.RED"
+      [left_2_2]="COLORS.RED"
+      [left_3_1]="COLORS.RED"
+      [right_1_1]="COLORS.GREEN"
+      [right_2_1]="COLORS.GREEN"
+      [right_2_2]="COLORS.GREEN"
+      [right_3_1]="COLORS.GREEN"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_1_1]="COLORS.WHITE"
+      [top_1_2]="COLORS.WHITE"
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_3_1]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [left_2_2]="COLORS.RED"
+      [left_3_1]="COLORS.RED"
+      [left_3_2]="COLORS.RED"
+      [left_3_3]="COLORS.RED"
+      [right_1_1]="COLORS.WHITE"
+      [right_1_2]="COLORS.WHITE"
+      [right_1_3]="COLORS.WHITE"
+      [right_2_1]="COLORS.GREEN"
+      [right_2_2]="COLORS.GREEN"
+      [right_3_1]="COLORS.GREEN"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_1_1]="COLORS.WHITE"
+      [top_1_2]="COLORS.WHITE"
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_3_1]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [left_1_3]="COLORS.WHITE"
+      [left_2_2]="COLORS.RED"
+      [left_3_1]="COLORS.RED"
+      [left_3_2]="COLORS.RED"
+      [right_1_1]="COLORS.WHITE"
+      [right_1_2]="COLORS.WHITE"
+      [right_2_1]="COLORS.GREEN"
+      [right_2_2]="COLORS.GREEN"
+      [right_3_1]="COLORS.GREEN"
+    ></svg>
+
+    <svg
+      appCuboDeRubikSvg
+      [top_1_1]="COLORS.WHITE"
+      [top_1_2]="COLORS.WHITE"
+      [top_1_3]="COLORS.WHITE"
+      [top_2_1]="COLORS.WHITE"
+      [top_2_2]="COLORS.WHITE"
+      [top_2_3]="COLORS.WHITE"
+      [top_3_1]="COLORS.WHITE"
+      [top_3_2]="COLORS.WHITE"
+      [left_1_1]="COLORS.RED"
+      [left_2_1]="COLORS.RED"
+      [left_2_2]="COLORS.RED"
+      [left_3_3]="COLORS.WHITE"
+      [right_2_1]="COLORS.GREEN"
+      [right_2_2]="COLORS.GREEN"
+      [right_3_1]="COLORS.GREEN"
+    ></svg>
+  </div>
+
+  <p>
+    Si los laterales que no tienen amarillo están en la segunda fila, pero no en su posición,
+    debemos remplazarlos con otros laterales que si tengan amarillo, siguiendo el mismo proceso. De
+    esta manera, al final el lateral que no estaba en su posición queda en la ultima fila, y podemos
+    repetir el proceso.
+  </p>
+
+  <h1 #stepSection id="linea-amarilla">Linea amarilla</h1>
+
   <svg
     appCuboDeRubikSvg
-    [top_1_2]="COLORS.WHITE"
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [left_2_2]="COLORS.GREEN"
-    [left_3_2]="COLORS.GREEN"
-    [left_3_3]="COLORS.WHITE"
-    [right_1_2]="COLORS.WHITE"
+    [top_1_2]="COLORS.YELLOW"
+    [top_2_2]="COLORS.YELLOW"
+    [top_3_2]="COLORS.YELLOW"
+    [left_1_2]="COLORS.BLUE"
+    [left_1_3]="COLORS.BLUE"
+    [left_2_2]="COLORS.BLUE"
+    [left_2_3]="COLORS.BLUE"
+    [left_3_2]="COLORS.BLUE"
+    [left_3_3]="COLORS.BLUE"
+    [right_1_2]="COLORS.RED"
+    [right_1_3]="COLORS.RED"
+    [right_2_2]="COLORS.RED"
+    [right_2_3]="COLORS.RED"
+    [right_3_2]="COLORS.RED"
+    [right_3_3]="COLORS.RED"
+  ></svg>
+
+  <p>
+    En la cara inferior debemos formar una linea horizontal amarilla, da igual si horizontal o
+    vertical.
+  </p>
+
+  <p>Con la cara blanca hacia arriba, repetir estos pasos:</p>
+
+  <ul>
+    <li>Lado derecho abajo ⬇️</li>
+    <li>Cara inferior izquierda ⬅️</li>
+    <li>Lado derecho arriba ⬆️</li>
+    <li>Gira el cubo a la izquierda ↩️</li>
+    <li>Lado izquierdo abajo ⬇️</li>
+    <li>Cara inferior izquierda ⬅️</li>
+    <li>Lado izquierdo arriba ⬆️</li>
+    <li>Gira el cubo a la izquierda ↪️</li>
+    <li>Lado derecho abajo ⬇️</li>
+    <li>Cara inferior derecha ➡️</li>
+    <li>Lado derecho arriba ⬆️</li>
+  </ul>
+
+  <p>Repite el proceso hasta que salga la linea horizontal amarilla.</p>
+
+  <h1 #stepSection id="cruz-amarilla">Cruz amarilla</h1>
+
+  <svg
+    appCuboDeRubikSvg
+    [top_1_2]="COLORS.YELLOW"
+    [top_2_1]="COLORS.YELLOW"
+    [top_2_2]="COLORS.YELLOW"
+    [top_2_3]="COLORS.YELLOW"
+    [top_3_2]="COLORS.YELLOW"
+    [left_1_2]="COLORS.BLUE"
+    [left_1_3]="COLORS.BLUE"
+    [left_2_2]="COLORS.BLUE"
+    [left_2_3]="COLORS.BLUE"
+    [left_3_2]="COLORS.BLUE"
+    [left_3_3]="COLORS.BLUE"
+    [right_1_2]="COLORS.RED"
+    [right_1_3]="COLORS.RED"
+    [right_2_2]="COLORS.RED"
+    [right_2_3]="COLORS.RED"
+    [right_3_2]="COLORS.RED"
+    [right_3_3]="COLORS.RED"
+  ></svg>
+
+  <p>Coloca el cubo con la cara amarilla hacia arriba, de forma que veas la linea horizontal.</p>
+
+  <p>Sigue estos pasos:</p>
+
+  <ul>
+    <li>Cara frontal a la derecha 🔃</li>
+    <li>Lado derecho arriba ⬆️</li>
+    <li>Cara superior izquierda ⬅️</li>
+    <li>Lado derecho abajo ⬇️</li>
+    <li>Cara superior derecha ➡️</li>
+    <li>Cara frontal a la izquierda 🔄</li>
+  </ul>
+
+  <p>Repite el proceso hasta que salga la cruz amarilla.</p>
+
+  <h1 #stepSection id="laterales-amarillos">Laterales amarillos</h1>
+
+  <svg
+    appCuboDeRubikSvg
+    [top_1_2]="COLORS.YELLOW"
+    [top_2_1]="COLORS.YELLOW"
+    [top_2_2]="COLORS.YELLOW"
+    [top_2_3]="COLORS.YELLOW"
+    [top_3_2]="COLORS.YELLOW"
+    [left_1_2]="COLORS.BLUE"
+    [left_1_3]="COLORS.BLUE"
+    [left_2_1]="COLORS.BLUE"
+    [left_2_2]="COLORS.BLUE"
+    [left_2_3]="COLORS.BLUE"
+    [left_3_2]="COLORS.BLUE"
+    [left_3_3]="COLORS.BLUE"
+    [right_1_2]="COLORS.RED"
     [right_1_3]="COLORS.RED"
     [right_2_1]="COLORS.RED"
     [right_2_2]="COLORS.RED"
+    [right_2_3]="COLORS.RED"
+    [right_3_2]="COLORS.RED"
+    [right_3_3]="COLORS.RED"
   ></svg>
 
-  <svg
-    appCuboDeRubikSvg
-    [top_1_2]="COLORS.WHITE"
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [left_2_2]="COLORS.GREEN"
-    [left_3_2]="COLORS.GREEN"
-    [right_1_2]="COLORS.WHITE"
-    [right_2_1]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
-    [right_3_3]="COLORS.WHITE"
-  ></svg>
+  <p>
+    Primero asegurate que no coincide ninguna cara en su posición. O que solo coincide una cara. Si
+    coincide en una cara, hacer el proceso en esa cafa, y si no hacerlo sobre cualquiera.
+  </p>
 
-  <svg
-    appCuboDeRubikSvg
-    [top_1_2]="COLORS.WHITE"
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_2_3]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [left_2_1]="COLORS.GREEN"
-    [left_2_2]="COLORS.GREEN"
-    [right_2_1]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
-    [right_3_3]="COLORS.WHITE"
-  ></svg>
-</div>
+  <ul>
+    <li>Lado derecho arriba ⬆️</li>
+    <li>Cara superior izquierda ⬅️</li>
+    <li>Lado derecho abajo ⬇️</li>
+    <li>Cara superior izquierda ⬅️</li>
+    <li>Lado derecho arriba ⬆️</li>
+    <li>Cara superior 2 veces ⬅️ ⬅️</li>
+    <li>Lado derecho abajo ⬇️</li>
+  </ul>
 
-<p>
-  Si la esquina blanca ya está arriba pero no en su posición, se rota el frontal, la cara inferior y
-  se revierte la rotación del frontal. Así tenemos de nuevo un caso ya conocido.
-</p>
+  <p>Repite el proceso hasta que los cuatro laterales amarillos estén en su posición.</p>
 
-<div class="multiple-cubes">
-  <svg
-    appCuboDeRubikSvg
-    [top_1_2]="COLORS.WHITE"
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_2_3]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [top_3_3]="COLORS.WHITE"
-    [left_2_1]="COLORS.GREEN"
-    [left_2_2]="COLORS.GREEN"
-    [left_3_1]="COLORS.ORANGE"
-    [right_1_1]="COLORS.BLUE"
-    [right_2_1]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
-  ></svg>
+  <h1 #stepSection id="esquinas-finales-1">Esquinas finales 1</h1>
 
-  <svg
-    appCuboDeRubikSvg
-    [top_1_2]="COLORS.WHITE"
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [left_2_2]="COLORS.GREEN"
-    [left_3_2]="COLORS.GREEN"
-    [left_3_3]="COLORS.ORANGE"
-    [right_1_2]="COLORS.WHITE"
-    [right_1_3]="COLORS.WHITE"
-    [right_2_1]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
-  ></svg>
+  <p>
+    Hacer este paso sobre una esquina que esté en su posición, aunque mal orientada. Si no hay
+    ninguna esquina colocada en su posición, hacerlo sobre cualquier cara. La esquina debe estar
+    arriba en el lado derecho.
+  </p>
 
-  <svg
-    appCuboDeRubikSvg
-    [top_1_2]="COLORS.WHITE"
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [left_1_3]="COLORS.WHITE"
-    [left_2_2]="COLORS.GREEN"
-    [left_3_2]="COLORS.GREEN"
-    [right_1_2]="COLORS.WHITE"
-    [right_2_1]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
-  ></svg>
+  <ul>
+    <li>Cara superior izquierda ⬅️</li>
+    <li>Lado derecho arriba ⬆️</li>
+    <li>Cara superior derecha ➡️</li>
+    <li>Lado izquierdo arriba ⬆️</li>
+    <li>Cara superior izquierda ⬅️</li>
+    <li>Lado derecho abajo ⬇️</li>
+    <li>Cara superior derecha ➡️</li>
+    <li>Lado izquierdo abajo ⬇️</li>
+  </ul>
 
-  <svg
-    appCuboDeRubikSvg
-    [top_1_2]="COLORS.WHITE"
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_2_3]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [left_2_1]="COLORS.GREEN"
-    [left_2_2]="COLORS.GREEN"
-    [left_3_3]="COLORS.WHITE"
-    [right_2_1]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
-  ></svg>
-</div>
+  <h1 #stepSection id="esquinas-finales-2">Esquinas finales 2</h1>
 
-<h1>Segunda fila</h1>
+  <p>
+    Cuando todas las esquinas estén en su sitio, aunque mal orientadas, repetir este proceso en la
+    misma cara hasta colocar todas las esquinas.
+  </p>
 
-<svg
-  appCuboDeRubikSvg
-  [top_1_1]="COLORS.WHITE"
-  [top_1_2]="COLORS.WHITE"
-  [top_1_3]="COLORS.WHITE"
-  [top_2_1]="COLORS.WHITE"
-  [top_2_2]="COLORS.WHITE"
-  [top_2_3]="COLORS.WHITE"
-  [top_3_1]="COLORS.WHITE"
-  [top_3_2]="COLORS.WHITE"
-  [top_3_3]="COLORS.WHITE"
-  [left_1_1]="COLORS.RED"
-  [left_1_2]="COLORS.RED"
-  [left_2_1]="COLORS.RED"
-  [left_2_2]="COLORS.RED"
-  [left_3_1]="COLORS.RED"
-  [left_3_2]="COLORS.RED"
-  [right_1_1]="COLORS.GREEN"
-  [right_1_2]="COLORS.GREEN"
-  [right_2_1]="COLORS.GREEN"
-  [right_2_2]="COLORS.GREEN"
-  [right_3_1]="COLORS.GREEN"
-  [right_3_2]="COLORS.GREEN"
-></svg>
-
-<p>Buscamos los laterales que no tienen color amarillo.</p>
-
-<p>
-  Si el lateral está abajo, rotamos la cara inferior para llevarlo al color de su cara. Después
-  giramos la cara inferior al lado contrario de la esquina que la queremos colocar. Baja el lateral
-  de la posición que estás colocando. Vuelve a girar la parte inferior al sentido contrario que
-  antes, y vuelve a subir el lateral. Se nos va a descolocar una esquina, pero la podemos volver a
-  colocar con los pasos que ya hemos visto, y al hacerlo, se colocará tambien el cuadro que
-  queríamos de la segunda fila.
-</p>
-
-<div class="multiple-cubes">
-  <svg
-    appCuboDeRubikSvg
-    [top_1_1]="COLORS.WHITE"
-    [top_1_2]="COLORS.WHITE"
-    [top_1_3]="COLORS.WHITE"
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_2_3]="COLORS.WHITE"
-    [top_3_1]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [top_3_3]="COLORS.WHITE"
-    [left_1_1]="COLORS.RED"
-    [left_2_1]="COLORS.RED"
-    [left_2_2]="COLORS.RED"
-    [left_3_1]="COLORS.RED"
-    [right_1_1]="COLORS.GREEN"
-    [right_2_1]="COLORS.GREEN"
-    [right_2_2]="COLORS.GREEN"
-    [right_3_1]="COLORS.GREEN"
-  ></svg>
-
-  <svg
-    appCuboDeRubikSvg
-    [top_1_1]="COLORS.WHITE"
-    [top_1_2]="COLORS.WHITE"
-    [top_1_3]="COLORS.WHITE"
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_2_3]="COLORS.WHITE"
-    [top_3_1]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [top_3_3]="COLORS.WHITE"
-    [left_1_1]="COLORS.RED"
-    [left_2_1]="COLORS.RED"
-    [left_2_2]="COLORS.RED"
-    [left_3_1]="COLORS.RED"
-    [right_1_1]="COLORS.GREEN"
-    [right_2_1]="COLORS.GREEN"
-    [right_2_2]="COLORS.GREEN"
-    [right_2_3]="COLORS.GREEN"
-    [right_3_1]="COLORS.GREEN"
-  ></svg>
-
-  <svg
-    appCuboDeRubikSvg
-    [top_1_1]="COLORS.WHITE"
-    [top_1_2]="COLORS.WHITE"
-    [top_1_3]="COLORS.WHITE"
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_2_3]="COLORS.WHITE"
-    [top_3_1]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [top_3_3]="COLORS.WHITE"
-    [left_1_1]="COLORS.RED"
-    [left_2_1]="COLORS.RED"
-    [left_2_2]="COLORS.RED"
-    [left_3_1]="COLORS.RED"
-    [right_1_1]="COLORS.GREEN"
-    [right_2_1]="COLORS.GREEN"
-    [right_2_2]="COLORS.GREEN"
-    [right_3_1]="COLORS.GREEN"
-  ></svg>
-
-  <svg
-    appCuboDeRubikSvg
-    [top_1_1]="COLORS.WHITE"
-    [top_1_2]="COLORS.WHITE"
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_3_1]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [left_2_2]="COLORS.RED"
-    [left_3_1]="COLORS.RED"
-    [left_3_2]="COLORS.RED"
-    [left_3_3]="COLORS.RED"
-    [right_1_1]="COLORS.WHITE"
-    [right_1_2]="COLORS.WHITE"
-    [right_1_3]="COLORS.WHITE"
-    [right_2_1]="COLORS.GREEN"
-    [right_2_2]="COLORS.GREEN"
-    [right_3_1]="COLORS.GREEN"
-  ></svg>
-
-  <svg
-    appCuboDeRubikSvg
-    [top_1_1]="COLORS.WHITE"
-    [top_1_2]="COLORS.WHITE"
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_3_1]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [left_1_3]="COLORS.WHITE"
-    [left_2_2]="COLORS.RED"
-    [left_3_1]="COLORS.RED"
-    [left_3_2]="COLORS.RED"
-    [right_1_1]="COLORS.WHITE"
-    [right_1_2]="COLORS.WHITE"
-    [right_2_1]="COLORS.GREEN"
-    [right_2_2]="COLORS.GREEN"
-    [right_3_1]="COLORS.GREEN"
-  ></svg>
-
-  <svg
-    appCuboDeRubikSvg
-    [top_1_1]="COLORS.WHITE"
-    [top_1_2]="COLORS.WHITE"
-    [top_1_3]="COLORS.WHITE"
-    [top_2_1]="COLORS.WHITE"
-    [top_2_2]="COLORS.WHITE"
-    [top_2_3]="COLORS.WHITE"
-    [top_3_1]="COLORS.WHITE"
-    [top_3_2]="COLORS.WHITE"
-    [left_1_1]="COLORS.RED"
-    [left_2_1]="COLORS.RED"
-    [left_2_2]="COLORS.RED"
-    [left_3_3]="COLORS.WHITE"
-    [right_2_1]="COLORS.GREEN"
-    [right_2_2]="COLORS.GREEN"
-    [right_3_1]="COLORS.GREEN"
-  ></svg>
-</div>
-
-<p>
-  Si los laterales que no tienen amarillo están en la segunda fila, pero no en su posición, debemos
-  remplazarlos con otros laterales que si tengan amarillo, siguiendo el mismo proceso. De esta
-  manera, al final el lateral que no estaba en su posición queda en la ultima fila, y podemos
-  repetir el proceso.
-</p>
-
-<h1>Crear una linea horizonal amarilla</h1>
-
-<svg
-  appCuboDeRubikSvg
-  [top_1_2]="COLORS.YELLOW"
-  [top_2_2]="COLORS.YELLOW"
-  [top_3_2]="COLORS.YELLOW"
-  [left_1_2]="COLORS.BLUE"
-  [left_1_3]="COLORS.BLUE"
-  [left_2_2]="COLORS.BLUE"
-  [left_2_3]="COLORS.BLUE"
-  [left_3_2]="COLORS.BLUE"
-  [left_3_3]="COLORS.BLUE"
-  [right_1_2]="COLORS.RED"
-  [right_1_3]="COLORS.RED"
-  [right_2_2]="COLORS.RED"
-  [right_2_3]="COLORS.RED"
-  [right_3_2]="COLORS.RED"
-  [right_3_3]="COLORS.RED"
-></svg>
-
-<p>
-  En la cara inferior debemos formar una linea horizontal amarilla, da igual si horizontal o
-  vertical.
-</p>
-
-<p>Con la cara blanca hacia arriba, repetir estos pasos:</p>
-
-<ul>
-  <li>Lado derecho abajo ⬇️</li>
-  <li>Cara inferior izquierda ⬅️</li>
-  <li>Lado derecho arriba ⬆️</li>
-  <li>Gira el cubo a la izquierda ↩️</li>
-  <li>Lado izquierdo abajo ⬇️</li>
-  <li>Cara inferior izquierda ⬅️</li>
-  <li>Lado izquierdo arriba ⬆️</li>
-  <li>Gira el cubo a la izquierda ↪️</li>
-  <li>Lado derecho abajo ⬇️</li>
-  <li>Cara inferior derecha ➡️</li>
-  <li>Lado derecho arriba ⬆️</li>
-</ul>
-
-<p>Repite el proceso hasta que salga la linea horizontal amarilla.</p>
-
-<h1>Forma una cruz amarilla</h1>
-
-<svg
-  appCuboDeRubikSvg
-  [top_1_2]="COLORS.YELLOW"
-  [top_2_1]="COLORS.YELLOW"
-  [top_2_2]="COLORS.YELLOW"
-  [top_2_3]="COLORS.YELLOW"
-  [top_3_2]="COLORS.YELLOW"
-  [left_1_2]="COLORS.BLUE"
-  [left_1_3]="COLORS.BLUE"
-  [left_2_2]="COLORS.BLUE"
-  [left_2_3]="COLORS.BLUE"
-  [left_3_2]="COLORS.BLUE"
-  [left_3_3]="COLORS.BLUE"
-  [right_1_2]="COLORS.RED"
-  [right_1_3]="COLORS.RED"
-  [right_2_2]="COLORS.RED"
-  [right_2_3]="COLORS.RED"
-  [right_3_2]="COLORS.RED"
-  [right_3_3]="COLORS.RED"
-></svg>
-
-<p>Coloca el cubo con la cara amarilla hacia arriba, de forma que veas la linea horizontal.</p>
-
-<p>Sigue estos pasos:</p>
-
-<ul>
-  <li>Cara frontal a la derecha 🔃</li>
-  <li>Lado derecho arriba ⬆️</li>
-  <li>Cara superior izquierda ⬅️</li>
-  <li>Lado derecho abajo ⬇️</li>
-  <li>Cara superior derecha ➡️</li>
-  <li>Cara frontal a la izquierda 🔄</li>
-</ul>
-
-<p>Repite el proceso hasta que salga la cruz amarilla.</p>
-
-<h1>Colores centrales</h1>
-
-<svg
-  appCuboDeRubikSvg
-  [top_1_2]="COLORS.YELLOW"
-  [top_2_1]="COLORS.YELLOW"
-  [top_2_2]="COLORS.YELLOW"
-  [top_2_3]="COLORS.YELLOW"
-  [top_3_2]="COLORS.YELLOW"
-  [left_1_2]="COLORS.BLUE"
-  [left_1_3]="COLORS.BLUE"
-  [left_2_1]="COLORS.BLUE"
-  [left_2_2]="COLORS.BLUE"
-  [left_2_3]="COLORS.BLUE"
-  [left_3_2]="COLORS.BLUE"
-  [left_3_3]="COLORS.BLUE"
-  [right_1_2]="COLORS.RED"
-  [right_1_3]="COLORS.RED"
-  [right_2_1]="COLORS.RED"
-  [right_2_2]="COLORS.RED"
-  [right_2_3]="COLORS.RED"
-  [right_3_2]="COLORS.RED"
-  [right_3_3]="COLORS.RED"
-></svg>
-
-<p>
-  Primero asegurate que no coincide ninguna cara en su posición. O que solo coincide una cara. Si
-  coincide en una cara, hacer el proceso en esa cafa, y si no hacerlo sobre cualquiera.
-</p>
-
-<ul>
-  <li>Lado derecho arriba ⬆️</li>
-  <li>Cara superior izquierda ⬅️</li>
-  <li>Lado derecho abajo ⬇️</li>
-  <li>Cara superior izquierda ⬅️</li>
-  <li>Lado derecho arriba ⬆️</li>
-  <li>Cara superior 2 veces ⬅️ ⬅️</li>
-  <li>Lado derecho abajo ⬇️</li>
-</ul>
-
-<p>Repite el proceso hasta que los cuatro laterales amarillos estén en su posición.</p>
-
-<h1>Esquinas finales 1</h1>
-
-<p>
-  Hacer este paso sobre una esquina que esté en su posición, aunque mal orientada. Si no hay ninguna
-  esquina colocada en su posición, hacerlo sobre cualquier cara. La esquina debe estar arriba en el
-  lado derecho.
-</p>
-
-<ul>
-  <li>Cara superior izquierda ⬅️</li>
-  <li>Lado derecho arriba ⬆️</li>
-  <li>Cara superior derecha ➡️</li>
-  <li>Lado izquierdo arriba ⬆️</li>
-  <li>Cara superior izquierda ⬅️</li>
-  <li>Lado derecho abajo ⬇️</li>
-  <li>Cara superior derecha ➡️</li>
-  <li>Lado izquierdo abajo ⬇️</li>
-</ul>
-
-<h1>Esquinas finales 2</h1>
-
-<p>
-  Cuando todas las esquinas estén en su sitio, aunque mal orientadas, repetir este proceso en la
-  misma cara hasta colocar todas las esquinas.
-</p>
-
-<ul>
-  <li>Rotar la parte superior para situar la esquina a colocar en la parte derecha arriba.</li>
-  <li>Lado derecho abajo ⬇️</li>
-  <li>Cara inferior izquierda ⬅️</li>
-  <li>Lado derecho arriba ⬆️</li>
-  <li>Cara inferior derecha ➡️</li>
-</ul>
+  <ul>
+    <li>Rotar la parte superior para situar la esquina a colocar en la parte derecha arriba.</li>
+    <li>Lado derecho abajo ⬇️</li>
+    <li>Cara inferior izquierda ⬅️</li>
+    <li>Lado derecho arriba ⬆️</li>
+    <li>Cara inferior derecha ➡️</li>
+  </ul>
+</main>

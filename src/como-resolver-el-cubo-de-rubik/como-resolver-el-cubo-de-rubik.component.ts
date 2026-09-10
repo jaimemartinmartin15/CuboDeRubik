@@ -1,4 +1,13 @@
-import { Component } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Inject,
+  PLATFORM_ID,
+  QueryList,
+  ViewChildren,
+} from '@angular/core';
 import { CuboDeRubikSvgComponent } from '../svg-output/cubo-de-rubik.component';
 
 @Component({
@@ -7,7 +16,13 @@ import { CuboDeRubikSvgComponent } from '../svg-output/cubo-de-rubik.component';
   styleUrls: ['./como-resolver-el-cubo-de-rubik.component.scss'],
   imports: [CuboDeRubikSvgComponent],
 })
-export class ComoResolverElCuboDeRubikComponent {
+export class ComoResolverElCuboDeRubikComponent implements AfterViewInit {
+  @ViewChildren('stepLink')
+  public stepLinks: QueryList<ElementRef<HTMLAnchorElement>>;
+
+  @ViewChildren('stepSection')
+  public sections: QueryList<ElementRef<HTMLElement>>;
+
   public readonly COLORS = {
     WHITE: '#FFFFFF',
     YELLOW: '#FFFF00',
@@ -15,17 +30,32 @@ export class ComoResolverElCuboDeRubikComponent {
     GREEN: '#4bb911',
     RED: '#FF0000',
     ORANGE: '#FFA500',
+  };
 
-    ARROW: '#ffffff',
-    SELECTED: '#ffffff',
-    SELECTED_LIGHT: '#b0d5ff',
-  };
-  public readonly COLORS_DARK = {
-    WHITE: '#e6e6e6',
-    YELLOW: '#F5E6A8',
-    BLUE: '#A8C4E0',
-    GREEN: '#B3D1B5',
-    RED: '#E3A9A9',
-    ORANGE: '#F2C39B',
-  };
+  public constructor(@Inject(PLATFORM_ID) private readonly platformId: object) {}
+
+  public ngAfterViewInit() {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    // activates the current link in the nav while scrolling to the section
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) {
+            continue;
+          }
+
+          const id = entry.target.id;
+          this.stepLinks.forEach((link) => {
+            link.nativeElement.classList.toggle('active', link.nativeElement.hash === `#${id}`);
+          });
+        }
+      },
+      { threshold: 1 },
+    );
+
+    this.sections.forEach((section) => observer.observe(section.nativeElement));
+  }
 }
