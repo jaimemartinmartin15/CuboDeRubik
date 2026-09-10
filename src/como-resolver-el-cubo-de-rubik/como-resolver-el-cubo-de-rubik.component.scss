@@ -71,6 +71,9 @@ svg[appCuboDeRubikSvg] {
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   padding: 20px;
 
   .section {
@@ -79,7 +82,7 @@ svg[appCuboDeRubikSvg] {
     border: 1px solid #e1e7f0;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(26, 43, 74, 0.04);
-    max-width: 900px;
+    max-width: 1050px;
 
     .section-title {
       display: flex;
@@ -105,16 +108,14 @@ svg[appCuboDeRubikSvg] {
 
     .section-content {
       padding-left: 60px;
-    }
 
-    &#introduccion {
       svg[appCuboDeRubikSvg] {
         margin-top: 16px;
       }
 
-      .section-content {
+      .cube-and-description {
         display: flex;
-        align-items: start;
+        align-items: center;
         gap: 50px;
       }
     }
