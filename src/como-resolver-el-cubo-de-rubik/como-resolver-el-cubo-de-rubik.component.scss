@@ -12,6 +12,11 @@ svg[appCuboDeRubikSvg] {
   gap: 20px;
 }
 
+.mirror {
+  display: inline-block;
+  transform: scale(-1, 1);
+}
+
 .sidebar {
   flex-shrink: 0;
   width: 280px;
