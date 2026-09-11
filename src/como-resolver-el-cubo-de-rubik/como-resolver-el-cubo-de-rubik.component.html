@@ -904,85 +904,119 @@
     </section>
   </section>
 
-  <h1 #stepSection id="cruz-amarilla">Cruz amarilla</h1>
-
-  <svg
-    appCuboDeRubikSvg
-    [top_1_2]="COLORS.YELLOW"
-    [top_2_1]="COLORS.YELLOW"
-    [top_2_2]="COLORS.YELLOW"
-    [top_2_3]="COLORS.YELLOW"
-    [top_3_2]="COLORS.YELLOW"
-    [left_1_2]="COLORS.BLUE"
-    [left_1_3]="COLORS.BLUE"
-    [left_2_2]="COLORS.BLUE"
-    [left_2_3]="COLORS.BLUE"
-    [left_3_2]="COLORS.BLUE"
-    [left_3_3]="COLORS.BLUE"
-    [right_1_2]="COLORS.RED"
-    [right_1_3]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
-    [right_2_3]="COLORS.RED"
-    [right_3_2]="COLORS.RED"
-    [right_3_3]="COLORS.RED"
-  ></svg>
-
-  <p>Coloca el cubo con la cara amarilla hacia arriba, de forma que veas la linea horizontal.</p>
-
-  <p>Sigue estos pasos:</p>
-
-  <ul>
-    <li>Cara frontal a la derecha 🔃</li>
-    <li>Lado derecho arriba ⬆️</li>
-    <li>Cara superior izquierda ⬅️</li>
-    <li>Lado derecho abajo ⬇️</li>
-    <li>Cara superior derecha ➡️</li>
-    <li>Cara frontal a la izquierda 🔄</li>
-  </ul>
-
-  <p>Repite el proceso hasta que salga la cruz amarilla.</p>
-
-  <h1 #stepSection id="laterales-amarillos">Laterales amarillos</h1>
-
-  <svg
-    appCuboDeRubikSvg
-    [top_1_2]="COLORS.YELLOW"
-    [top_2_1]="COLORS.YELLOW"
-    [top_2_2]="COLORS.YELLOW"
-    [top_2_3]="COLORS.YELLOW"
-    [top_3_2]="COLORS.YELLOW"
-    [left_1_2]="COLORS.BLUE"
-    [left_1_3]="COLORS.BLUE"
-    [left_2_1]="COLORS.BLUE"
-    [left_2_2]="COLORS.BLUE"
-    [left_2_3]="COLORS.BLUE"
-    [left_3_2]="COLORS.BLUE"
-    [left_3_3]="COLORS.BLUE"
-    [right_1_2]="COLORS.RED"
-    [right_1_3]="COLORS.RED"
-    [right_2_1]="COLORS.RED"
-    [right_2_2]="COLORS.RED"
-    [right_2_3]="COLORS.RED"
-    [right_3_2]="COLORS.RED"
-    [right_3_3]="COLORS.RED"
-  ></svg>
-
-  <p>
-    Primero asegurate que no coincide ninguna cara en su posición. O que solo coincide una cara. Si
-    coincide en una cara, hacer el proceso en esa cafa, y si no hacerlo sobre cualquiera.
+  <p class="rotate-cube-warning">
+    ¡ATENCION! ahora coloca el cubo con la cara amarilla hacia arriba, de forma que veas la linea
+    horizontal.
   </p>
 
-  <ul>
-    <li>Lado derecho arriba ⬆️</li>
-    <li>Cara superior izquierda ⬅️</li>
-    <li>Lado derecho abajo ⬇️</li>
-    <li>Cara superior izquierda ⬅️</li>
-    <li>Lado derecho arriba ⬆️</li>
-    <li>Cara superior 2 veces ⬅️ ⬅️</li>
-    <li>Lado derecho abajo ⬇️</li>
-  </ul>
+  <section #stepSection id="cruz-amarilla" class="section">
+    <h1 class="section-title">
+      <span class="section-number">6</span>
+      Cruz amarilla
+    </h1>
 
-  <p>Repite el proceso hasta que los cuatro laterales amarillos estén en su posición.</p>
+    <div class="section-content">
+      <div class="cube-and-description">
+        <svg
+          appCuboDeRubikSvg
+          [top_1_2]="COLORS.YELLOW"
+          [top_2_1]="COLORS.YELLOW"
+          [top_2_2]="COLORS.YELLOW"
+          [top_2_3]="COLORS.YELLOW"
+          [top_3_2]="COLORS.YELLOW"
+          [left_1_2]="COLORS.BLUE"
+          [left_1_3]="COLORS.BLUE"
+          [left_2_2]="COLORS.BLUE"
+          [left_2_3]="COLORS.BLUE"
+          [left_3_2]="COLORS.BLUE"
+          [left_3_3]="COLORS.BLUE"
+          [right_1_2]="COLORS.RED"
+          [right_1_3]="COLORS.RED"
+          [right_2_2]="COLORS.RED"
+          [right_2_3]="COLORS.RED"
+          [right_3_2]="COLORS.RED"
+          [right_3_3]="COLORS.RED"
+        ></svg>
+
+        <p>
+          El objetivo de este paso es colocar los laterales amarillos en su lugar, es decir, formar
+          una cruz amarilla en la cara superior. No importa que el otro color de los laterales no
+          esté alineado con la otra cara.
+        </p>
+      </div>
+
+      <p>
+        Con la cara amarilla hacia arriba y viendo la linea amarilla en horizontal, sigue estos
+        pasos hasta conseguir la cruz.
+      </p>
+
+      <ul>
+        <li>Frontal 🔃</li>
+        <li>Derecho ⬆️</li>
+        <li>Superior ⬅️</li>
+        <li>Derecho ⬇️</li>
+        <li>Superior ➡️</li>
+        <li>Frontal 🔄</li>
+      </ul>
+    </div>
+  </section>
+
+  <section #stepSection id="laterales-amarillos" class="section">
+    <h1 class="section-title">
+      <span class="section-number">7</span>
+      Laterales amarillos
+    </h1>
+
+    <div class="section-content">
+      <div class="cube-and-description">
+        <svg
+          appCuboDeRubikSvg
+          [top_1_2]="COLORS.YELLOW"
+          [top_2_1]="COLORS.YELLOW"
+          [top_2_2]="COLORS.YELLOW"
+          [top_2_3]="COLORS.YELLOW"
+          [top_3_2]="COLORS.YELLOW"
+          [left_1_2]="COLORS.BLUE"
+          [left_1_3]="COLORS.BLUE"
+          [left_2_1]="COLORS.BLUE"
+          [left_2_2]="COLORS.BLUE"
+          [left_2_3]="COLORS.BLUE"
+          [left_3_2]="COLORS.BLUE"
+          [left_3_3]="COLORS.BLUE"
+          [right_1_2]="COLORS.RED"
+          [right_1_3]="COLORS.RED"
+          [right_2_1]="COLORS.RED"
+          [right_2_2]="COLORS.RED"
+          [right_2_3]="COLORS.RED"
+          [right_3_2]="COLORS.RED"
+          [right_3_3]="COLORS.RED"
+        ></svg>
+
+        <p>
+          El objetivo de este paso ahora sí, es colocar los laterales amarillos de forma que
+          concidan en sus dos caras.
+        </p>
+      </div>
+
+      <p>
+        Primero asegurate que no coincide ninguna cara en su posición. O que solo coincide una cara
+        como máximo. Si coincide en una cara, hacer el proceso en esa cara, y si no, hacerlo sobre
+        cualquiera.
+      </p>
+
+      <ul>
+        <li>Derecho ⬆️</li>
+        <li>Superior ⬅️</li>
+        <li>Derecho ⬇️</li>
+        <li>Superior ⬅️</li>
+        <li>Derecho ⬆️</li>
+        <li>Superior ⬅️</li>
+        <li>Derecho ⬇️</li>
+      </ul>
+
+      <p>Repite el proceso hasta que los cuatro laterales amarillos estén en su posición.</p>
+    </div>
+  </section>
 
   <h1 #stepSection id="esquinas-finales-1">Esquinas finales 1</h1>
 
