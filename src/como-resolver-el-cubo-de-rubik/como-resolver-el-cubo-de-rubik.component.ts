@@ -8,13 +8,21 @@ import {
   QueryList,
   ViewChildren,
 } from '@angular/core';
+import { ArrowSvgComponent } from '../svg-output/arrow.component';
+import { CircularArrowSvgComponent } from '../svg-output/circular-arrow.component';
 import { CuboDeRubikSvgComponent } from '../svg-output/cubo-de-rubik.component';
+import { CubeRotationComponent } from './cube-rotation/cube-rotation.component';
 
 @Component({
   selector: 'app-como-resolver-el-cubo-de-rubik',
   templateUrl: './como-resolver-el-cubo-de-rubik.component.html',
   styleUrls: ['./como-resolver-el-cubo-de-rubik.component.scss'],
-  imports: [CuboDeRubikSvgComponent],
+  imports: [
+    CuboDeRubikSvgComponent,
+    ArrowSvgComponent,
+    CircularArrowSvgComponent,
+    CubeRotationComponent,
+  ],
 })
 export class ComoResolverElCuboDeRubikComponent implements AfterViewInit {
   @ViewChildren('stepLink')

@@ -885,22 +885,108 @@
         </p>
       </div>
 
-      <p>Con la cara blanca hacia arriba, repetir estos pasos:</p>
+      <p class="bold-text">Con la cara blanca hacia arriba, repetir estos pasos:</p>
 
-      <!-- TODO replace the list with images and arrows -->
-      <ul>
-        <li>Derecho ⬇️</li>
-        <li>Inferior ⬅️</li>
-        <li>Derecho ⬆️</li>
-        <li>Cubo ⬅️</li>
-        <li>Izquierdo ⬇️</li>
-        <li>Inferior ⬅️</li>
-        <li>Izquierdo ⬆️</li>
-        <li>Cubo ➡️</li>
-        <li>Derecho ⬇️</li>
-        <li>Inferior ➡️</li>
-        <li>Derecho ⬆️</li>
-      </ul>
+      <ol class="moves-list">
+        <li class="move-item side-right move-down">
+          <span class="move-number">1</span>
+          <span class="move-name">Derecho</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#0066FF'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-bottom move-left">
+          <span class="move-number">2</span>
+          <span class="move-name">Inferior</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#ed2634'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-right move-up">
+          <span class="move-number">3</span>
+          <span class="move-name">Derecho</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#0b9b61'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-cube move-left">
+          <span class="move-number">4</span>
+          <span class="move-name">Cubo</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'cube'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#ed2634'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-left move-down">
+          <span class="move-number">5</span>
+          <span class="move-name">Izquierdo</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'left'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#0066FF'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-bottom move-left">
+          <span class="move-number">6</span>
+          <span class="move-name">Inferior</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#ed2634'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-left move-up">
+          <span class="move-number">7</span>
+          <span class="move-name">Izquierdo</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'left'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#0b9b61'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-cube move-right">
+          <span class="move-number">8</span>
+          <span class="move-name">Cubo</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'cube'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#e99b00'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-right move-down">
+          <span class="move-number">9</span>
+          <span class="move-name">Derecho</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#0066FF'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-bottom move-right">
+          <span class="move-number">10</span>
+          <span class="move-name">Inferior</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#e99b00'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-right move-up">
+          <span class="move-number">11</span>
+          <span class="move-name">Derecho</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#0b9b61'"></svg>
+          </span>
+        </li>
+      </ol>
     </section>
   </section>
 
@@ -950,14 +1036,61 @@
         pasos hasta conseguir la cruz.
       </p>
 
-      <ul>
-        <li>Frontal <span class="mirror">🔄</span></li>
-        <li>Derecho ⬆️</li>
-        <li>Superior ⬅️</li>
-        <li>Derecho ⬇️</li>
-        <li>Superior ➡️</li>
-        <li>Frontal 🔄</li>
-      </ul>
+      <ol class="moves-list">
+        <li class="move-item side-front move-clockwise">
+          <span class="move-number">1</span>
+          <span class="move-name">Frontal</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'front'"></app-cube-rotation>
+          <span class="move-arrow mirror">
+            <svg appCircularArrowSvg [color]="'#9c00ff'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-right move-up">
+          <span class="move-number">2</span>
+          <span class="move-name">Derecho</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#0b9b61'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-top move-left">
+          <span class="move-number">3</span>
+          <span class="move-name">Superior</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#ed2634'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-right move-down">
+          <span class="move-number">4</span>
+          <span class="move-name">Derecho</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#0066FF'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-top move-right">
+          <span class="move-number">5</span>
+          <span class="move-name">Superior</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#e99b00'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-front move-counter-clockwise">
+          <span class="move-number">6</span>
+          <span class="move-name">Frontal</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'front'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appCircularArrowSvg [color]="'#BD5E8C'"></svg>
+          </span>
+        </li>
+      </ol>
     </div>
   </section>
 
@@ -1004,15 +1137,70 @@
         cualquiera.
       </p>
 
-      <ul>
-        <li>Derecho ⬆️</li>
-        <li>Superior ⬅️</li>
-        <li>Derecho ⬇️</li>
-        <li>Superior ⬅️</li>
-        <li>Derecho ⬆️</li>
-        <li>Superior ⬅️</li>
-        <li>Derecho ⬇️</li>
-      </ul>
+      <ol class="moves-list">
+        <li class="move-item side-right move-up">
+          <span class="move-number">1</span>
+          <span class="move-name">Derecho</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#0b9b61'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-top move-left">
+          <span class="move-number">2</span>
+          <span class="move-name">Superior</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#ed2634'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-right move-down">
+          <span class="move-number">3</span>
+          <span class="move-name">Derecho</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#0066FF'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-top move-left">
+          <span class="move-number">4</span>
+          <span class="move-name">Superior</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#ed2634'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-right move-up">
+          <span class="move-number">5</span>
+          <span class="move-name">Derecho</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#0b9b61'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-top move-left">
+          <span class="move-number">6</span>
+          <span class="move-name">Superior x2</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#ed2634'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-right move-down">
+          <span class="move-number">7</span>
+          <span class="move-name">Derecho</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#0066FF'"></svg>
+          </span>
+        </li>
+      </ol>
 
       <p>Repite el proceso hasta que los cuatro laterales amarillos estén en su posición.</p>
     </div>
@@ -1031,16 +1219,79 @@
         arriba en el lado derecho.
       </p>
 
-      <ul>
-        <li>Superior ⬅️</li>
-        <li>Derecho ⬆️</li>
-        <li>Superior ➡️</li>
-        <li>Izquierdo ⬆️</li>
-        <li>Superior ⬅️</li>
-        <li>Derecho ⬇️</li>
-        <li>Superior ➡️</li>
-        <li>Izquierdo ⬇️</li>
-      </ul>
+      <ol class="moves-list">
+        <li class="move-item side-top move-left">
+          <span class="move-number">1</span>
+          <span class="move-name">Superior</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#ed2634'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-right move-up">
+          <span class="move-number">2</span>
+          <span class="move-name">Derecho</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#0b9b61'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-top move-right">
+          <span class="move-number">3</span>
+          <span class="move-name">Superior</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#e99b00'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-left move-up">
+          <span class="move-number">4</span>
+          <span class="move-name">Izquierdo</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'left'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#0b9b61'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-top move-left">
+          <span class="move-number">5</span>
+          <span class="move-name">Superior</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#ed2634'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-right move-down">
+          <span class="move-number">6</span>
+          <span class="move-name">Derecho</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#0066FF'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-top move-right">
+          <span class="move-number">7</span>
+          <span class="move-name">Superior</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#e99b00'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-left move-down">
+          <span class="move-number">8</span>
+          <span class="move-name">Izquierdo</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'left'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#0066FF'"></svg>
+          </span>
+        </li>
+      </ol>
     </div>
   </section>
 
@@ -1070,12 +1321,43 @@
         el proceso de nuevo para todas las esquinas amarillas.
       </p>
 
-      <ul>
-        <li>Derecho ⬇️</li>
-        <li>Inferior ⬅️</li>
-        <li>Derecho ⬆️</li>
-        <li>Inferior ➡️</li>
-      </ul>
+      <ol class="moves-list">
+        <li class="move-item side-right move-down">
+          <span class="move-number">1</span>
+          <span class="move-name">Derecho</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#0066FF'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-bottom move-left">
+          <span class="move-number">2</span>
+          <span class="move-name">Inferior</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#ed2634'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-right move-up">
+          <span class="move-number">3</span>
+          <span class="move-name">Derecho</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#0b9b61'"></svg>
+          </span>
+        </li>
+
+        <li class="move-item side-bottom move-right">
+          <span class="move-number">2</span>
+          <span class="move-name">Inferior</span>
+          <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
+          <span class="move-arrow">
+            <svg appArrowSvg [color]="'#e99b00'"></svg>
+          </span>
+        </li>
+      </ol>
     </div>
   </section>
 </main>

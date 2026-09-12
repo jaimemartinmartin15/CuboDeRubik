@@ -1,5 +1,5 @@
 {
-  "inputDirs": ["src/svg-assets"],
+  "inputDirs": ["~@jaimemartinmartin15/svg-icons", "src/svg-assets"],
   "outputDir": "src/svg-output",
   "prefix": "app",
   "modules": []
