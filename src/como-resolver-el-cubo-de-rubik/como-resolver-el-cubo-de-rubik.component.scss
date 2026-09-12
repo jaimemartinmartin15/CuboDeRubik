@@ -1,15 +1,36 @@
 :host {
   display: flex;
+
+  --title-color: #2e4985;
 }
 
 svg[appCuboDeRubikSvg] {
-  max-width: 150px;
-  flex-shrink: 0;
+  width: 150px;
 }
 
 .multiple-cubes {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
+}
+
+.cube-figure {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  color: #3c3c3c;
+  max-width: 150px;
+
+  .caption {
+    text-wrap: balance;
+    text-align: center;
+  }
+}
+
+.margin-top {
+  margin-top: 15px !important;
 }
 
 .mirror {
@@ -100,6 +121,7 @@ svg[appCuboDeRubikSvg] {
       margin: 0;
       padding-bottom: 12px;
       font-weight: 800;
+      color: var(--title-color);
 
       .section-number {
         width: 47px;
@@ -124,8 +146,31 @@ svg[appCuboDeRubikSvg] {
 
       .cube-and-description {
         display: flex;
-        align-items: center;
+        align-items: start;
         gap: 50px;
+      }
+
+      .description {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .description-block {
+          padding: 1.25rem 1.4rem;
+          border-radius: 16px;
+          border: 1px solid #edf2f8;
+          background: #f8faff;
+
+          h2 {
+            margin: 0;
+            color: var(--title-color);
+            font-size: 18px;
+          }
+
+          p {
+            margin: 5px 0;
+          }
+        }
       }
 
       .moves-list {
@@ -251,7 +296,8 @@ svg[appCuboDeRubikSvg] {
 }
 
 #laterales-amarillos .moves-list,
-#esquinas-finales-1 .moves-list {
+#esquinas-finales-1 .moves-list,
+#segunda-fila .moves-list {
   --template-rows: 3;
 }
 
@@ -271,6 +317,10 @@ svg[appCuboDeRubikSvg] {
   #laterales-amarillos .moves-list,
   #esquinas-finales-1 .moves-list {
     --template-rows: 4;
+  }
+
+  #segunda-fila .moves-list {
+    --template-rows: 5;
   }
 
   #linea-amarilla .moves-list {
@@ -293,6 +343,10 @@ svg[appCuboDeRubikSvg] {
 
   #esquinas-finales-1 .moves-list {
     --template-rows: 8;
+  }
+
+  #segunda-fila .moves-list {
+    --template-rows: 9;
   }
 
   #linea-amarilla .moves-list {
