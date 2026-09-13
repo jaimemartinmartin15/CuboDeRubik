@@ -1329,8 +1329,10 @@
   </section>
 
   <p class="rotate-cube-warning">
-    ¡ATENCION! ahora coloca el cubo con la cara amarilla hacia arriba, de forma que veas la linea
-    horizontal.
+    <span class="bold-text atention-warning-text">¡ATENCION!</span>
+    <span>
+      Ahora coloca el cubo con la cara amarilla hacia arriba, de forma que veas la linea horizontal.
+    </span>
   </p>
 
   <section #stepSection id="cruz-amarilla" class="section">
@@ -1561,11 +1563,42 @@
     </h1>
 
     <div class="section-content">
-      <div class="description">
-        <!-- TODO show ilustration -->
-        <div class="description-block">
-          <h2>Objetivo</h2>
-          <p>Colocar las esquinas amarillas en sus caras, aunque sean mal orientadas.</p>
+      <div class="cube-and-description">
+        <svg
+          appCuboDeRubikSvg
+          [top_1_1]="COLORS.ORANGE"
+          [top_1_2]="COLORS.YELLOW"
+          [top_1_3]="COLORS.BLUE"
+          [top_2_1]="COLORS.YELLOW"
+          [top_2_2]="COLORS.YELLOW"
+          [top_2_3]="COLORS.YELLOW"
+          [top_3_1]="COLORS.RED"
+          [top_3_2]="COLORS.YELLOW"
+          [top_3_3]="COLORS.BLUE"
+          [left_1_1]="COLORS.ORANGE"
+          [left_1_2]="COLORS.BLUE"
+          [left_1_3]="COLORS.BLUE"
+          [left_2_1]="COLORS.BLUE"
+          [left_2_2]="COLORS.BLUE"
+          [left_2_3]="COLORS.BLUE"
+          [left_3_1]="COLORS.RED"
+          [left_3_2]="COLORS.BLUE"
+          [left_3_3]="COLORS.BLUE"
+          [right_1_1]="COLORS.YELLOW"
+          [right_1_2]="COLORS.RED"
+          [right_1_3]="COLORS.RED"
+          [right_2_1]="COLORS.RED"
+          [right_2_2]="COLORS.RED"
+          [right_2_3]="COLORS.RED"
+          [right_3_1]="COLORS.GREEN"
+          [right_3_2]="COLORS.RED"
+          [right_3_3]="COLORS.RED"
+        ></svg>
+        <div class="description">
+          <div class="description-block">
+            <h2>Objetivo</h2>
+            <p>Colocar las esquinas amarillas en sus caras, aunque sean mal orientadas.</p>
+          </div>
         </div>
       </div>
 
@@ -1658,10 +1691,42 @@
     </h1>
 
     <div class="section-content">
-      <div class="description">
-        <div class="description-block">
-          <h2>Objetivo</h2>
-          <p>Orientar bien las esquinas amarillas para completar el cubo.</p>
+      <div class="cube-and-description">
+        <svg
+          appCuboDeRubikSvg
+          [top_1_1]="COLORS.YELLOW"
+          [top_1_2]="COLORS.YELLOW"
+          [top_1_3]="COLORS.YELLOW"
+          [top_2_1]="COLORS.YELLOW"
+          [top_2_2]="COLORS.YELLOW"
+          [top_2_3]="COLORS.YELLOW"
+          [top_3_1]="COLORS.YELLOW"
+          [top_3_2]="COLORS.YELLOW"
+          [top_3_3]="COLORS.YELLOW"
+          [left_1_1]="COLORS.GREEN"
+          [left_1_2]="COLORS.GREEN"
+          [left_1_3]="COLORS.GREEN"
+          [left_2_1]="COLORS.GREEN"
+          [left_2_2]="COLORS.GREEN"
+          [left_2_3]="COLORS.GREEN"
+          [left_3_1]="COLORS.GREEN"
+          [left_3_2]="COLORS.GREEN"
+          [left_3_3]="COLORS.GREEN"
+          [right_1_1]="COLORS.ORANGE"
+          [right_1_2]="COLORS.ORANGE"
+          [right_1_3]="COLORS.ORANGE"
+          [right_2_1]="COLORS.ORANGE"
+          [right_2_2]="COLORS.ORANGE"
+          [right_2_3]="COLORS.ORANGE"
+          [right_3_1]="COLORS.ORANGE"
+          [right_3_2]="COLORS.ORANGE"
+          [right_3_3]="COLORS.ORANGE"
+        ></svg>
+        <div class="description">
+          <div class="description-block">
+            <h2>Objetivo</h2>
+            <p>Orientar bien las esquinas amarillas para completar el cubo.</p>
+          </div>
         </div>
       </div>
 
