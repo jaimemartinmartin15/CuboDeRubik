@@ -1,4 +1,5 @@
-import { isPlatformBrowser } from '@angular/common';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { AsyncPipe, isPlatformBrowser } from '@angular/common';
 import {
   AfterViewInit,
   Component,
@@ -6,9 +7,13 @@ import {
   Inject,
   PLATFORM_ID,
   QueryList,
+  ViewChild,
   ViewChildren,
 } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { ArrowSvgComponent } from '../svg-output/arrow.component';
+import { BurgerSvgComponent } from '../svg-output/burger.component';
 import { CircularArrowSvgComponent } from '../svg-output/circular-arrow.component';
 import { CuboDeRubikSvgComponent } from '../svg-output/cubo-de-rubik.component';
 import { CubeRotationComponent } from './cube-rotation/cube-rotation.component';
@@ -18,13 +23,18 @@ import { CubeRotationComponent } from './cube-rotation/cube-rotation.component';
   templateUrl: './como-resolver-el-cubo-de-rubik.component.html',
   styleUrls: ['./como-resolver-el-cubo-de-rubik.component.scss'],
   imports: [
-    CuboDeRubikSvgComponent,
     ArrowSvgComponent,
+    BurgerSvgComponent,
     CircularArrowSvgComponent,
+    CuboDeRubikSvgComponent,
     CubeRotationComponent,
+    AsyncPipe,
   ],
 })
 export class ComoResolverElCuboDeRubikComponent implements AfterViewInit {
+  @ViewChild('sidebar')
+  public sidebarEl: ElementRef<HTMLElement>;
+
   @ViewChildren('stepLink')
   public stepLinks: QueryList<ElementRef<HTMLAnchorElement>>;
 
@@ -40,7 +50,16 @@ export class ComoResolverElCuboDeRubikComponent implements AfterViewInit {
     ORANGE: '#FFA500',
   };
 
-  public constructor(@Inject(PLATFORM_ID) private readonly platformId: object) {}
+  public showTopBar$: Observable<boolean>;
+
+  public constructor(
+    @Inject(PLATFORM_ID) private readonly platformId: object,
+    breakpointObserver: BreakpointObserver,
+  ) {
+    this.showTopBar$ = breakpointObserver
+      .observe('(max-width: 768px)')
+      .pipe(map((result) => result.matches));
+  }
 
   public ngAfterViewInit() {
     if (!isPlatformBrowser(this.platformId)) {
@@ -65,5 +84,13 @@ export class ComoResolverElCuboDeRubikComponent implements AfterViewInit {
     );
 
     this.sections.forEach((section) => observer.observe(section.nativeElement));
+  }
+
+  public toggleSidebar(): void {
+    this.sidebarEl.nativeElement.classList.toggle('sidebar--opened');
+  }
+
+  public hideSidebar(): void {
+    this.sidebarEl.nativeElement.classList.remove('sidebar--opened');
   }
 }

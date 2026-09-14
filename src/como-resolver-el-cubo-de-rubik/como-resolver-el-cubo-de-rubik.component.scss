@@ -1,7 +1,68 @@
 :host {
-  display: flex;
+  display: block;
 
   --title-color: #2e4985;
+  --top-bar-height: 55px;
+}
+
+.top-bar {
+  padding: 10px;
+  border-bottom: 10px;
+  position: sticky;
+  top: 0;
+  height: var(--top-bar-height);
+  z-index: 999;
+  background-color: white;
+
+  svg[appBurgerSvg] {
+    width: 30px;
+  }
+}
+
+.component {
+  display: flex;
+
+  @media (max-width: 768px) {
+    display: block;
+
+    .sidebar {
+      position: fixed;
+      top: var(--top-bar-height);
+      left: 0;
+      bottom: 0;
+      overflow: auto;
+      transform: translateX(-100%);
+      transition: transform 0.5s;
+
+      &--opened {
+        transform: translateX(0);
+      }
+
+      .steps-nav {
+        margin-top: 0;
+        top: 0;
+      }
+    }
+
+    .content {
+      .rotate-cube-warning {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .atention-warning-text {
+          border-right: none;
+          border-bottom: 3px solid #e72534;
+          padding-bottom: 5px;
+        }
+      }
+
+      .section {
+        scroll-margin-top: calc(var(--top-bar-height) + 10px);
+        padding: 5px;
+      }
+    }
+  }
 }
 
 svg[appCuboDeRubikSvg] {
@@ -360,5 +421,23 @@ svg[appCuboDeRubikSvg] {
 
   #linea-amarilla .moves-list {
     --template-rows: 12;
+  }
+}
+
+@media (max-width: 1050px) {
+  .content .section {
+    .section-content {
+      padding-left: 0;
+    }
+  }
+}
+
+@media (max-width: 880px) {
+  .cube-and-description {
+    flex-direction: column;
+
+    svg {
+      align-self: center;
+    }
   }
 }

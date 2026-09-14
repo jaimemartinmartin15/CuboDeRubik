@@ -1,508 +1,612 @@
-<aside class="sidebar">
-  <nav class="steps-nav">
-    <a #stepLink href="#conceptos" class="step-link">
-      <span class="step-number">1</span>
-      <span>Conceptos</span>
-    </a>
+@if (showTopBar$ | async) {
+  <div class="top-bar"><svg appBurgerSvg (click)="toggleSidebar()"></svg></div>
+}
 
-    <a #stepLink href="#cruz-blanca" class="step-link">
-      <span class="step-number">2</span>
-      <span>Cruz blanca</span>
-    </a>
+<div class="component">
+  <aside #sidebar class="sidebar">
+    <nav class="steps-nav" (click)="hideSidebar()">
+      <a #stepLink href="#conceptos" class="step-link">
+        <span class="step-number">1</span>
+        <span>Conceptos</span>
+      </a>
 
-    <a #stepLink href="#esquinas-blancas" class="step-link">
-      <span class="step-number">3</span>
-      <span>Esquinas blancas</span>
-    </a>
+      <a #stepLink href="#cruz-blanca" class="step-link">
+        <span class="step-number">2</span>
+        <span>Cruz blanca</span>
+      </a>
 
-    <a #stepLink href="#segunda-fila" class="step-link">
-      <span class="step-number">4</span>
-      <span>Segunda fila</span>
-    </a>
+      <a #stepLink href="#esquinas-blancas" class="step-link">
+        <span class="step-number">3</span>
+        <span>Esquinas blancas</span>
+      </a>
 
-    <a #stepLink href="#linea-amarilla" class="step-link">
-      <span class="step-number">5</span>
-      <span>Línea amarilla</span>
-    </a>
+      <a #stepLink href="#segunda-fila" class="step-link">
+        <span class="step-number">4</span>
+        <span>Segunda fila</span>
+      </a>
 
-    <a #stepLink href="#cruz-amarilla" class="step-link">
-      <span class="step-number">6</span>
-      <span>Cruz amarilla</span>
-    </a>
+      <a #stepLink href="#linea-amarilla" class="step-link">
+        <span class="step-number">5</span>
+        <span>Línea amarilla</span>
+      </a>
 
-    <a #stepLink href="#laterales-amarillos" class="step-link">
-      <span class="step-number">7</span>
-      <span>Laterales amarillos</span>
-    </a>
+      <a #stepLink href="#cruz-amarilla" class="step-link">
+        <span class="step-number">6</span>
+        <span>Cruz amarilla</span>
+      </a>
 
-    <a #stepLink href="#esquinas-finales-1" class="step-link">
-      <span class="step-number">8</span>
-      <span>Esquinas finales 1</span>
-    </a>
+      <a #stepLink href="#laterales-amarillos" class="step-link">
+        <span class="step-number">7</span>
+        <span>Laterales amarillos</span>
+      </a>
 
-    <a #stepLink href="#esquinas-finales-2" class="step-link">
-      <span class="step-number">9</span>
-      <span>Esquinas finales 2</span>
-    </a>
-  </nav>
-</aside>
+      <a #stepLink href="#esquinas-finales-1" class="step-link">
+        <span class="step-number">8</span>
+        <span>Esquinas finales 1</span>
+      </a>
 
-<main class="content">
-  <section #stepSection id="conceptos" class="section">
-    <h1 class="section-title">
-      <span class="section-number">1</span>
-      Conceptos
-    </h1>
+      <a #stepLink href="#esquinas-finales-2" class="step-link">
+        <span class="step-number">9</span>
+        <span>Esquinas finales 2</span>
+      </a>
+    </nav>
+  </aside>
 
-    <div class="section-content">
-      <div class="cube-and-description">
-        <svg
-          appCuboDeRubikSvg
-          [left_2_2]="COLORS.GREEN"
-          [right_2_2]="COLORS.RED"
-          [top_2_2]="COLORS.WHITE"
-        ></svg>
+  <main class="content" (click)="hideSidebar()">
+    <section #stepSection id="conceptos" class="section">
+      <h1 class="section-title">
+        <span class="section-number">1</span>
+        Conceptos
+      </h1>
+
+      <div class="section-content">
+        <div class="cube-and-description">
+          <svg
+            appCuboDeRubikSvg
+            [left_2_2]="COLORS.GREEN"
+            [right_2_2]="COLORS.RED"
+            [top_2_2]="COLORS.WHITE"
+          ></svg>
+
+          <div class="description">
+            <div class="description-block">
+              <h2>¿Cómo identificar las caras?</h2>
+              <p>
+                El color de cada cara lo determina su
+                <strong>cuadro central</strong>.
+              </p>
+            </div>
+
+            <div class="description-block">
+              <h2>Orientación inicial</h2>
+              <p>
+                Comenzamos con la <strong>cara blanca hacia arriba</strong>. A partir del paso 6,
+                invertimos el cubo: <strong> cara blanca abajo y amarilla arriba</strong>.
+              </p>
+            </div>
+
+            <div class="description-block">
+              <h2>Caras de referencia</h2>
+              <p>
+                En cada paso, una de las caras
+                <strong>verde, roja, azul o naranja</strong> será la cara frontal. Los movimientos
+                se indican tomando esta cara como referencia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section #stepSection id="cruz-blanca" class="section">
+      <h1 class="section-title">
+        <span class="section-number">2</span>
+        Cruz blanca
+      </h1>
+
+      <div class="section-content">
+        <div class="cube-and-description">
+          <svg
+            appCuboDeRubikSvg
+            [left_2_1]="COLORS.GREEN"
+            [left_2_2]="COLORS.GREEN"
+            [right_2_1]="COLORS.RED"
+            [right_2_2]="COLORS.RED"
+            [top_1_2]="COLORS.WHITE"
+            [top_2_1]="COLORS.WHITE"
+            [top_2_2]="COLORS.WHITE"
+            [top_2_3]="COLORS.WHITE"
+            [top_3_2]="COLORS.WHITE"
+          ></svg>
+
+          <div class="description">
+            <div class="description-block">
+              <h2>Objetivo</h2>
+              <p>
+                Colocar los <strong>cuatro laterales blancos</strong> en la cara blanca, de forma
+                que el otro color de los laterales también coincida con el de la cara adyacente. Es
+                decir, colocarlos bien orientados.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Para estos pasos vamos a tomar como cara de referencia la cara en la que se situa el
+          lateral blanco (teniendo siempre la cara blanca hacia arriba, recuerda).
+        </p>
+
+        <div class="cube-and-description">
+          <svg
+            appCuboDeRubikSvg
+            [right_2_1]="COLORS.RED"
+            [right_2_2]="COLORS.RED"
+            [top_2_2]="COLORS.WHITE"
+            [top_3_2]="COLORS.WHITE"
+          ></svg>
+
+          <div class="description">
+            <div class="description-block">
+              <h2>Conseguir el primer lateral blanco en la cara superior</h2>
+
+              <p>
+                Si el blanco está en la cara de abajo, rota dos veces la cara frontal para subirlo.
+              </p>
+
+              <p>
+                Si el blanco esta en la fila del medio, rota la cara lateral una vez hacia arriba
+                para subirlo.
+              </p>
+
+              <p>
+                Si el blanco está en la fila de arriba o abajo, rota la cara frontal hacia un lado y
+                luego rota el lado al que queda hacia arriba.
+              </p>
+
+              <p>
+                Finalmente, rota la cara superior para que el otro color del lateral se alinee con
+                el color de la cara del cubo.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Ahora hay varias posibilidades para colocar el resto de laterales blancos en su posición
+          (podemos cambiar la cara de referencia).
+        </p>
 
         <div class="description">
           <div class="description-block">
-            <h2>¿Cómo identificar las caras?</h2>
             <p>
-              El color de cada cara lo determina su
-              <strong>cuadro central</strong>.
+              Si el <strong> lado blanco del lateral está en la cara inferior</strong>, rotar la
+              cara inferior para colocar el otro color del lateral en su cara del cubo. Después se
+              rota la cara frontal para dejar el blanco hacia arriba.
             </p>
+
+            <div class="multiple-cubes">
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_2_2]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                  [left_2_2]="COLORS.GREEN"
+                  [right_2_3]="COLORS.GREEN"
+                ></svg>
+                <span class="caption">Ejemplo de posición inicial</span>
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_2_2]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                  [left_2_2]="COLORS.GREEN"
+                  [left_2_3]="COLORS.GREEN"
+                ></svg>
+                <span class="caption">Alinea la cara inferior</span>
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_2_2]="COLORS.WHITE"
+                  [top_2_3]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                  [left_2_1]="COLORS.GREEN"
+                  [left_2_2]="COLORS.GREEN"
+                ></svg>
+                <span class="caption">Rota la cara frontal para subir el lateral</span>
+              </div>
+            </div>
           </div>
 
           <div class="description-block">
-            <h2>Orientación inicial</h2>
             <p>
-              Comenzamos con la <strong>cara blanca hacia arriba</strong>. A partir del paso 6,
-              invertimos el cubo: <strong> cara blanca abajo y amarilla arriba</strong>.
+              Si el <strong>lado blanco del lateral está en la fila de abajo</strong>, se rota la
+              parte inferior hasta dejar el lateral blanco en la cara del cubo del otro color del
+              lateral. Se rota la cara inferior a la izquierda, se rota la cara izquierda hacia
+              arriba y por último la cara frontal a la derecha.
             </p>
+
+            <div class="multiple-cubes">
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [right_2_2]="COLORS.RED"
+                ></svg>
+                <span class="caption">Posición inicial</span>
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [right_2_3]="COLORS.WHITE"
+                  [right_2_2]="COLORS.RED"
+                ></svg>
+                <span class="caption">Alinea el lateral con su cara</span>
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [left_2_3]="COLORS.WHITE"
+                  [right_2_2]="COLORS.RED"
+                ></svg>
+                <span class="caption">Rota la cara inferior a la izquierda</span>
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [left_3_2]="COLORS.WHITE"
+                  [right_1_2]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                ></svg>
+                <span class="caption">Rota la cara izquierda hacia arriba</span>
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                ></svg>
+                <span class="caption">Rota la cara frontal en sentido horario</span>
+              </div>
+            </div>
+
+            <p class="margin-top">
+              Si uno de los laterales que ya estaba colocado queda descolocado al hacer estos pasos,
+              se puede recolocar fácilmente así:
+            </p>
+
+            <div class="multiple-cubes">
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [left_1_2]="COLORS.GREEN"
+                  [left_2_2]="COLORS.GREEN"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                ></svg>
+                <span class="caption">Un lateral quedó descolocado</span>
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_2_3]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [left_2_1]="COLORS.GREEN"
+                  [left_2_2]="COLORS.GREEN"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                ></svg>
+                <span class="caption">
+                  Recuperar la posicón rotando la cara izquierda hacia abajo
+                </span>
+              </div>
+            </div>
           </div>
 
           <div class="description-block">
-            <h2>Caras de referencia</h2>
             <p>
-              En cada paso, una de las caras
-              <strong>verde, roja, azul o naranja</strong> será la cara frontal. Los movimientos se
-              indican tomando esta cara como referencia.
+              Si el <strong> lado blanco del lateral está en la fila de arriba</strong>, girar la
+              cara frontal para que quede abajo, y repetir el proceso anterior.
             </p>
+
+            <div class="multiple-cubes">
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_2_3]="COLORS.BLUE"
+                  [right_2_2]="COLORS.RED"
+                  [left_2_1]="COLORS.WHITE"
+                ></svg>
+                <span class="caption">Posición inicial</span>
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [right_2_2]="COLORS.RED"
+                  [left_2_3]="COLORS.WHITE"
+                ></svg>
+                <span class="caption">Rotar la cara frontal para dejarlo abajo</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="description-block">
+            <p>
+              Si el <strong>lado blanco del lateral está en la fila del medio</strong>, rotar la
+              cara frontal para bajar el cuadro blanco (izquierda o derecha). Si se descolocó un
+              cuadro blanco de la cruz blanca, rotar la cara inferior (izquierda o derecha, da
+              igual) y rotar la cara frontal hacia el lado contrario que antes, para dejar el cuadro
+              blanco colocado en su sitio de nuevo. Después seguir los pasos anteriores.
+            </p>
+
+            <div class="multiple-cubes">
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_2_3]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [left_2_1]="COLORS.GREEN"
+                  [left_2_2]="COLORS.GREEN"
+                  [left_3_2]="COLORS.WHITE"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                ></svg>
+                <span class="caption">Posición inicial</span>
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [left_2_2]="COLORS.GREEN"
+                  [left_2_3]="COLORS.WHITE"
+                  [left_3_2]="COLORS.GREEN"
+                  [right_1_2]="COLORS.WHITE"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                ></svg>
+                <span class="caption">Rotar cara frontal para bajar el cuadro blanco</span>
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [left_2_2]="COLORS.GREEN"
+                  [left_3_2]="COLORS.GREEN"
+                  [right_1_2]="COLORS.WHITE"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                ></svg>
+                <span class="caption">Rota la cara inferior</span>
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_2_3]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [left_2_1]="COLORS.GREEN"
+                  [left_2_2]="COLORS.GREEN"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                ></svg>
+                <span class="caption">Vuelve a recuperar el lateral blanco a su posición</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section #stepSection id="cruz-blanca" class="section">
-    <h1 class="section-title">
-      <span class="section-number">2</span>
-      Cruz blanca
-    </h1>
+    <section #stepSection id="esquinas-blancas" class="section">
+      <h1 class="section-title">
+        <span class="section-number">3</span>
+        Esquinas blancas
+      </h1>
 
-    <div class="section-content">
-      <div class="cube-and-description">
-        <svg
-          appCuboDeRubikSvg
-          [left_2_1]="COLORS.GREEN"
-          [left_2_2]="COLORS.GREEN"
-          [right_2_1]="COLORS.RED"
-          [right_2_2]="COLORS.RED"
-          [top_1_2]="COLORS.WHITE"
-          [top_2_1]="COLORS.WHITE"
-          [top_2_2]="COLORS.WHITE"
-          [top_2_3]="COLORS.WHITE"
-          [top_3_2]="COLORS.WHITE"
-        ></svg>
+      <div class="section-content">
+        <div class="cube-and-description">
+          <svg
+            appCuboDeRubikSvg
+            [top_1_1]="COLORS.WHITE"
+            [top_1_2]="COLORS.WHITE"
+            [top_1_3]="COLORS.WHITE"
+            [top_2_1]="COLORS.WHITE"
+            [top_2_2]="COLORS.WHITE"
+            [top_2_3]="COLORS.WHITE"
+            [top_3_1]="COLORS.WHITE"
+            [top_3_2]="COLORS.WHITE"
+            [top_3_3]="COLORS.WHITE"
+            [left_1_1]="COLORS.GREEN"
+            [left_2_1]="COLORS.GREEN"
+            [left_2_2]="COLORS.GREEN"
+            [left_3_1]="COLORS.GREEN"
+            [right_1_1]="COLORS.RED"
+            [right_2_1]="COLORS.RED"
+            [right_2_2]="COLORS.RED"
+            [right_3_1]="COLORS.RED"
+          ></svg>
+
+          <div class="description">
+            <div class="description-block">
+              <h2>Objetivo</h2>
+              <p>Terminar la cara blanca colocando es su lugar las esquinas.</p>
+            </div>
+          </div>
+        </div>
 
         <div class="description">
-          <div class="description-block">
-            <h2>Objetivo</h2>
+          <div class="description-block margin-top">
             <p>
-              Colocar los <strong>cuatro laterales blancos</strong> en la cara blanca, de forma que
-              el otro color de los laterales también coincida con el de la cara adyacente. Es decir,
-              colocarlos bien orientados.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <p>
-        Para estos pasos vamos a tomar como cara de referencia la cara en la que se situa el lateral
-        blanco (teniendo siempre la cara blanca hacia arriba, recuerda).
-      </p>
-
-      <div class="cube-and-description">
-        <svg
-          appCuboDeRubikSvg
-          [right_2_1]="COLORS.RED"
-          [right_2_2]="COLORS.RED"
-          [top_2_2]="COLORS.WHITE"
-          [top_3_2]="COLORS.WHITE"
-        ></svg>
-
-        <div class="description">
-          <div class="description-block">
-            <h2>Conseguir el primer lateral blanco en la cara superior</h2>
-
-            <p>
-              Si el blanco está en la cara de abajo, rota dos veces la cara frontal para subirlo.
+              Para <strong>esquinas que esten abajo y el blanco en la cara frontal</strong>, giramos
+              la cara inferior para llevar la esquina al color de sus caras. Gira la cara inferior
+              al sentido contrario del lado que queda el cuadro blanco. Baja el lado izquierdo o
+              derecho, según donde quieras colocar la esquina, y gira de nuevo la parte inferior en
+              el sentido contrario para alinearla con las otras blancas. Por último, sube de nuevo
+              el lado que bajaste.
             </p>
 
-            <p>
-              Si el blanco esta en la fila del medio, rota la cara lateral una vez hacia arriba para
-              subirlo.
+            <div class="multiple-cubes">
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_1_2]="COLORS.WHITE"
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_2_3]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [left_1_3]="COLORS.WHITE"
+                  [left_2_1]="COLORS.GREEN"
+                  [left_2_2]="COLORS.GREEN"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                ></svg>
+                <span class="caption">Posición inicial</span>
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_1_2]="COLORS.WHITE"
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_2_3]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [left_2_1]="COLORS.GREEN"
+                  [left_2_2]="COLORS.GREEN"
+                  [left_3_3]="COLORS.GREEN"
+                  [right_1_3]="COLORS.WHITE"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                ></svg>
+                <span class="caption">Lleva la esquina al color de sus caras</span>
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_1_2]="COLORS.WHITE"
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_2_3]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [left_2_1]="COLORS.GREEN"
+                  [left_2_2]="COLORS.GREEN"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                  [right_3_3]="COLORS.GREEN"
+                ></svg>
+                <span class="caption">
+                  Gira la cara inferior al sentido contrario del lado del blanco
+                </span>
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_1_2]="COLORS.WHITE"
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [left_2_2]="COLORS.GREEN"
+                  [left_3_2]="COLORS.GREEN"
+                  [right_1_2]="COLORS.WHITE"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                  [right_3_3]="COLORS.GREEN"
+                ></svg>
+                <span class="caption"
+                  >Baja la esquina que quieres colocar (izquierda o derecha)</span
+                >
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_1_2]="COLORS.WHITE"
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [left_2_2]="COLORS.GREEN"
+                  [left_3_2]="COLORS.GREEN"
+                  [left_3_3]="COLORS.GREEN"
+                  [right_1_2]="COLORS.WHITE"
+                  [right_1_3]="COLORS.WHITE"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                ></svg>
+                <span class="caption">Retorna la cara inferior</span>
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_1_2]="COLORS.WHITE"
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_2_3]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [top_3_3]="COLORS.WHITE"
+                  [left_2_1]="COLORS.GREEN"
+                  [left_2_2]="COLORS.GREEN"
+                  [left_3_1]="COLORS.GREEN"
+                  [right_1_1]="COLORS.RED"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                ></svg>
+                <span class="caption">Sube la esquina</span>
+              </div>
+            </div>
+
+            <p class="margin-top">
+              Si <strong>la esquina tiene el cuadro blanco abajo</strong>, el proceso es el mismo,
+              pero la esquina quedará girada. No preocuparse.
             </p>
 
-            <p>
-              Si el blanco está en la fila de arriba o abajo, rota la cara frontal hacia un lado y
-              luego rota el lado al que queda hacia arriba.
-            </p>
-
-            <p>
-              Finalmente, rota la cara superior para que el otro color del lateral se alinee con el
-              color de la cara del cubo.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <p>
-        Ahora hay varias posibilidades para colocar el resto de laterales blancos en su posición
-        (podemos cambiar la cara de referencia).
-      </p>
-
-      <div class="description">
-        <div class="description-block">
-          <p>
-            Si el <strong> lado blanco del lateral está en la cara inferior</strong>, rotar la cara
-            inferior para colocar el otro color del lateral en su cara del cubo. Después se rota la
-            cara frontal para dejar el blanco hacia arriba.
-          </p>
-
-          <div class="multiple-cubes">
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_2_2]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-                [left_2_2]="COLORS.GREEN"
-                [right_2_3]="COLORS.GREEN"
-              ></svg>
-              <span class="caption">Ejemplo de posición inicial</span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_2_2]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-                [left_2_2]="COLORS.GREEN"
-                [left_2_3]="COLORS.GREEN"
-              ></svg>
-              <span class="caption">Alinea la cara inferior</span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_2_2]="COLORS.WHITE"
-                [top_2_3]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-                [left_2_1]="COLORS.GREEN"
-                [left_2_2]="COLORS.GREEN"
-              ></svg>
-              <span class="caption">Rota la cara frontal para subir el lateral</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="description-block">
-          <p>
-            Si el <strong>lado blanco del lateral está en la fila de abajo</strong>, se rota la
-            parte inferior hasta dejar el lateral blanco en la cara del cubo del otro color del
-            lateral. Se rota la cara inferior a la izquierda, se rota la cara izquierda hacia arriba
-            y por último la cara frontal a la derecha.
-          </p>
-
-          <div class="multiple-cubes">
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [right_2_2]="COLORS.RED"
-              ></svg>
-              <span class="caption">Posición inicial</span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [right_2_3]="COLORS.WHITE"
-                [right_2_2]="COLORS.RED"
-              ></svg>
-              <span class="caption">Alinea el lateral con su cara</span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [left_2_3]="COLORS.WHITE"
-                [right_2_2]="COLORS.RED"
-              ></svg>
-              <span class="caption">Rota la cara inferior a la izquierda</span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [left_3_2]="COLORS.WHITE"
-                [right_1_2]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-              ></svg>
-              <span class="caption">Rota la cara izquierda hacia arriba</span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-              ></svg>
-              <span class="caption">Rota la cara frontal en sentido horario</span>
-            </div>
-          </div>
-
-          <p class="margin-top">
-            Si uno de los laterales que ya estaba colocado queda descolocado al hacer estos pasos,
-            se puede recolocar fácilmente así:
-          </p>
-
-          <div class="multiple-cubes">
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [left_1_2]="COLORS.GREEN"
-                [left_2_2]="COLORS.GREEN"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-              ></svg>
-              <span class="caption">Un lateral quedó descolocado</span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_2_3]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [left_2_1]="COLORS.GREEN"
-                [left_2_2]="COLORS.GREEN"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-              ></svg>
-              <span class="caption">
-                Recuperar la posicón rotando la cara izquierda hacia abajo
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="description-block">
-          <p>
-            Si el <strong> lado blanco del lateral está en la fila de arriba</strong>, girar la cara
-            frontal para que quede abajo, y repetir el proceso anterior.
-          </p>
-
-          <div class="multiple-cubes">
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_2_3]="COLORS.BLUE"
-                [right_2_2]="COLORS.RED"
-                [left_2_1]="COLORS.WHITE"
-              ></svg>
-              <span class="caption">Posición inicial</span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [right_2_2]="COLORS.RED"
-                [left_2_3]="COLORS.WHITE"
-              ></svg>
-              <span class="caption">Rotar la cara frontal para dejarlo abajo</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="description-block">
-          <p>
-            Si el <strong>lado blanco del lateral está en la fila del medio</strong>, rotar la cara
-            frontal para bajar el cuadro blanco (izquierda o derecha). Si se descolocó un cuadro
-            blanco de la cruz blanca, rotar la cara inferior (izquierda o derecha, da igual) y rotar
-            la cara frontal hacia el lado contrario que antes, para dejar el cuadro blanco colocado
-            en su sitio de nuevo. Después seguir los pasos anteriores.
-          </p>
-
-          <div class="multiple-cubes">
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_2_3]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [left_2_1]="COLORS.GREEN"
-                [left_2_2]="COLORS.GREEN"
-                [left_3_2]="COLORS.WHITE"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-              ></svg>
-              <span class="caption">Posición inicial</span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [left_2_2]="COLORS.GREEN"
-                [left_2_3]="COLORS.WHITE"
-                [left_3_2]="COLORS.GREEN"
-                [right_1_2]="COLORS.WHITE"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-              ></svg>
-              <span class="caption">Rotar cara frontal para bajar el cuadro blanco</span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [left_2_2]="COLORS.GREEN"
-                [left_3_2]="COLORS.GREEN"
-                [right_1_2]="COLORS.WHITE"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-              ></svg>
-              <span class="caption">Rota la cara inferior</span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_2_3]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [left_2_1]="COLORS.GREEN"
-                [left_2_2]="COLORS.GREEN"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-              ></svg>
-              <span class="caption">Vuelve a recuperar el lateral blanco a su posición</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section #stepSection id="esquinas-blancas" class="section">
-    <h1 class="section-title">
-      <span class="section-number">3</span>
-      Esquinas blancas
-    </h1>
-
-    <div class="section-content">
-      <div class="cube-and-description">
-        <svg
-          appCuboDeRubikSvg
-          [top_1_1]="COLORS.WHITE"
-          [top_1_2]="COLORS.WHITE"
-          [top_1_3]="COLORS.WHITE"
-          [top_2_1]="COLORS.WHITE"
-          [top_2_2]="COLORS.WHITE"
-          [top_2_3]="COLORS.WHITE"
-          [top_3_1]="COLORS.WHITE"
-          [top_3_2]="COLORS.WHITE"
-          [top_3_3]="COLORS.WHITE"
-          [left_1_1]="COLORS.GREEN"
-          [left_2_1]="COLORS.GREEN"
-          [left_2_2]="COLORS.GREEN"
-          [left_3_1]="COLORS.GREEN"
-          [right_1_1]="COLORS.RED"
-          [right_2_1]="COLORS.RED"
-          [right_2_2]="COLORS.RED"
-          [right_3_1]="COLORS.RED"
-        ></svg>
-
-        <div class="description">
-          <div class="description-block">
-            <h2>Objetivo</h2>
-            <p>Terminar la cara blanca colocando es su lugar las esquinas.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="description">
-        <div class="description-block margin-top">
-          <p>
-            Para <strong>esquinas que esten abajo y el blanco en la cara frontal</strong>, giramos
-            la cara inferior para llevar la esquina al color de sus caras. Gira la cara inferior al
-            sentido contrario del lado que queda el cuadro blanco. Baja el lado izquierdo o derecho,
-            según donde quieras colocar la esquina, y gira de nuevo la parte inferior en el sentido
-            contrario para alinearla con las otras blancas. Por último, sube de nuevo el lado que
-            bajaste.
-          </p>
-
-          <div class="multiple-cubes">
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_1_2]="COLORS.WHITE"
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_2_3]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [left_1_3]="COLORS.WHITE"
-                [left_2_1]="COLORS.GREEN"
-                [left_2_2]="COLORS.GREEN"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-              ></svg>
-              <span class="caption">Posición inicial</span>
-            </div>
-
-            <div class="cube-figure">
+            <div class="multiple-cubes">
               <svg
                 appCuboDeRubikSvg
                 [top_1_2]="COLORS.WHITE"
@@ -512,137 +616,12 @@
                 [top_3_2]="COLORS.WHITE"
                 [left_2_1]="COLORS.GREEN"
                 [left_2_2]="COLORS.GREEN"
-                [left_3_3]="COLORS.GREEN"
-                [right_1_3]="COLORS.WHITE"
+                [left_3_3]="COLORS.RED"
+                [right_1_3]="COLORS.GREEN"
                 [right_2_1]="COLORS.RED"
                 [right_2_2]="COLORS.RED"
               ></svg>
-              <span class="caption">Lleva la esquina al color de sus caras</span>
-            </div>
 
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_1_2]="COLORS.WHITE"
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_2_3]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [left_2_1]="COLORS.GREEN"
-                [left_2_2]="COLORS.GREEN"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-                [right_3_3]="COLORS.GREEN"
-              ></svg>
-              <span class="caption">
-                Gira la cara inferior al sentido contrario del lado del blanco
-              </span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_1_2]="COLORS.WHITE"
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [left_2_2]="COLORS.GREEN"
-                [left_3_2]="COLORS.GREEN"
-                [right_1_2]="COLORS.WHITE"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-                [right_3_3]="COLORS.GREEN"
-              ></svg>
-              <span class="caption">Baja la esquina que quieres colocar (izquierda o derecha)</span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_1_2]="COLORS.WHITE"
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [left_2_2]="COLORS.GREEN"
-                [left_3_2]="COLORS.GREEN"
-                [left_3_3]="COLORS.GREEN"
-                [right_1_2]="COLORS.WHITE"
-                [right_1_3]="COLORS.WHITE"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-              ></svg>
-              <span class="caption">Retorna la cara inferior</span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_1_2]="COLORS.WHITE"
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_2_3]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [top_3_3]="COLORS.WHITE"
-                [left_2_1]="COLORS.GREEN"
-                [left_2_2]="COLORS.GREEN"
-                [left_3_1]="COLORS.GREEN"
-                [right_1_1]="COLORS.RED"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-              ></svg>
-              <span class="caption">Sube la esquina</span>
-            </div>
-          </div>
-
-          <p class="margin-top">
-            Si <strong>la esquina tiene el cuadro blanco abajo</strong>, el proceso es el mismo,
-            pero la esquina quedará girada. No preocuparse.
-          </p>
-
-          <div class="multiple-cubes">
-            <svg
-              appCuboDeRubikSvg
-              [top_1_2]="COLORS.WHITE"
-              [top_2_1]="COLORS.WHITE"
-              [top_2_2]="COLORS.WHITE"
-              [top_2_3]="COLORS.WHITE"
-              [top_3_2]="COLORS.WHITE"
-              [left_2_1]="COLORS.GREEN"
-              [left_2_2]="COLORS.GREEN"
-              [left_3_3]="COLORS.RED"
-              [right_1_3]="COLORS.GREEN"
-              [right_2_1]="COLORS.RED"
-              [right_2_2]="COLORS.RED"
-            ></svg>
-
-            <svg
-              appCuboDeRubikSvg
-              [top_1_2]="COLORS.WHITE"
-              [top_2_1]="COLORS.WHITE"
-              [top_2_2]="COLORS.WHITE"
-              [top_2_3]="COLORS.WHITE"
-              [top_3_2]="COLORS.WHITE"
-              [top_3_3]="COLORS.RED"
-              [left_2_1]="COLORS.GREEN"
-              [left_2_2]="COLORS.GREEN"
-              [left_3_1]="COLORS.WHITE"
-              [right_1_1]="COLORS.GREEN"
-              [right_2_1]="COLORS.RED"
-              [right_2_2]="COLORS.RED"
-            ></svg>
-          </div>
-        </div>
-
-        <div class="description-block">
-          <p>
-            Si <strong>la esquina tiene el cuadro blanco arriba en la cara frontal</strong>, se rota
-            la cara frontal para bajarla (izquierda o derecha), despues se rota la cara inferior
-            hacia el lado que queda el cuadro blanco, y se revierte el giro de la cara frontal.
-            Entonces, ya podemos seguir los pasos anteriores.
-          </p>
-
-          <div class="multiple-cubes">
-            <div class="cube-figure">
               <svg
                 appCuboDeRubikSvg
                 [top_1_2]="COLORS.WHITE"
@@ -658,1142 +637,1174 @@
                 [right_2_1]="COLORS.RED"
                 [right_2_2]="COLORS.RED"
               ></svg>
-              <span class="caption">Posición inicial</span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_1_2]="COLORS.WHITE"
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [left_2_2]="COLORS.GREEN"
-                [left_3_2]="COLORS.GREEN"
-                [left_3_3]="COLORS.WHITE"
-                [right_1_2]="COLORS.WHITE"
-                [right_1_3]="COLORS.RED"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-              ></svg>
-              <span class="caption">Bajar la esquina rotando la cara frontal</span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_1_2]="COLORS.WHITE"
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [left_2_2]="COLORS.GREEN"
-                [left_3_2]="COLORS.GREEN"
-                [right_1_2]="COLORS.WHITE"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-                [right_3_3]="COLORS.WHITE"
-              ></svg>
-              <span class="caption">Rotar el lado inferior hacia el lado del cuadro blanco</span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_1_2]="COLORS.WHITE"
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_2_3]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [left_2_1]="COLORS.GREEN"
-                [left_2_2]="COLORS.GREEN"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-                [right_3_3]="COLORS.WHITE"
-              ></svg>
-              <span class="caption">Revertir el giro de la cara frontal</span>
             </div>
           </div>
-        </div>
 
-        <div class="description-block">
-          <p>
-            Si <strong>la esquina blanca ya está arriba pero no en su posición</strong>, se rota el
-            frontal, la cara inferior y se revierte la rotación del frontal. Así tenemos de nuevo un
-            caso ya conocido.
-          </p>
-
-          <div class="multiple-cubes">
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_1_2]="COLORS.WHITE"
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_2_3]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [top_3_3]="COLORS.WHITE"
-                [left_2_1]="COLORS.GREEN"
-                [left_2_2]="COLORS.GREEN"
-                [left_3_1]="COLORS.ORANGE"
-                [right_1_1]="COLORS.BLUE"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-              ></svg>
-              <span class="caption">Posición inicial</span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_1_2]="COLORS.WHITE"
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [left_2_2]="COLORS.GREEN"
-                [left_3_2]="COLORS.GREEN"
-                [left_3_3]="COLORS.ORANGE"
-                [right_1_2]="COLORS.WHITE"
-                [right_1_3]="COLORS.WHITE"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-              ></svg>
-              <span class="caption">Rotar la cara frontal para bajar la esquina</span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_1_2]="COLORS.WHITE"
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [left_1_3]="COLORS.WHITE"
-                [left_2_2]="COLORS.GREEN"
-                [left_3_2]="COLORS.GREEN"
-                [right_1_2]="COLORS.WHITE"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-              ></svg>
-              <span class="caption">Gira la cara inferior</span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_1_2]="COLORS.WHITE"
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_2_3]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [left_2_1]="COLORS.GREEN"
-                [left_2_2]="COLORS.GREEN"
-                [left_3_3]="COLORS.WHITE"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-              ></svg>
-              <span class="caption">Revierte el giro de la cara frontal</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section #stepSection id="segunda-fila" class="section">
-    <h1 class="section-title">
-      <span class="section-number">4</span>
-      Segunda fila
-    </h1>
-
-    <div class="section-content">
-      <div class="cube-and-description">
-        <svg
-          appCuboDeRubikSvg
-          [top_1_1]="COLORS.WHITE"
-          [top_1_2]="COLORS.WHITE"
-          [top_1_3]="COLORS.WHITE"
-          [top_2_1]="COLORS.WHITE"
-          [top_2_2]="COLORS.WHITE"
-          [top_2_3]="COLORS.WHITE"
-          [top_3_1]="COLORS.WHITE"
-          [top_3_2]="COLORS.WHITE"
-          [top_3_3]="COLORS.WHITE"
-          [left_1_1]="COLORS.RED"
-          [left_1_2]="COLORS.RED"
-          [left_2_1]="COLORS.RED"
-          [left_2_2]="COLORS.RED"
-          [left_3_1]="COLORS.RED"
-          [left_3_2]="COLORS.RED"
-          [right_1_1]="COLORS.GREEN"
-          [right_1_2]="COLORS.GREEN"
-          [right_2_1]="COLORS.GREEN"
-          [right_2_2]="COLORS.GREEN"
-          [right_3_1]="COLORS.GREEN"
-          [right_3_2]="COLORS.GREEN"
-        ></svg>
-
-        <div class="description">
           <div class="description-block">
-            <h2>Objetivo</h2>
             <p>
-              Colocar y orientar los laterales de la fila del medio, es decir, completar la segunda
-              fila.
+              Si <strong>la esquina tiene el cuadro blanco arriba en la cara frontal</strong>, se
+              rota la cara frontal para bajarla (izquierda o derecha), despues se rota la cara
+              inferior hacia el lado que queda el cuadro blanco, y se revierte el giro de la cara
+              frontal. Entonces, ya podemos seguir los pasos anteriores.
             </p>
-          </div>
-        </div>
-      </div>
 
-      <div class="description">
-        <div class="description-block">
-          <p>
-            <strong>Nota</strong>: buscamos en la fila inferior los laterales que no tienen color
-            amarillo. Si no hubiese porque los laterales están todos ya en la segunda fila, pero no
-            en su posición o mal orientados, debemos antes remplazarlos con otros laterales que si
-            tengan amarillo, siguiendo exactamente el mismo proceso. De esta manera, al final el
-            lateral que no estaba en su posición queda en la última fila.
-          </p>
-        </div>
+            <div class="multiple-cubes">
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_1_2]="COLORS.WHITE"
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_2_3]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [top_3_3]="COLORS.RED"
+                  [left_2_1]="COLORS.GREEN"
+                  [left_2_2]="COLORS.GREEN"
+                  [left_3_1]="COLORS.WHITE"
+                  [right_1_1]="COLORS.GREEN"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                ></svg>
+                <span class="caption">Posición inicial</span>
+              </div>
 
-        <div class="description-block">
-          <p>
-            <strong>Descripción general</strong>: rotamos la cara inferior para llevar el lateral al
-            color de su cara. Después giramos la cara inferior al lado contrario de la esquina que
-            la queremos colocar. Baja el lateral de la posición que estás colocando. Vuelve a girar
-            la parte inferior al sentido contrario que antes, y vuelve a subir el lateral. Se nos va
-            a descolocar una esquina, pero la podemos volver a colocar con los pasos que ya hemos
-            visto, y al hacerlo, se colocará tambien el cuadro que queríamos de la segunda fila.
-          </p>
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_1_2]="COLORS.WHITE"
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [left_2_2]="COLORS.GREEN"
+                  [left_3_2]="COLORS.GREEN"
+                  [left_3_3]="COLORS.WHITE"
+                  [right_1_2]="COLORS.WHITE"
+                  [right_1_3]="COLORS.RED"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                ></svg>
+                <span class="caption">Bajar la esquina rotando la cara frontal</span>
+              </div>
 
-          <p class="margin-top bold-text">Este es un ejemplo:</p>
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_1_2]="COLORS.WHITE"
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [left_2_2]="COLORS.GREEN"
+                  [left_3_2]="COLORS.GREEN"
+                  [right_1_2]="COLORS.WHITE"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                  [right_3_3]="COLORS.WHITE"
+                ></svg>
+                <span class="caption">Rotar el lado inferior hacia el lado del cuadro blanco</span>
+              </div>
 
-          <div class="multiple-cubes">
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_1_1]="COLORS.WHITE"
-                [top_1_2]="COLORS.WHITE"
-                [top_1_3]="COLORS.WHITE"
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_2_3]="COLORS.WHITE"
-                [top_3_1]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [top_3_3]="COLORS.WHITE"
-                [left_1_1]="COLORS.RED"
-                [left_2_1]="COLORS.RED"
-                [left_2_2]="COLORS.RED"
-                [left_3_1]="COLORS.RED"
-                [right_1_1]="COLORS.GREEN"
-                [right_2_1]="COLORS.GREEN"
-                [right_2_2]="COLORS.GREEN"
-                [right_3_1]="COLORS.GREEN"
-              ></svg>
-              <span class="caption">Posición inicial</span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_1_1]="COLORS.WHITE"
-                [top_1_2]="COLORS.WHITE"
-                [top_1_3]="COLORS.WHITE"
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_2_3]="COLORS.WHITE"
-                [top_3_1]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [top_3_3]="COLORS.WHITE"
-                [left_1_1]="COLORS.RED"
-                [left_2_1]="COLORS.RED"
-                [left_2_2]="COLORS.RED"
-                [left_3_1]="COLORS.RED"
-                [right_1_1]="COLORS.GREEN"
-                [right_2_1]="COLORS.GREEN"
-                [right_2_2]="COLORS.GREEN"
-                [right_2_3]="COLORS.GREEN"
-                [right_3_1]="COLORS.GREEN"
-              ></svg>
-              <span class="caption">Llevar el lateral a su cara</span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_1_1]="COLORS.WHITE"
-                [top_1_2]="COLORS.WHITE"
-                [top_1_3]="COLORS.WHITE"
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_2_3]="COLORS.WHITE"
-                [top_3_1]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [top_3_3]="COLORS.WHITE"
-                [left_1_1]="COLORS.RED"
-                [left_2_1]="COLORS.RED"
-                [left_2_2]="COLORS.RED"
-                [left_3_1]="COLORS.RED"
-                [right_1_1]="COLORS.GREEN"
-                [right_2_1]="COLORS.GREEN"
-                [right_2_2]="COLORS.GREEN"
-                [right_3_1]="COLORS.GREEN"
-              ></svg>
-              <span class="caption">
-                Girar cara inferior al lado contrario del lateral a colocar
-              </span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_1_1]="COLORS.WHITE"
-                [top_1_2]="COLORS.WHITE"
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_3_1]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [left_2_2]="COLORS.RED"
-                [left_3_1]="COLORS.RED"
-                [left_3_2]="COLORS.RED"
-                [left_3_3]="COLORS.RED"
-                [right_1_1]="COLORS.WHITE"
-                [right_1_2]="COLORS.WHITE"
-                [right_1_3]="COLORS.WHITE"
-                [right_2_1]="COLORS.GREEN"
-                [right_2_2]="COLORS.GREEN"
-                [right_3_1]="COLORS.GREEN"
-              ></svg>
-              <span class="caption">Bajar la cara del lateral a colocar</span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_1_1]="COLORS.WHITE"
-                [top_1_2]="COLORS.WHITE"
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_3_1]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [left_1_3]="COLORS.WHITE"
-                [left_2_2]="COLORS.RED"
-                [left_3_1]="COLORS.RED"
-                [left_3_2]="COLORS.RED"
-                [right_1_1]="COLORS.WHITE"
-                [right_1_2]="COLORS.WHITE"
-                [right_2_1]="COLORS.GREEN"
-                [right_2_2]="COLORS.GREEN"
-                [right_3_1]="COLORS.GREEN"
-              ></svg>
-              <span class="caption">Retornar la cara inferior</span>
-            </div>
-
-            <div class="cube-figure">
-              <svg
-                appCuboDeRubikSvg
-                [top_1_1]="COLORS.WHITE"
-                [top_1_2]="COLORS.WHITE"
-                [top_1_3]="COLORS.WHITE"
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_2_3]="COLORS.WHITE"
-                [top_3_1]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [left_1_1]="COLORS.RED"
-                [left_2_1]="COLORS.RED"
-                [left_2_2]="COLORS.RED"
-                [left_3_3]="COLORS.WHITE"
-                [right_2_1]="COLORS.GREEN"
-                [right_2_2]="COLORS.GREEN"
-                [right_3_1]="COLORS.GREEN"
-              ></svg>
-              <span class="caption">Retornar la cara del lateral a colocar</span>
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_1_2]="COLORS.WHITE"
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_2_3]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [left_2_1]="COLORS.GREEN"
+                  [left_2_2]="COLORS.GREEN"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                  [right_3_3]="COLORS.WHITE"
+                ></svg>
+                <span class="caption">Revertir el giro de la cara frontal</span>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <p class="bold-text">Pasos a seguir si vamos a colocar el lateral de la izquierda:</p>
-
-      <ol class="moves-list">
-        <li class="move-item side-bottom move-right">
-          <span class="move-number">1</span>
-          <span class="move-name">Inferior</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#e99b00'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-left move-down">
-          <span class="move-number">2</span>
-          <span class="move-name">Izquierdo</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'left'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0066FF'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-bottom move-left">
-          <span class="move-number">3</span>
-          <span class="move-name">Inferior</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#ed2634'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-left move-up">
-          <span class="move-number">4</span>
-          <span class="move-name">Izquierdo</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'left'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0b9b61'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-cube move-right">
-          <span class="move-number">5</span>
-          <span class="move-name">Cubo</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'cube'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#e99b00'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-bottom move-left">
-          <span class="move-number">6</span>
-          <span class="move-name">Inferior</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#ed2634'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-right move-down">
-          <span class="move-number">7</span>
-          <span class="move-name">Derecho</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0066FF'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-bottom move-right">
-          <span class="move-number">8</span>
-          <span class="move-name">Inferior</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#e99b00'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-right move-up">
-          <span class="move-number">9</span>
-          <span class="move-name">Derecho</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0b9b61'"></svg>
-          </span>
-        </li>
-      </ol>
-
-      <p class="bold-text">Pasos a seguir si vamos a colocar el lateral de la derecha:</p>
-
-      <ol class="moves-list">
-        <li class="move-item side-bottom move-left">
-          <span class="move-number">1</span>
-          <span class="move-name">Inferior</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#ed2634'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-right move-down">
-          <span class="move-number">2</span>
-          <span class="move-name">Derecho</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0066FF'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-bottom move-right">
-          <span class="move-number">3</span>
-          <span class="move-name">Inferior</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#e99b00'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-right move-up">
-          <span class="move-number">4</span>
-          <span class="move-name">Derecho</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0b9b61'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-cube move-left">
-          <span class="move-number">5</span>
-          <span class="move-name">Cubo</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'cube'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#ed2634'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-bottom move-right">
-          <span class="move-number">6</span>
-          <span class="move-name">Inferior</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#e99b00'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-left move-down">
-          <span class="move-number">7</span>
-          <span class="move-name">Izquierdo</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'left'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0066FF'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-bottom move-left">
-          <span class="move-number">8</span>
-          <span class="move-name">Inferior</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#ed2634'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-left move-up">
-          <span class="move-number">9</span>
-          <span class="move-name">Izquierdo</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'left'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0b9b61'"></svg>
-          </span>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section #stepSection id="linea-amarilla" class="section">
-    <h1 class="section-title">
-      <span class="section-number">5</span>
-      Linea amarilla
-    </h1>
-
-    <section class="section-content">
-      <div class="cube-and-description">
-        <svg
-          appCuboDeRubikSvg
-          [top_1_2]="COLORS.YELLOW"
-          [top_2_2]="COLORS.YELLOW"
-          [top_3_2]="COLORS.YELLOW"
-          [left_1_2]="COLORS.BLUE"
-          [left_1_3]="COLORS.BLUE"
-          [left_2_2]="COLORS.BLUE"
-          [left_2_3]="COLORS.BLUE"
-          [left_3_2]="COLORS.BLUE"
-          [left_3_3]="COLORS.BLUE"
-          [right_1_2]="COLORS.RED"
-          [right_1_3]="COLORS.RED"
-          [right_2_2]="COLORS.RED"
-          [right_2_3]="COLORS.RED"
-          [right_3_2]="COLORS.RED"
-          [right_3_3]="COLORS.RED"
-        ></svg>
-
-        <div class="description">
           <div class="description-block">
-            <h2>Objetivo</h2>
             <p>
-              Completar una linea horizontal amarilla en la parte inferior. Para ello, hay que
-              repetir estos pasos siempre sobre la misma cara de referencia, una y otra vez hasta
-              que aparezca la linea.
+              Si <strong>la esquina blanca ya está arriba pero no en su posición</strong>, se rota
+              el frontal, la cara inferior y se revierte la rotación del frontal. Así tenemos de
+              nuevo un caso ya conocido.
             </p>
+
+            <div class="multiple-cubes">
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_1_2]="COLORS.WHITE"
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_2_3]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [top_3_3]="COLORS.WHITE"
+                  [left_2_1]="COLORS.GREEN"
+                  [left_2_2]="COLORS.GREEN"
+                  [left_3_1]="COLORS.ORANGE"
+                  [right_1_1]="COLORS.BLUE"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                ></svg>
+                <span class="caption">Posición inicial</span>
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_1_2]="COLORS.WHITE"
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [left_2_2]="COLORS.GREEN"
+                  [left_3_2]="COLORS.GREEN"
+                  [left_3_3]="COLORS.ORANGE"
+                  [right_1_2]="COLORS.WHITE"
+                  [right_1_3]="COLORS.WHITE"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                ></svg>
+                <span class="caption">Rotar la cara frontal para bajar la esquina</span>
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_1_2]="COLORS.WHITE"
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [left_1_3]="COLORS.WHITE"
+                  [left_2_2]="COLORS.GREEN"
+                  [left_3_2]="COLORS.GREEN"
+                  [right_1_2]="COLORS.WHITE"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                ></svg>
+                <span class="caption">Gira la cara inferior</span>
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_1_2]="COLORS.WHITE"
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_2_3]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [left_2_1]="COLORS.GREEN"
+                  [left_2_2]="COLORS.GREEN"
+                  [left_3_3]="COLORS.WHITE"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                ></svg>
+                <span class="caption">Revierte el giro de la cara frontal</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      <p class="bold-text">Con la cara blanca hacia arriba, repetir estos pasos:</p>
-
-      <ol class="moves-list">
-        <li class="move-item side-right move-down">
-          <span class="move-number">1</span>
-          <span class="move-name">Derecho</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0066FF'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-bottom move-left">
-          <span class="move-number">2</span>
-          <span class="move-name">Inferior</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#ed2634'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-right move-up">
-          <span class="move-number">3</span>
-          <span class="move-name">Derecho</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0b9b61'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-cube move-left">
-          <span class="move-number">4</span>
-          <span class="move-name">Cubo</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'cube'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#ed2634'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-left move-down">
-          <span class="move-number">5</span>
-          <span class="move-name">Izquierdo</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'left'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0066FF'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-bottom move-left">
-          <span class="move-number">6</span>
-          <span class="move-name">Inferior</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#ed2634'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-left move-up">
-          <span class="move-number">7</span>
-          <span class="move-name">Izquierdo</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'left'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0b9b61'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-cube move-right">
-          <span class="move-number">8</span>
-          <span class="move-name">Cubo</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'cube'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#e99b00'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-right move-down">
-          <span class="move-number">9</span>
-          <span class="move-name">Derecho</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0066FF'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-bottom move-right">
-          <span class="move-number">10</span>
-          <span class="move-name">Inferior</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#e99b00'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-right move-up">
-          <span class="move-number">11</span>
-          <span class="move-name">Derecho</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0b9b61'"></svg>
-          </span>
-        </li>
-      </ol>
     </section>
-  </section>
 
-  <p class="rotate-cube-warning">
-    <span class="bold-text atention-warning-text">¡ATENCION!</span>
-    <span>
-      Ahora coloca el cubo con la cara amarilla hacia arriba, de forma que veas la linea horizontal.
-    </span>
-  </p>
+    <section #stepSection id="segunda-fila" class="section">
+      <h1 class="section-title">
+        <span class="section-number">4</span>
+        Segunda fila
+      </h1>
 
-  <section #stepSection id="cruz-amarilla" class="section">
-    <h1 class="section-title">
-      <span class="section-number">6</span>
-      Cruz amarilla
-    </h1>
+      <div class="section-content">
+        <div class="cube-and-description">
+          <svg
+            appCuboDeRubikSvg
+            [top_1_1]="COLORS.WHITE"
+            [top_1_2]="COLORS.WHITE"
+            [top_1_3]="COLORS.WHITE"
+            [top_2_1]="COLORS.WHITE"
+            [top_2_2]="COLORS.WHITE"
+            [top_2_3]="COLORS.WHITE"
+            [top_3_1]="COLORS.WHITE"
+            [top_3_2]="COLORS.WHITE"
+            [top_3_3]="COLORS.WHITE"
+            [left_1_1]="COLORS.RED"
+            [left_1_2]="COLORS.RED"
+            [left_2_1]="COLORS.RED"
+            [left_2_2]="COLORS.RED"
+            [left_3_1]="COLORS.RED"
+            [left_3_2]="COLORS.RED"
+            [right_1_1]="COLORS.GREEN"
+            [right_1_2]="COLORS.GREEN"
+            [right_2_1]="COLORS.GREEN"
+            [right_2_2]="COLORS.GREEN"
+            [right_3_1]="COLORS.GREEN"
+            [right_3_2]="COLORS.GREEN"
+          ></svg>
 
-    <div class="section-content">
-      <div class="cube-and-description">
-        <svg
-          appCuboDeRubikSvg
-          [top_1_2]="COLORS.YELLOW"
-          [top_2_1]="COLORS.YELLOW"
-          [top_2_2]="COLORS.YELLOW"
-          [top_2_3]="COLORS.YELLOW"
-          [top_3_2]="COLORS.YELLOW"
-          [left_1_2]="COLORS.BLUE"
-          [left_1_3]="COLORS.BLUE"
-          [left_2_2]="COLORS.BLUE"
-          [left_2_3]="COLORS.BLUE"
-          [left_3_2]="COLORS.BLUE"
-          [left_3_3]="COLORS.BLUE"
-          [right_1_2]="COLORS.RED"
-          [right_1_3]="COLORS.RED"
-          [right_2_2]="COLORS.RED"
-          [right_2_3]="COLORS.RED"
-          [right_3_2]="COLORS.RED"
-          [right_3_3]="COLORS.RED"
-        ></svg>
+          <div class="description">
+            <div class="description-block">
+              <h2>Objetivo</h2>
+              <p>
+                Colocar y orientar los laterales de la fila del medio, es decir, completar la
+                segunda fila.
+              </p>
+            </div>
+          </div>
+        </div>
 
         <div class="description">
           <div class="description-block">
-            <h2>Objetivo</h2>
             <p>
-              El objetivo de este paso es colocar los laterales amarillos en su lugar, es decir,
-              formar una cruz amarilla en la cara superior. No importa que el otro color de los
-              laterales no esté alineado con la otra cara.
+              <strong>Nota</strong>: buscamos en la fila inferior los laterales que no tienen color
+              amarillo. Si no hubiese porque los laterales están todos ya en la segunda fila, pero
+              no en su posición o mal orientados, debemos antes remplazarlos con otros laterales que
+              si tengan amarillo, siguiendo exactamente el mismo proceso. De esta manera, al final
+              el lateral que no estaba en su posición queda en la última fila.
+            </p>
+          </div>
+
+          <div class="description-block">
+            <p>
+              <strong>Descripción general</strong>: rotamos la cara inferior para llevar el lateral
+              al color de su cara. Después giramos la cara inferior al lado contrario de la esquina
+              que la queremos colocar. Baja el lateral de la posición que estás colocando. Vuelve a
+              girar la parte inferior al sentido contrario que antes, y vuelve a subir el lateral.
+              Se nos va a descolocar una esquina, pero la podemos volver a colocar con los pasos que
+              ya hemos visto, y al hacerlo, se colocará tambien el cuadro que queríamos de la
+              segunda fila.
+            </p>
+
+            <p class="margin-top bold-text">Este es un ejemplo:</p>
+
+            <div class="multiple-cubes">
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_1_1]="COLORS.WHITE"
+                  [top_1_2]="COLORS.WHITE"
+                  [top_1_3]="COLORS.WHITE"
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_2_3]="COLORS.WHITE"
+                  [top_3_1]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [top_3_3]="COLORS.WHITE"
+                  [left_1_1]="COLORS.RED"
+                  [left_2_1]="COLORS.RED"
+                  [left_2_2]="COLORS.RED"
+                  [left_3_1]="COLORS.RED"
+                  [right_1_1]="COLORS.GREEN"
+                  [right_2_1]="COLORS.GREEN"
+                  [right_2_2]="COLORS.GREEN"
+                  [right_3_1]="COLORS.GREEN"
+                ></svg>
+                <span class="caption">Posición inicial</span>
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_1_1]="COLORS.WHITE"
+                  [top_1_2]="COLORS.WHITE"
+                  [top_1_3]="COLORS.WHITE"
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_2_3]="COLORS.WHITE"
+                  [top_3_1]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [top_3_3]="COLORS.WHITE"
+                  [left_1_1]="COLORS.RED"
+                  [left_2_1]="COLORS.RED"
+                  [left_2_2]="COLORS.RED"
+                  [left_3_1]="COLORS.RED"
+                  [right_1_1]="COLORS.GREEN"
+                  [right_2_1]="COLORS.GREEN"
+                  [right_2_2]="COLORS.GREEN"
+                  [right_2_3]="COLORS.GREEN"
+                  [right_3_1]="COLORS.GREEN"
+                ></svg>
+                <span class="caption">Llevar el lateral a su cara</span>
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_1_1]="COLORS.WHITE"
+                  [top_1_2]="COLORS.WHITE"
+                  [top_1_3]="COLORS.WHITE"
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_2_3]="COLORS.WHITE"
+                  [top_3_1]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [top_3_3]="COLORS.WHITE"
+                  [left_1_1]="COLORS.RED"
+                  [left_2_1]="COLORS.RED"
+                  [left_2_2]="COLORS.RED"
+                  [left_3_1]="COLORS.RED"
+                  [right_1_1]="COLORS.GREEN"
+                  [right_2_1]="COLORS.GREEN"
+                  [right_2_2]="COLORS.GREEN"
+                  [right_3_1]="COLORS.GREEN"
+                ></svg>
+                <span class="caption">
+                  Girar cara inferior al lado contrario del lateral a colocar
+                </span>
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_1_1]="COLORS.WHITE"
+                  [top_1_2]="COLORS.WHITE"
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_3_1]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [left_2_2]="COLORS.RED"
+                  [left_3_1]="COLORS.RED"
+                  [left_3_2]="COLORS.RED"
+                  [left_3_3]="COLORS.RED"
+                  [right_1_1]="COLORS.WHITE"
+                  [right_1_2]="COLORS.WHITE"
+                  [right_1_3]="COLORS.WHITE"
+                  [right_2_1]="COLORS.GREEN"
+                  [right_2_2]="COLORS.GREEN"
+                  [right_3_1]="COLORS.GREEN"
+                ></svg>
+                <span class="caption">Bajar la cara del lateral a colocar</span>
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_1_1]="COLORS.WHITE"
+                  [top_1_2]="COLORS.WHITE"
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_3_1]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [left_1_3]="COLORS.WHITE"
+                  [left_2_2]="COLORS.RED"
+                  [left_3_1]="COLORS.RED"
+                  [left_3_2]="COLORS.RED"
+                  [right_1_1]="COLORS.WHITE"
+                  [right_1_2]="COLORS.WHITE"
+                  [right_2_1]="COLORS.GREEN"
+                  [right_2_2]="COLORS.GREEN"
+                  [right_3_1]="COLORS.GREEN"
+                ></svg>
+                <span class="caption">Retornar la cara inferior</span>
+              </div>
+
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_1_1]="COLORS.WHITE"
+                  [top_1_2]="COLORS.WHITE"
+                  [top_1_3]="COLORS.WHITE"
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_2_3]="COLORS.WHITE"
+                  [top_3_1]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [left_1_1]="COLORS.RED"
+                  [left_2_1]="COLORS.RED"
+                  [left_2_2]="COLORS.RED"
+                  [left_3_3]="COLORS.WHITE"
+                  [right_2_1]="COLORS.GREEN"
+                  [right_2_2]="COLORS.GREEN"
+                  [right_3_1]="COLORS.GREEN"
+                ></svg>
+                <span class="caption">Retornar la cara del lateral a colocar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="bold-text">Pasos a seguir si vamos a colocar el lateral de la izquierda:</p>
+
+        <ol class="moves-list">
+          <li class="move-item side-bottom move-right">
+            <span class="move-number">1</span>
+            <span class="move-name">Inferior</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#e99b00'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-left move-down">
+            <span class="move-number">2</span>
+            <span class="move-name">Izquierdo</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'left'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0066FF'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-bottom move-left">
+            <span class="move-number">3</span>
+            <span class="move-name">Inferior</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#ed2634'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-left move-up">
+            <span class="move-number">4</span>
+            <span class="move-name">Izquierdo</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'left'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0b9b61'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-cube move-right">
+            <span class="move-number">5</span>
+            <span class="move-name">Cubo</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'cube'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#e99b00'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-bottom move-left">
+            <span class="move-number">6</span>
+            <span class="move-name">Inferior</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#ed2634'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-right move-down">
+            <span class="move-number">7</span>
+            <span class="move-name">Derecho</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0066FF'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-bottom move-right">
+            <span class="move-number">8</span>
+            <span class="move-name">Inferior</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#e99b00'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-right move-up">
+            <span class="move-number">9</span>
+            <span class="move-name">Derecho</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0b9b61'"></svg>
+            </span>
+          </li>
+        </ol>
+
+        <p class="bold-text">Pasos a seguir si vamos a colocar el lateral de la derecha:</p>
+
+        <ol class="moves-list">
+          <li class="move-item side-bottom move-left">
+            <span class="move-number">1</span>
+            <span class="move-name">Inferior</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#ed2634'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-right move-down">
+            <span class="move-number">2</span>
+            <span class="move-name">Derecho</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0066FF'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-bottom move-right">
+            <span class="move-number">3</span>
+            <span class="move-name">Inferior</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#e99b00'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-right move-up">
+            <span class="move-number">4</span>
+            <span class="move-name">Derecho</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0b9b61'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-cube move-left">
+            <span class="move-number">5</span>
+            <span class="move-name">Cubo</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'cube'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#ed2634'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-bottom move-right">
+            <span class="move-number">6</span>
+            <span class="move-name">Inferior</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#e99b00'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-left move-down">
+            <span class="move-number">7</span>
+            <span class="move-name">Izquierdo</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'left'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0066FF'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-bottom move-left">
+            <span class="move-number">8</span>
+            <span class="move-name">Inferior</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#ed2634'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-left move-up">
+            <span class="move-number">9</span>
+            <span class="move-name">Izquierdo</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'left'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0b9b61'"></svg>
+            </span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section #stepSection id="linea-amarilla" class="section">
+      <h1 class="section-title">
+        <span class="section-number">5</span>
+        Linea amarilla
+      </h1>
+
+      <section class="section-content">
+        <div class="cube-and-description">
+          <svg
+            appCuboDeRubikSvg
+            [top_1_2]="COLORS.YELLOW"
+            [top_2_2]="COLORS.YELLOW"
+            [top_3_2]="COLORS.YELLOW"
+            [left_1_2]="COLORS.BLUE"
+            [left_1_3]="COLORS.BLUE"
+            [left_2_2]="COLORS.BLUE"
+            [left_2_3]="COLORS.BLUE"
+            [left_3_2]="COLORS.BLUE"
+            [left_3_3]="COLORS.BLUE"
+            [right_1_2]="COLORS.RED"
+            [right_1_3]="COLORS.RED"
+            [right_2_2]="COLORS.RED"
+            [right_2_3]="COLORS.RED"
+            [right_3_2]="COLORS.RED"
+            [right_3_3]="COLORS.RED"
+          ></svg>
+
+          <div class="description">
+            <div class="description-block">
+              <h2>Objetivo</h2>
+              <p>
+                Completar una linea horizontal amarilla en la parte inferior. Para ello, hay que
+                repetir estos pasos siempre sobre la misma cara de referencia, una y otra vez hasta
+                que aparezca la linea.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p class="bold-text">Con la cara blanca hacia arriba, repetir estos pasos:</p>
+
+        <ol class="moves-list">
+          <li class="move-item side-right move-down">
+            <span class="move-number">1</span>
+            <span class="move-name">Derecho</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0066FF'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-bottom move-left">
+            <span class="move-number">2</span>
+            <span class="move-name">Inferior</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#ed2634'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-right move-up">
+            <span class="move-number">3</span>
+            <span class="move-name">Derecho</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0b9b61'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-cube move-left">
+            <span class="move-number">4</span>
+            <span class="move-name">Cubo</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'cube'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#ed2634'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-left move-down">
+            <span class="move-number">5</span>
+            <span class="move-name">Izquierdo</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'left'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0066FF'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-bottom move-left">
+            <span class="move-number">6</span>
+            <span class="move-name">Inferior</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#ed2634'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-left move-up">
+            <span class="move-number">7</span>
+            <span class="move-name">Izquierdo</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'left'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0b9b61'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-cube move-right">
+            <span class="move-number">8</span>
+            <span class="move-name">Cubo</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'cube'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#e99b00'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-right move-down">
+            <span class="move-number">9</span>
+            <span class="move-name">Derecho</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0066FF'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-bottom move-right">
+            <span class="move-number">10</span>
+            <span class="move-name">Inferior</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#e99b00'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-right move-up">
+            <span class="move-number">11</span>
+            <span class="move-name">Derecho</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0b9b61'"></svg>
+            </span>
+          </li>
+        </ol>
+      </section>
+    </section>
+
+    <p class="rotate-cube-warning">
+      <span class="bold-text atention-warning-text">¡ATENCION!</span>
+      <span>
+        Ahora coloca el cubo con la cara amarilla hacia arriba, de forma que veas la linea
+        horizontal.
+      </span>
+    </p>
+
+    <section #stepSection id="cruz-amarilla" class="section">
+      <h1 class="section-title">
+        <span class="section-number">6</span>
+        Cruz amarilla
+      </h1>
+
+      <div class="section-content">
+        <div class="cube-and-description">
+          <svg
+            appCuboDeRubikSvg
+            [top_1_2]="COLORS.YELLOW"
+            [top_2_1]="COLORS.YELLOW"
+            [top_2_2]="COLORS.YELLOW"
+            [top_2_3]="COLORS.YELLOW"
+            [top_3_2]="COLORS.YELLOW"
+            [left_1_2]="COLORS.BLUE"
+            [left_1_3]="COLORS.BLUE"
+            [left_2_2]="COLORS.BLUE"
+            [left_2_3]="COLORS.BLUE"
+            [left_3_2]="COLORS.BLUE"
+            [left_3_3]="COLORS.BLUE"
+            [right_1_2]="COLORS.RED"
+            [right_1_3]="COLORS.RED"
+            [right_2_2]="COLORS.RED"
+            [right_2_3]="COLORS.RED"
+            [right_3_2]="COLORS.RED"
+            [right_3_3]="COLORS.RED"
+          ></svg>
+
+          <div class="description">
+            <div class="description-block">
+              <h2>Objetivo</h2>
+              <p>
+                El objetivo de este paso es colocar los laterales amarillos en su lugar, es decir,
+                formar una cruz amarilla en la cara superior. No importa que el otro color de los
+                laterales no esté alineado con la otra cara.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p class="bold-text">
+          Con la cara amarilla hacia arriba y viendo la linea amarilla en horizontal, sigue estos
+          pasos hasta conseguir la cruz.
+        </p>
+
+        <ol class="moves-list">
+          <li class="move-item side-front move-clockwise">
+            <span class="move-number">1</span>
+            <span class="move-name">Frontal</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'front'"></app-cube-rotation>
+            <span class="move-arrow mirror">
+              <svg appCircularArrowSvg [color]="'#9c00ff'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-right move-up">
+            <span class="move-number">2</span>
+            <span class="move-name">Derecho</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0b9b61'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-top move-left">
+            <span class="move-number">3</span>
+            <span class="move-name">Superior</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#ed2634'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-right move-down">
+            <span class="move-number">4</span>
+            <span class="move-name">Derecho</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0066FF'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-top move-right">
+            <span class="move-number">5</span>
+            <span class="move-name">Superior</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#e99b00'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-front move-counter-clockwise">
+            <span class="move-number">6</span>
+            <span class="move-name">Frontal</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'front'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appCircularArrowSvg [color]="'#BD5E8C'"></svg>
+            </span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section #stepSection id="laterales-amarillos" class="section">
+      <h1 class="section-title">
+        <span class="section-number">7</span>
+        Laterales amarillos
+      </h1>
+
+      <div class="section-content">
+        <div class="cube-and-description">
+          <svg
+            appCuboDeRubikSvg
+            [top_1_2]="COLORS.YELLOW"
+            [top_2_1]="COLORS.YELLOW"
+            [top_2_2]="COLORS.YELLOW"
+            [top_2_3]="COLORS.YELLOW"
+            [top_3_2]="COLORS.YELLOW"
+            [left_1_2]="COLORS.BLUE"
+            [left_1_3]="COLORS.BLUE"
+            [left_2_1]="COLORS.BLUE"
+            [left_2_2]="COLORS.BLUE"
+            [left_2_3]="COLORS.BLUE"
+            [left_3_2]="COLORS.BLUE"
+            [left_3_3]="COLORS.BLUE"
+            [right_1_2]="COLORS.RED"
+            [right_1_3]="COLORS.RED"
+            [right_2_1]="COLORS.RED"
+            [right_2_2]="COLORS.RED"
+            [right_2_3]="COLORS.RED"
+            [right_3_2]="COLORS.RED"
+            [right_3_3]="COLORS.RED"
+          ></svg>
+
+          <div class="description">
+            <div class="description-block">
+              <h2>Objetivo</h2>
+              <p>
+                El objetivo de este paso ahora sí, es colocar los laterales amarillos de forma que
+                concidan en sus dos caras.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Primero asegurate que no coincide ninguna cara en su posición. O que solo coincide una
+          cara como máximo. Si coincide en una cara, hacer el proceso en esa cara, y si no, hacerlo
+          sobre cualquiera. Repite el proceso hasta que los cuatro laterales amarillos estén en su
+          posición.
+        </p>
+
+        <ol class="moves-list">
+          <li class="move-item side-right move-up">
+            <span class="move-number">1</span>
+            <span class="move-name">Derecho</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0b9b61'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-top move-left">
+            <span class="move-number">2</span>
+            <span class="move-name">Superior</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#ed2634'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-right move-down">
+            <span class="move-number">3</span>
+            <span class="move-name">Derecho</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0066FF'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-top move-left">
+            <span class="move-number">4</span>
+            <span class="move-name">Superior</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#ed2634'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-right move-up">
+            <span class="move-number">5</span>
+            <span class="move-name">Derecho</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0b9b61'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-top move-left">
+            <span class="move-number">6</span>
+            <span class="move-name">Superior x2</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#ed2634'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-right move-down">
+            <span class="move-number">7</span>
+            <span class="move-name">Derecho</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0066FF'"></svg>
+            </span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section #stepSection id="esquinas-finales-1" class="section">
+      <h1 class="section-title">
+        <span class="section-number">8</span>
+        Esquinas finales 1
+      </h1>
+
+      <div class="section-content">
+        <div class="cube-and-description">
+          <svg
+            appCuboDeRubikSvg
+            [top_1_1]="COLORS.ORANGE"
+            [top_1_2]="COLORS.YELLOW"
+            [top_1_3]="COLORS.BLUE"
+            [top_2_1]="COLORS.YELLOW"
+            [top_2_2]="COLORS.YELLOW"
+            [top_2_3]="COLORS.YELLOW"
+            [top_3_1]="COLORS.RED"
+            [top_3_2]="COLORS.YELLOW"
+            [top_3_3]="COLORS.BLUE"
+            [left_1_1]="COLORS.ORANGE"
+            [left_1_2]="COLORS.BLUE"
+            [left_1_3]="COLORS.BLUE"
+            [left_2_1]="COLORS.BLUE"
+            [left_2_2]="COLORS.BLUE"
+            [left_2_3]="COLORS.BLUE"
+            [left_3_1]="COLORS.RED"
+            [left_3_2]="COLORS.BLUE"
+            [left_3_3]="COLORS.BLUE"
+            [right_1_1]="COLORS.YELLOW"
+            [right_1_2]="COLORS.RED"
+            [right_1_3]="COLORS.RED"
+            [right_2_1]="COLORS.RED"
+            [right_2_2]="COLORS.RED"
+            [right_2_3]="COLORS.RED"
+            [right_3_1]="COLORS.GREEN"
+            [right_3_2]="COLORS.RED"
+            [right_3_3]="COLORS.RED"
+          ></svg>
+          <div class="description">
+            <div class="description-block">
+              <h2>Objetivo</h2>
+              <p>Colocar las esquinas amarillas en sus caras, aunque sean mal orientadas.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="description margin-top">
+          <div class="description-block">
+            <p>
+              Hacer este paso sobre una esquina que esté en su posición, aunque mal orientada. Si no
+              hay ninguna esquina colocada en su posición, hacerlo sobre cualquier cara. La esquina
+              debe estar arriba en el lado derecho.
             </p>
           </div>
         </div>
+
+        <ol class="moves-list">
+          <li class="move-item side-top move-left">
+            <span class="move-number">1</span>
+            <span class="move-name">Superior</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#ed2634'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-right move-up">
+            <span class="move-number">2</span>
+            <span class="move-name">Derecho</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0b9b61'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-top move-right">
+            <span class="move-number">3</span>
+            <span class="move-name">Superior</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#e99b00'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-left move-up">
+            <span class="move-number">4</span>
+            <span class="move-name">Izquierdo</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'left'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0b9b61'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-top move-left">
+            <span class="move-number">5</span>
+            <span class="move-name">Superior</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#ed2634'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-right move-down">
+            <span class="move-number">6</span>
+            <span class="move-name">Derecho</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0066FF'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-top move-right">
+            <span class="move-number">7</span>
+            <span class="move-name">Superior</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#e99b00'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-left move-down">
+            <span class="move-number">8</span>
+            <span class="move-name">Izquierdo</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'left'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0066FF'"></svg>
+            </span>
+          </li>
+        </ol>
       </div>
+    </section>
 
-      <p class="bold-text">
-        Con la cara amarilla hacia arriba y viendo la linea amarilla en horizontal, sigue estos
-        pasos hasta conseguir la cruz.
-      </p>
+    <section #stepSection id="esquinas-finales-2" class="section">
+      <h1 class="section-title">
+        <span class="section-number">9</span>
+        Esquinas finales 2
+      </h1>
 
-      <ol class="moves-list">
-        <li class="move-item side-front move-clockwise">
-          <span class="move-number">1</span>
-          <span class="move-name">Frontal</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'front'"></app-cube-rotation>
-          <span class="move-arrow mirror">
-            <svg appCircularArrowSvg [color]="'#9c00ff'"></svg>
-          </span>
-        </li>
+      <div class="section-content">
+        <div class="cube-and-description">
+          <svg
+            appCuboDeRubikSvg
+            [top_1_1]="COLORS.YELLOW"
+            [top_1_2]="COLORS.YELLOW"
+            [top_1_3]="COLORS.YELLOW"
+            [top_2_1]="COLORS.YELLOW"
+            [top_2_2]="COLORS.YELLOW"
+            [top_2_3]="COLORS.YELLOW"
+            [top_3_1]="COLORS.YELLOW"
+            [top_3_2]="COLORS.YELLOW"
+            [top_3_3]="COLORS.YELLOW"
+            [left_1_1]="COLORS.GREEN"
+            [left_1_2]="COLORS.GREEN"
+            [left_1_3]="COLORS.GREEN"
+            [left_2_1]="COLORS.GREEN"
+            [left_2_2]="COLORS.GREEN"
+            [left_2_3]="COLORS.GREEN"
+            [left_3_1]="COLORS.GREEN"
+            [left_3_2]="COLORS.GREEN"
+            [left_3_3]="COLORS.GREEN"
+            [right_1_1]="COLORS.ORANGE"
+            [right_1_2]="COLORS.ORANGE"
+            [right_1_3]="COLORS.ORANGE"
+            [right_2_1]="COLORS.ORANGE"
+            [right_2_2]="COLORS.ORANGE"
+            [right_2_3]="COLORS.ORANGE"
+            [right_3_1]="COLORS.ORANGE"
+            [right_3_2]="COLORS.ORANGE"
+            [right_3_3]="COLORS.ORANGE"
+          ></svg>
+          <div class="description">
+            <div class="description-block">
+              <h2>Objetivo</h2>
+              <p>Orientar bien las esquinas amarillas para completar el cubo.</p>
+            </div>
+          </div>
+        </div>
 
-        <li class="move-item side-right move-up">
-          <span class="move-number">2</span>
-          <span class="move-name">Derecho</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0b9b61'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-top move-left">
-          <span class="move-number">3</span>
-          <span class="move-name">Superior</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#ed2634'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-right move-down">
-          <span class="move-number">4</span>
-          <span class="move-name">Derecho</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0066FF'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-top move-right">
-          <span class="move-number">5</span>
-          <span class="move-name">Superior</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#e99b00'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-front move-counter-clockwise">
-          <span class="move-number">6</span>
-          <span class="move-name">Frontal</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'front'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appCircularArrowSvg [color]="'#BD5E8C'"></svg>
-          </span>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section #stepSection id="laterales-amarillos" class="section">
-    <h1 class="section-title">
-      <span class="section-number">7</span>
-      Laterales amarillos
-    </h1>
-
-    <div class="section-content">
-      <div class="cube-and-description">
-        <svg
-          appCuboDeRubikSvg
-          [top_1_2]="COLORS.YELLOW"
-          [top_2_1]="COLORS.YELLOW"
-          [top_2_2]="COLORS.YELLOW"
-          [top_2_3]="COLORS.YELLOW"
-          [top_3_2]="COLORS.YELLOW"
-          [left_1_2]="COLORS.BLUE"
-          [left_1_3]="COLORS.BLUE"
-          [left_2_1]="COLORS.BLUE"
-          [left_2_2]="COLORS.BLUE"
-          [left_2_3]="COLORS.BLUE"
-          [left_3_2]="COLORS.BLUE"
-          [left_3_3]="COLORS.BLUE"
-          [right_1_2]="COLORS.RED"
-          [right_1_3]="COLORS.RED"
-          [right_2_1]="COLORS.RED"
-          [right_2_2]="COLORS.RED"
-          [right_2_3]="COLORS.RED"
-          [right_3_2]="COLORS.RED"
-          [right_3_3]="COLORS.RED"
-        ></svg>
+        <p>
+          En este momento, después del último paso, todas las esquinas deben estar en su sitio,
+          aunque mal orientadas.
+        </p>
 
         <div class="description">
           <div class="description-block">
-            <h2>Objetivo</h2>
             <p>
-              El objetivo de este paso ahora sí, es colocar los laterales amarillos de forma que
-              concidan en sus dos caras.
+              Para este paso siempre tomamos como referencia la misma cara. Si hay alguna esquina
+              bien orientada, toma de referencia la cara que tiene esa esquina arriba a la derecha.
+              Si no hay ninguna esquina orientada, usar cualquier cara.
+            </p>
+          </div>
+
+          <div class="description-block">
+            <p>
+              Debemos rotar la parte superior para colocar una esquina mal orientada en el lugar que
+              estaba la orientada. Y se repite este proceso hasta que se coloque. Una vez orientada,
+              parece que el cubo está deshecho, pero rota la parte superior de nuevo para colocar la
+              siguiente esquina mal orientada en el lugar que estaba la bien orientada. Vuelve a
+              repetir el proceso de nuevo para todas las esquinas amarillas.
             </p>
           </div>
         </div>
+
+        <ol class="moves-list">
+          <li class="move-item side-right move-down">
+            <span class="move-number">1</span>
+            <span class="move-name">Derecho</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0066FF'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-bottom move-left">
+            <span class="move-number">2</span>
+            <span class="move-name">Inferior</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#ed2634'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-right move-up">
+            <span class="move-number">3</span>
+            <span class="move-name">Derecho</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#0b9b61'"></svg>
+            </span>
+          </li>
+
+          <li class="move-item side-bottom move-right">
+            <span class="move-number">4</span>
+            <span class="move-name">Inferior</span>
+            <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
+            <span class="move-arrow">
+              <svg appArrowSvg [color]="'#e99b00'"></svg>
+            </span>
+          </li>
+        </ol>
       </div>
-
-      <p>
-        Primero asegurate que no coincide ninguna cara en su posición. O que solo coincide una cara
-        como máximo. Si coincide en una cara, hacer el proceso en esa cara, y si no, hacerlo sobre
-        cualquiera. Repite el proceso hasta que los cuatro laterales amarillos estén en su posición.
-      </p>
-
-      <ol class="moves-list">
-        <li class="move-item side-right move-up">
-          <span class="move-number">1</span>
-          <span class="move-name">Derecho</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0b9b61'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-top move-left">
-          <span class="move-number">2</span>
-          <span class="move-name">Superior</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#ed2634'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-right move-down">
-          <span class="move-number">3</span>
-          <span class="move-name">Derecho</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0066FF'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-top move-left">
-          <span class="move-number">4</span>
-          <span class="move-name">Superior</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#ed2634'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-right move-up">
-          <span class="move-number">5</span>
-          <span class="move-name">Derecho</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0b9b61'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-top move-left">
-          <span class="move-number">6</span>
-          <span class="move-name">Superior x2</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#ed2634'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-right move-down">
-          <span class="move-number">7</span>
-          <span class="move-name">Derecho</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0066FF'"></svg>
-          </span>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section #stepSection id="esquinas-finales-1" class="section">
-    <h1 class="section-title">
-      <span class="section-number">8</span>
-      Esquinas finales 1
-    </h1>
-
-    <div class="section-content">
-      <div class="cube-and-description">
-        <svg
-          appCuboDeRubikSvg
-          [top_1_1]="COLORS.ORANGE"
-          [top_1_2]="COLORS.YELLOW"
-          [top_1_3]="COLORS.BLUE"
-          [top_2_1]="COLORS.YELLOW"
-          [top_2_2]="COLORS.YELLOW"
-          [top_2_3]="COLORS.YELLOW"
-          [top_3_1]="COLORS.RED"
-          [top_3_2]="COLORS.YELLOW"
-          [top_3_3]="COLORS.BLUE"
-          [left_1_1]="COLORS.ORANGE"
-          [left_1_2]="COLORS.BLUE"
-          [left_1_3]="COLORS.BLUE"
-          [left_2_1]="COLORS.BLUE"
-          [left_2_2]="COLORS.BLUE"
-          [left_2_3]="COLORS.BLUE"
-          [left_3_1]="COLORS.RED"
-          [left_3_2]="COLORS.BLUE"
-          [left_3_3]="COLORS.BLUE"
-          [right_1_1]="COLORS.YELLOW"
-          [right_1_2]="COLORS.RED"
-          [right_1_3]="COLORS.RED"
-          [right_2_1]="COLORS.RED"
-          [right_2_2]="COLORS.RED"
-          [right_2_3]="COLORS.RED"
-          [right_3_1]="COLORS.GREEN"
-          [right_3_2]="COLORS.RED"
-          [right_3_3]="COLORS.RED"
-        ></svg>
-        <div class="description">
-          <div class="description-block">
-            <h2>Objetivo</h2>
-            <p>Colocar las esquinas amarillas en sus caras, aunque sean mal orientadas.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="description margin-top">
-        <div class="description-block">
-          <p>
-            Hacer este paso sobre una esquina que esté en su posición, aunque mal orientada. Si no
-            hay ninguna esquina colocada en su posición, hacerlo sobre cualquier cara. La esquina
-            debe estar arriba en el lado derecho.
-          </p>
-        </div>
-      </div>
-
-      <ol class="moves-list">
-        <li class="move-item side-top move-left">
-          <span class="move-number">1</span>
-          <span class="move-name">Superior</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#ed2634'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-right move-up">
-          <span class="move-number">2</span>
-          <span class="move-name">Derecho</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0b9b61'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-top move-right">
-          <span class="move-number">3</span>
-          <span class="move-name">Superior</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#e99b00'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-left move-up">
-          <span class="move-number">4</span>
-          <span class="move-name">Izquierdo</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'left'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0b9b61'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-top move-left">
-          <span class="move-number">5</span>
-          <span class="move-name">Superior</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#ed2634'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-right move-down">
-          <span class="move-number">6</span>
-          <span class="move-name">Derecho</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0066FF'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-top move-right">
-          <span class="move-number">7</span>
-          <span class="move-name">Superior</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#e99b00'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-left move-down">
-          <span class="move-number">8</span>
-          <span class="move-name">Izquierdo</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'left'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0066FF'"></svg>
-          </span>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section #stepSection id="esquinas-finales-2" class="section">
-    <h1 class="section-title">
-      <span class="section-number">9</span>
-      Esquinas finales 2
-    </h1>
-
-    <div class="section-content">
-      <div class="cube-and-description">
-        <svg
-          appCuboDeRubikSvg
-          [top_1_1]="COLORS.YELLOW"
-          [top_1_2]="COLORS.YELLOW"
-          [top_1_3]="COLORS.YELLOW"
-          [top_2_1]="COLORS.YELLOW"
-          [top_2_2]="COLORS.YELLOW"
-          [top_2_3]="COLORS.YELLOW"
-          [top_3_1]="COLORS.YELLOW"
-          [top_3_2]="COLORS.YELLOW"
-          [top_3_3]="COLORS.YELLOW"
-          [left_1_1]="COLORS.GREEN"
-          [left_1_2]="COLORS.GREEN"
-          [left_1_3]="COLORS.GREEN"
-          [left_2_1]="COLORS.GREEN"
-          [left_2_2]="COLORS.GREEN"
-          [left_2_3]="COLORS.GREEN"
-          [left_3_1]="COLORS.GREEN"
-          [left_3_2]="COLORS.GREEN"
-          [left_3_3]="COLORS.GREEN"
-          [right_1_1]="COLORS.ORANGE"
-          [right_1_2]="COLORS.ORANGE"
-          [right_1_3]="COLORS.ORANGE"
-          [right_2_1]="COLORS.ORANGE"
-          [right_2_2]="COLORS.ORANGE"
-          [right_2_3]="COLORS.ORANGE"
-          [right_3_1]="COLORS.ORANGE"
-          [right_3_2]="COLORS.ORANGE"
-          [right_3_3]="COLORS.ORANGE"
-        ></svg>
-        <div class="description">
-          <div class="description-block">
-            <h2>Objetivo</h2>
-            <p>Orientar bien las esquinas amarillas para completar el cubo.</p>
-          </div>
-        </div>
-      </div>
-
-      <p>
-        En este momento, después del último paso, todas las esquinas deben estar en su sitio, aunque
-        mal orientadas.
-      </p>
-
-      <div class="description">
-        <div class="description-block">
-          <p>
-            Para este paso siempre tomamos como referencia la misma cara. Si hay alguna esquina bien
-            orientada, toma de referencia la cara que tiene esa esquina arriba a la derecha. Si no
-            hay ninguna esquina orientada, usar cualquier cara.
-          </p>
-        </div>
-
-        <div class="description-block">
-          <p>
-            Debemos rotar la parte superior para colocar una esquina mal orientada en el lugar que
-            estaba la orientada. Y se repite este proceso hasta que se coloque. Una vez orientada,
-            parece que el cubo está deshecho, pero rota la parte superior de nuevo para colocar la
-            siguiente esquina mal orientada en el lugar que estaba la bien orientada. Vuelve a
-            repetir el proceso de nuevo para todas las esquinas amarillas.
-          </p>
-        </div>
-      </div>
-
-      <ol class="moves-list">
-        <li class="move-item side-right move-down">
-          <span class="move-number">1</span>
-          <span class="move-name">Derecho</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0066FF'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-bottom move-left">
-          <span class="move-number">2</span>
-          <span class="move-name">Inferior</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#ed2634'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-right move-up">
-          <span class="move-number">3</span>
-          <span class="move-name">Derecho</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#0b9b61'"></svg>
-          </span>
-        </li>
-
-        <li class="move-item side-bottom move-right">
-          <span class="move-number">4</span>
-          <span class="move-name">Inferior</span>
-          <app-cube-rotation class="mini-cube" [sideToRotate]="'bottom'"></app-cube-rotation>
-          <span class="move-arrow">
-            <svg appArrowSvg [color]="'#e99b00'"></svg>
-          </span>
-        </li>
-      </ol>
-    </div>
-  </section>
-</main>
+    </section>
+  </main>
+</div>
