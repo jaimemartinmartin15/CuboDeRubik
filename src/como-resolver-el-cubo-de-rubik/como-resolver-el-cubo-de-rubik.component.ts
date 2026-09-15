@@ -1,12 +1,10 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { AsyncPipe, isPlatformBrowser } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import {
-  AfterViewInit,
   Component,
   ElementRef,
   HostBinding,
-  Inject,
-  PLATFORM_ID,
+  HostListener,
   QueryList,
   ViewChild,
   ViewChildren,
@@ -32,7 +30,7 @@ import { CubeRotationComponent } from './cube-rotation/cube-rotation.component';
     AsyncPipe,
   ],
 })
-export class ComoResolverElCuboDeRubikComponent implements AfterViewInit {
+export class ComoResolverElCuboDeRubikComponent {
   @ViewChild('sidebar')
   public sidebarEl: ElementRef<HTMLElement>;
 
@@ -45,6 +43,19 @@ export class ComoResolverElCuboDeRubikComponent implements AfterViewInit {
   @HostBinding('style.--menu-break-point')
   public MENU_BREAKPOINT: string = '1110px';
 
+  @HostListener('window:scroll')
+  public onWindowScroll() {
+    const result = this.getMostVisibleSection();
+
+    // reset all links
+    [...this.stepLinks].forEach((sl) => sl.nativeElement.classList.remove('active'));
+
+    // highlight current link
+    [...this.stepLinks]
+      .find((sl) => sl.nativeElement.hash === `#${result.section.id}`)!
+      .nativeElement.classList.add('active');
+  }
+
   public readonly COLORS = {
     WHITE: '#FFFFFF',
     YELLOW: '#FFFF00',
@@ -56,38 +67,45 @@ export class ComoResolverElCuboDeRubikComponent implements AfterViewInit {
 
   public showTopBar$: Observable<boolean>;
 
-  public constructor(
-    @Inject(PLATFORM_ID) private readonly platformId: object,
-    breakpointObserver: BreakpointObserver,
-  ) {
+  public constructor(breakpointObserver: BreakpointObserver) {
     this.showTopBar$ = breakpointObserver
       .observe(`(max-width: ${this.MENU_BREAKPOINT})`)
       .pipe(map((result) => result.matches));
   }
 
-  public ngAfterViewInit() {
-    if (!isPlatformBrowser(this.platformId)) {
-      return;
-    }
+  private getMostVisibleSection() {
+    const viewportTop = 0;
+    const viewportBottom = window.innerHeight;
 
-    // activates the current link in the nav while scrolling to the section
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (!entry.isIntersecting) {
-            continue;
+    return (
+      [...this.sections]
+        .map((s) => s.nativeElement)
+        .map((section, index) => {
+          const rect = section.getBoundingClientRect();
+
+          const visibleTop = Math.max(rect.top, viewportTop);
+          const visibleBottom = Math.min(rect.bottom, viewportBottom);
+
+          const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+          const sectionHeight = rect.height;
+
+          const visibility = sectionHeight > 0 ? visibleHeight / sectionHeight : 0;
+
+          return {
+            section,
+            index,
+            visibility,
+          };
+        })
+        // highest visibility first, for equal visibility, later section wins.
+        .sort((a, b) => {
+          if (a.visibility !== b.visibility) {
+            return b.visibility - a.visibility;
           }
 
-          const id = entry.target.id;
-          this.stepLinks.forEach((link) => {
-            link.nativeElement.classList.toggle('active', link.nativeElement.hash === `#${id}`);
-          });
-        }
-      },
-      { threshold: 1 },
+          return b.index - a.index;
+        })[0]
     );
-
-    this.sections.forEach((section) => observer.observe(section.nativeElement));
   }
 
   public toggleSidebar(): void {
