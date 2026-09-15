@@ -81,7 +81,7 @@
               <h2>Orientación inicial</h2>
               <p>
                 Comenzamos con la <strong>cara blanca hacia arriba</strong>. A partir del paso 6,
-                invertimos el cubo: <strong> cara blanca abajo y amarilla arriba</strong>.
+                invertimos el cubo: <strong> cara blanca abajo y cara amarilla arriba</strong>.
               </p>
             </div>
 
@@ -184,7 +184,7 @@
               rota la cara frontal para dejar el blanco hacia arriba.
             </p>
 
-            <div class="multiple-cubes">
+            <div class="list-of-cube-figures">
               <div class="cube-figure">
                 <svg
                   appCuboDeRubikSvg
@@ -235,7 +235,7 @@
               arriba y por último la cara frontal a la derecha.
             </p>
 
-            <div class="multiple-cubes">
+            <div class="list-of-cube-figures">
               <div class="cube-figure">
                 <svg
                   appCuboDeRubikSvg
@@ -298,7 +298,7 @@
               se puede recolocar fácilmente así:
             </p>
 
-            <div class="multiple-cubes">
+            <div class="list-of-cube-figures">
               <div class="cube-figure">
                 <svg
                   appCuboDeRubikSvg
@@ -338,7 +338,7 @@
               cara frontal para que quede abajo, y repetir el proceso anterior.
             </p>
 
-            <div class="multiple-cubes">
+            <div class="list-of-cube-figures">
               <div class="cube-figure">
                 <svg
                   appCuboDeRubikSvg
@@ -373,7 +373,7 @@
               blanco colocado en su sitio de nuevo. Después seguir los pasos anteriores.
             </p>
 
-            <div class="multiple-cubes">
+            <div class="list-of-cube-figures">
               <div class="cube-figure">
                 <svg
                   appCuboDeRubikSvg
@@ -489,7 +489,7 @@
               el lado que bajaste.
             </p>
 
-            <div class="multiple-cubes">
+            <div class="list-of-cube-figures">
               <div class="cube-figure">
                 <svg
                   appCuboDeRubikSvg
@@ -606,37 +606,43 @@
               pero la esquina quedará girada. No preocuparse.
             </p>
 
-            <div class="multiple-cubes">
-              <svg
-                appCuboDeRubikSvg
-                [top_1_2]="COLORS.WHITE"
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_2_3]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [left_2_1]="COLORS.GREEN"
-                [left_2_2]="COLORS.GREEN"
-                [left_3_3]="COLORS.RED"
-                [right_1_3]="COLORS.GREEN"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-              ></svg>
+            <div class="list-of-cube-figures">
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_1_2]="COLORS.WHITE"
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_2_3]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [left_2_1]="COLORS.GREEN"
+                  [left_2_2]="COLORS.GREEN"
+                  [left_3_3]="COLORS.RED"
+                  [right_1_3]="COLORS.GREEN"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                ></svg>
+                <span class="caption">Posición inicial con cuadro blanco abajo</span>
+              </div>
 
-              <svg
-                appCuboDeRubikSvg
-                [top_1_2]="COLORS.WHITE"
-                [top_2_1]="COLORS.WHITE"
-                [top_2_2]="COLORS.WHITE"
-                [top_2_3]="COLORS.WHITE"
-                [top_3_2]="COLORS.WHITE"
-                [top_3_3]="COLORS.RED"
-                [left_2_1]="COLORS.GREEN"
-                [left_2_2]="COLORS.GREEN"
-                [left_3_1]="COLORS.WHITE"
-                [right_1_1]="COLORS.GREEN"
-                [right_2_1]="COLORS.RED"
-                [right_2_2]="COLORS.RED"
-              ></svg>
+              <div class="cube-figure">
+                <svg
+                  appCuboDeRubikSvg
+                  [top_1_2]="COLORS.WHITE"
+                  [top_2_1]="COLORS.WHITE"
+                  [top_2_2]="COLORS.WHITE"
+                  [top_2_3]="COLORS.WHITE"
+                  [top_3_2]="COLORS.WHITE"
+                  [top_3_3]="COLORS.RED"
+                  [left_2_1]="COLORS.GREEN"
+                  [left_2_2]="COLORS.GREEN"
+                  [left_3_1]="COLORS.WHITE"
+                  [right_1_1]="COLORS.GREEN"
+                  [right_2_1]="COLORS.RED"
+                  [right_2_2]="COLORS.RED"
+                ></svg>
+                <span class="caption">Posición final con esquina desorientada</span>
+              </div>
             </div>
           </div>
 
@@ -648,7 +654,7 @@
               frontal. Entonces, ya podemos seguir los pasos anteriores.
             </p>
 
-            <div class="multiple-cubes">
+            <div class="list-of-cube-figures">
               <div class="cube-figure">
                 <svg
                   appCuboDeRubikSvg
@@ -729,7 +735,7 @@
               nuevo un caso ya conocido.
             </p>
 
-            <div class="multiple-cubes">
+            <div class="list-of-cube-figures">
               <div class="cube-figure">
                 <svg
                   appCuboDeRubikSvg
@@ -874,7 +880,7 @@
 
             <p class="margin-top bold-text">Este es un ejemplo:</p>
 
-            <div class="multiple-cubes">
+            <div class="list-of-cube-figures">
               <div class="cube-figure">
                 <svg
                   appCuboDeRubikSvg
@@ -1022,7 +1028,7 @@
 
         <p class="bold-text">Pasos a seguir si vamos a colocar el lateral de la izquierda:</p>
 
-        <ol class="moves-list">
+        <ol class="moves-list" style="--moves-list-number-of-items: 9">
           <li class="move-item side-bottom move-right">
             <span class="move-number">1</span>
             <span class="move-name">Inferior</span>
@@ -1107,7 +1113,7 @@
 
         <p class="bold-text">Pasos a seguir si vamos a colocar el lateral de la derecha:</p>
 
-        <ol class="moves-list">
+        <ol class="moves-list" style="--moves-list-number-of-items: 9">
           <li class="move-item side-bottom move-left">
             <span class="move-number">1</span>
             <span class="move-name">Inferior</span>
@@ -1233,7 +1239,7 @@
 
         <p class="bold-text">Con la cara blanca hacia arriba, repetir estos pasos:</p>
 
-        <ol class="moves-list">
+        <ol class="moves-list" style="--moves-list-number-of-items: 11">
           <li class="move-item side-right move-down">
             <span class="move-number">1</span>
             <span class="move-name">Derecho</span>
@@ -1386,11 +1392,11 @@
         </div>
 
         <p class="bold-text">
-          Con la cara amarilla hacia arriba y viendo la linea amarilla en horizontal, sigue estos
-          pasos hasta conseguir la cruz.
+          Con la <span class="underlined-text">cara amarilla hacia arriba</span> y viendo la linea
+          amarilla en horizontal, sigue estos pasos hasta conseguir la cruz.
         </p>
 
-        <ol class="moves-list">
+        <ol class="moves-list" style="--moves-list-number-of-items: 6">
           <li class="move-item side-front move-clockwise">
             <span class="move-number">1</span>
             <span class="move-name">Frontal</span>
@@ -1497,7 +1503,7 @@
           posición.
         </p>
 
-        <ol class="moves-list">
+        <ol class="moves-list" style="--moves-list-number-of-items: 7">
           <li class="move-item side-right move-up">
             <span class="move-number">1</span>
             <span class="move-name">Derecho</span>
@@ -1620,7 +1626,7 @@
           </div>
         </div>
 
-        <ol class="moves-list">
+        <ol class="moves-list" style="--moves-list-number-of-items: 8">
           <li class="move-item side-top move-left">
             <span class="move-number">1</span>
             <span class="move-name">Superior</span>
@@ -1767,7 +1773,7 @@
           </div>
         </div>
 
-        <ol class="moves-list">
+        <ol class="moves-list" style="--moves-list-number-of-items: 4">
           <li class="move-item side-right move-down">
             <span class="move-number">1</span>
             <span class="move-name">Derecho</span>
