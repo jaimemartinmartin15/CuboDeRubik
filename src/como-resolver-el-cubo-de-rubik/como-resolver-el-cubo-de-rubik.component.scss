@@ -1,3 +1,6 @@
+// defined in the component. Necessary to use scss variable for media queries
+$menu-break-point: 1110px;
+
 :host {
   display: block;
 
@@ -59,13 +62,14 @@
 
   svg[appBurgerSvg] {
     width: 30px;
+    cursor: pointer;
   }
 }
 
 .component {
   display: flex;
 
-  @media (max-width: 768px) {
+  @media (max-width: $menu-break-point) {
     display: block;
   }
 }
@@ -77,15 +81,15 @@
   background: #101d36;
   color: white;
   position: relative;
+  transition: transform 0.5s;
 
-  @media (max-width: 768px) {
+  @media (max-width: $menu-break-point) {
     position: fixed;
     top: var(--top-bar-height);
     left: 0;
     bottom: 0;
     overflow: auto;
     transform: translateX(-100%);
-    transition: transform 0.5s;
 
     &--opened {
       transform: translateX(0);
@@ -209,7 +213,7 @@
 .section-content {
   padding-left: 60px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 880px) {
     padding-left: 0;
   }
 }
@@ -219,9 +223,17 @@
   align-items: start;
   gap: 50px;
 
+  @media (max-width: 880px) {
+    flex-direction: column;
+  }
+
   svg[appCuboDeRubikSvg] {
     width: 200px;
     flex-shrink: 0;
+
+    @media (max-width: 880px) {
+      align-self: center;
+    }
   }
 }
 
@@ -261,11 +273,11 @@
   background-color: #f4f9ff;
   list-style: none;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1440px) {
     --columns: 2;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1110px) {
     --columns: 1;
   }
 

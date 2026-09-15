@@ -4,6 +4,7 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  HostBinding,
   Inject,
   PLATFORM_ID,
   QueryList,
@@ -41,6 +42,9 @@ export class ComoResolverElCuboDeRubikComponent implements AfterViewInit {
   @ViewChildren('stepSection')
   public sections: QueryList<ElementRef<HTMLElement>>;
 
+  @HostBinding('style.--menu-break-point')
+  public MENU_BREAKPOINT: string = '1110px';
+
   public readonly COLORS = {
     WHITE: '#FFFFFF',
     YELLOW: '#FFFF00',
@@ -57,7 +61,7 @@ export class ComoResolverElCuboDeRubikComponent implements AfterViewInit {
     breakpointObserver: BreakpointObserver,
   ) {
     this.showTopBar$ = breakpointObserver
-      .observe('(max-width: 768px)')
+      .observe(`(max-width: ${this.MENU_BREAKPOINT})`)
       .pipe(map((result) => result.matches));
   }
 
