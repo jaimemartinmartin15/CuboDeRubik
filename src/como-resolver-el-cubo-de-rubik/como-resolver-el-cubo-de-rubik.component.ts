@@ -1,13 +1,61 @@
-import { Component } from '@angular/core';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { AsyncPipe } from '@angular/common';
+import {
+  Component,
+  ElementRef,
+  HostBinding,
+  HostListener,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+} from '@angular/core';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { ArrowSvgComponent } from '../svg-output/arrow.component';
+import { BurgerSvgComponent } from '../svg-output/burger.component';
+import { CircularArrowSvgComponent } from '../svg-output/circular-arrow.component';
 import { CuboDeRubikSvgComponent } from '../svg-output/cubo-de-rubik.component';
+import { CubeRotationComponent } from './cube-rotation/cube-rotation.component';
 
 @Component({
   selector: 'app-como-resolver-el-cubo-de-rubik',
   templateUrl: './como-resolver-el-cubo-de-rubik.component.html',
   styleUrls: ['./como-resolver-el-cubo-de-rubik.component.scss'],
-  imports: [CuboDeRubikSvgComponent],
+  imports: [
+    ArrowSvgComponent,
+    BurgerSvgComponent,
+    CircularArrowSvgComponent,
+    CuboDeRubikSvgComponent,
+    CubeRotationComponent,
+    AsyncPipe,
+  ],
 })
 export class ComoResolverElCuboDeRubikComponent {
+  @ViewChild('sidebar')
+  public sidebarEl: ElementRef<HTMLElement>;
+
+  @ViewChildren('stepLink')
+  public stepLinks: QueryList<ElementRef<HTMLAnchorElement>>;
+
+  @ViewChildren('stepSection')
+  public sections: QueryList<ElementRef<HTMLElement>>;
+
+  @HostBinding('style.--menu-break-point')
+  public MENU_BREAKPOINT: string = '1110px';
+
+  @HostListener('window:scroll')
+  public onWindowScroll() {
+    const result = this.getMostVisibleSection();
+
+    // reset all links
+    [...this.stepLinks].forEach((sl) => sl.nativeElement.classList.remove('active'));
+
+    // highlight current link
+    [...this.stepLinks]
+      .find((sl) => sl.nativeElement.hash === `#${result.section.id}`)!
+      .nativeElement.classList.add('active');
+  }
+
   public readonly COLORS = {
     WHITE: '#FFFFFF',
     YELLOW: '#FFFF00',
@@ -15,17 +63,56 @@ export class ComoResolverElCuboDeRubikComponent {
     GREEN: '#4bb911',
     RED: '#FF0000',
     ORANGE: '#FFA500',
+  };
 
-    ARROW: '#ffffff',
-    SELECTED: '#ffffff',
-    SELECTED_LIGHT: '#b0d5ff',
-  };
-  public readonly COLORS_DARK = {
-    WHITE: '#e6e6e6',
-    YELLOW: '#F5E6A8',
-    BLUE: '#A8C4E0',
-    GREEN: '#B3D1B5',
-    RED: '#E3A9A9',
-    ORANGE: '#F2C39B',
-  };
+  public showTopBar$: Observable<boolean>;
+
+  public constructor(breakpointObserver: BreakpointObserver) {
+    this.showTopBar$ = breakpointObserver
+      .observe(`(max-width: ${this.MENU_BREAKPOINT})`)
+      .pipe(map((result) => result.matches));
+  }
+
+  private getMostVisibleSection() {
+    const viewportTop = 0;
+    const viewportBottom = window.innerHeight;
+
+    return (
+      [...this.sections]
+        .map((s) => s.nativeElement)
+        .map((section, index) => {
+          const rect = section.getBoundingClientRect();
+
+          const visibleTop = Math.max(rect.top, viewportTop);
+          const visibleBottom = Math.min(rect.bottom, viewportBottom);
+
+          const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+          const sectionHeight = rect.height;
+
+          const visibility = sectionHeight > 0 ? visibleHeight / sectionHeight : 0;
+
+          return {
+            section,
+            index,
+            visibility,
+          };
+        })
+        // highest visibility first, for equal visibility, later section wins.
+        .sort((a, b) => {
+          if (a.visibility !== b.visibility) {
+            return b.visibility - a.visibility;
+          }
+
+          return b.index - a.index;
+        })[0]
+    );
+  }
+
+  public toggleSidebar(): void {
+    this.sidebarEl.nativeElement.classList.toggle('sidebar--opened');
+  }
+
+  public hideSidebar(): void {
+    this.sidebarEl.nativeElement.classList.remove('sidebar--opened');
+  }
 }
