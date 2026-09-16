@@ -6,6 +6,7 @@
     "start:public": "ng serve -o --host 0.0.0.0 --port 80",
     "start:prod": "mv dist/cuboderubik dist/dist && mv dist/dist/browser dist/dist/como-resolver-el-cubo-de-rubik && cd dist/dist/ && live-server . --open=como-resolver-el-cubo-de-rubik",
     "build": "ng build --base-href /como-resolver-el-cubo-de-rubik/",
+    "aws-checks": "ng run cuboderubik:aws-checks",
     "icons": "ng run cuboderubik:icons"
   },
   "private": true,
@@ -13,16 +14,10 @@
   "dependencies": {
     "@angular/cdk": "^22.1.6",
     "@angular/common": "^22.1.6",
-    "@angular/compiler": "^22.1.6",
     "@angular/core": "^22.1.6",
-    "@angular/forms": "^22.1.6",
     "@angular/platform-browser": "^22.1.6",
-    "@angular/platform-server": "^22.1.6",
-    "@angular/router": "^22.1.6",
-    "@angular/ssr": "^22.1.8",
     "@jaimemartinmartin15/jei-devkit-angular-shared": "^8.1.0",
     "@jaimemartinmartin15/svg-icons": "^1.9.0",
-    "express": "^5.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
