@@ -27,8 +27,8 @@ jobs:
         run: npm run icons
       - name: Build
         run: npm run build
-      - name: AWS checks
-        run: npm run aws-checks
+      - name: Prepare files to upload
+        run: cp ./dist/cuboderubik/3rdpartylicenses.txt ./dist/cuboderubik/browser/
       - name: Set AWS credentials
         uses: aws-actions/configure-aws-credentials@v6
         with:
@@ -37,9 +37,4 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-south-2
       - name: Deploy
-        run: |
-          aws --version
-          aws s3 sync ./dist/cuboderubik/browser \
-                      s3://jaimeelingeniero.es/como-resolver-el-cubo-de-rubik \
-                      --delete
-          aws s3 cp ./dist/cuboderubik/3rdpartylicenses.txt s3://jaimeelingeniero.es/como-resolver-el-cubo-de-rubik/3rdpartylicenses.txt
+        run: npm run deploy -- --dry-run=false

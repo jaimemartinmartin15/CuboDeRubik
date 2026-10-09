@@ -104,11 +104,11 @@
             "configFile": "src/svg.json"
           }
         },
-        "aws-checks": {
-          "builder": "@jaimemartinmartin15/jei-devkit-angular-builders:aws-checks",
+        "deploy": {
+          "builder": "@jaimemartinmartin15/jei-devkit-angular-builders:aws-deploy",
           "options": {
-            "distFolder": "dist/cuboderubik/browser",
-            "serverPath": "como-resolver-el-cubo-de-rubik"
+            "serverSegment": "como-resolver-el-cubo-de-rubik",
+            "distFolder": "dist/cuboderubik/browser"
           }
         }
       }
