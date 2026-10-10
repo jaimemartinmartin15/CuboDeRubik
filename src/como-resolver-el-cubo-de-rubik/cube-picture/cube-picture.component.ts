@@ -7,12 +7,12 @@ type SquareToPaint = [face: number, square: number, color: string];
 const DEFAULT_COLOR = '#dfdfdfff';
 
 @Component({
-  selector: 'app-cube-figure',
-  templateUrl: './cube-figure.component.html',
+  selector: 'app-cube-picture',
+  templateUrl: './cube-picture.component.html',
   styleUrls: ['./cube-figure.component.scss'],
   imports: [CuboDeRubikSvgComponent, ExpandedRubikCubeSvgComponent],
 })
-export class CubeFigureComponent {
+export class CubePictureComponent {
   public static showExpanded = signal<boolean>(false);
 
   @Input()
@@ -20,11 +20,11 @@ export class CubeFigureComponent {
 
   @HostListener('click')
   public toggleView(): void {
-    CubeFigureComponent.showExpanded.update((v) => !v);
+    CubePictureComponent.showExpanded.update((v) => !v);
   }
 
   public get isExpandedView(): boolean {
-    return CubeFigureComponent.showExpanded();
+    return CubePictureComponent.showExpanded();
   }
 
   public getSquareColor(face: number, square: number): string {
