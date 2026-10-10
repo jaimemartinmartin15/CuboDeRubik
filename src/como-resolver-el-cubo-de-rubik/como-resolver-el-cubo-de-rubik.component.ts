@@ -15,6 +15,7 @@ import { ArrowSvgComponent } from '../svg-output/arrow.component';
 import { BurgerSvgComponent } from '../svg-output/burger.component';
 import { CircularArrowSvgComponent } from '../svg-output/circular-arrow.component';
 import { CuboDeRubikSvgComponent } from '../svg-output/cubo-de-rubik.component';
+import { CubePictureComponent } from './cube-picture/cube-picture.component';
 import { CubeRotationComponent } from './cube-rotation/cube-rotation.component';
 
 @Component({
@@ -27,6 +28,7 @@ import { CubeRotationComponent } from './cube-rotation/cube-rotation.component';
     CircularArrowSvgComponent,
     CuboDeRubikSvgComponent,
     CubeRotationComponent,
+    CubePictureComponent,
     AsyncPipe,
   ],
 })

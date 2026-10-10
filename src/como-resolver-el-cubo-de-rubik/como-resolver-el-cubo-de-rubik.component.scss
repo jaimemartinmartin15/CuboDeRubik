@@ -8,6 +8,16 @@ $menu-break-point: 1110px;
   --top-bar-height: 55px;
 }
 
+.cube-picture--small {
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+}
+
+.description-block {
+  margin-top: 10px;
+}
+
 // #region global class
 .cube-figure {
   display: flex;
@@ -210,13 +220,14 @@ $menu-break-point: 1110px;
   }
 }
 
-.section-content {
-  padding-left: 60px;
+// TODO delete it (I no longer want margin on the left side)
+// .section-content {
+//   // padding-left: 60px;
 
-  @media (max-width: 880px) {
-    padding-left: 0;
-  }
-}
+//   @media (max-width: 880px) {
+//     padding-left: 0;
+//   }
+// }
 
 .cube-and-description {
   display: flex;
