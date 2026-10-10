@@ -9,7 +9,7 @@ const DEFAULT_COLOR = '#dfdfdfff';
 @Component({
   selector: 'app-cube-picture',
   templateUrl: './cube-picture.component.html',
-  styleUrls: ['./cube-figure.component.scss'],
+  styleUrls: ['./cube-picture.component.scss'],
   imports: [CuboDeRubikSvgComponent, ExpandedRubikCubeSvgComponent],
 })
 export class CubePictureComponent {
