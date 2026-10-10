@@ -57,12 +57,12 @@ export class ComoResolverElCuboDeRubikComponent {
   }
 
   public readonly COLORS = {
-    WHITE: '#FFFFFF',
-    YELLOW: '#FFFF00',
-    BLUE: '#0000FF',
+    WHITE: '#ffffff',
+    YELLOW: '#ffff00',
+    BLUE: '#0000ff',
     GREEN: '#4bb911',
-    RED: '#FF0000',
-    ORANGE: '#FFA500',
+    RED: '#ff0000',
+    ORANGE: '#ffa500',
   };
 
   public showTopBar$: Observable<boolean>;
