@@ -32,23 +32,23 @@
     <rect name="8" x="161" y="202" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face3_8" />
     <rect name="9" x="201" y="202" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face3_9" />
   <!-- </g> -->
-  <!-- <g name="cara azul"> -->
+  <!-- <g name="cara roja"> -->
     <rect name="1" x="241" y="122" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face4_1" />
     <rect name="2" x="281" y="122" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face4_2" />
     <rect name="3" x="321" y="122" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face4_3" />
     <rect name="4" x="241" y="162" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face4_4" />
-    <rect name="5" x="281" y="162" width="40" height="40" rx="0" ry="0" fill="#0000ffff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face4_5" />
+    <rect name="5" x="281" y="162" width="40" height="40" rx="0" ry="0" fill="#ff0000ff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face4_5" />
     <rect name="6" x="321" y="162" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face4_6" />
     <rect name="7" x="241" y="202" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face4_7" />
     <rect name="8" x="281" y="202" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face4_8" />
     <rect name="9" x="321" y="202" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face4_9" />
   <!-- </g> -->
-  <!-- <g name="cara roja"> -->
+  <!-- <g name="cara azul"> -->
     <rect name="1" x="361" y="122" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face5_1" />
     <rect name="2" x="401" y="122" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face5_2" />
     <rect name="3" x="441" y="122" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face5_3" />
     <rect name="4" x="361" y="162" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face5_4" />
-    <rect name="5" x="401" y="162" width="40" height="40" rx="0" ry="0" fill="#ff0000ff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face5_5" />
+    <rect name="5" x="401" y="162" width="40" height="40" rx="0" ry="0" fill="#0000ffff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face5_5" />
     <rect name="6" x="441" y="162" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face5_6" />
     <rect name="7" x="361" y="202" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face5_7" />
     <rect name="8" x="401" y="202" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face5_8" />
