@@ -2,7 +2,7 @@ import { Component, HostListener, Input, signal } from '@angular/core';
 import { CuboDeRubikSvgComponent } from '../../svg-output/cubo-de-rubik.component';
 import { ExpandedRubikCubeSvgComponent } from '../../svg-output/expanded-rubik-cube.component';
 
-type SquareToPaint = [face: number, square: number, color: string];
+export type SquareToPaint = [face: number, square: number, color: string];
 
 const DEFAULT_COLOR = '#dfdfdfff';
 

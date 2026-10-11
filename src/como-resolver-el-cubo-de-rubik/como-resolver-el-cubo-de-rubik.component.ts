@@ -15,7 +15,7 @@ import { ArrowSvgComponent } from '../svg-output/arrow.component';
 import { BurgerSvgComponent } from '../svg-output/burger.component';
 import { CircularArrowSvgComponent } from '../svg-output/circular-arrow.component';
 import { CuboDeRubikSvgComponent } from '../svg-output/cubo-de-rubik.component';
-import { CubePictureComponent } from './cube-picture/cube-picture.component';
+import { CubePictureComponent, SquareToPaint } from './cube-picture/cube-picture.component';
 import { CubeRotationComponent } from './cube-rotation/cube-rotation.component';
 
 @Component({
@@ -66,6 +66,37 @@ export class ComoResolverElCuboDeRubikComponent {
     RED: '#ff0000',
     ORANGE: '#ffa500',
   };
+
+  public readonly WHITE_FACE: SquareToPaint[] = [
+    [1, 1, this.COLORS.WHITE],
+    [1, 2, this.COLORS.WHITE],
+    [1, 3, this.COLORS.WHITE],
+    [1, 4, this.COLORS.WHITE],
+    [1, 5, this.COLORS.WHITE],
+    [1, 6, this.COLORS.WHITE],
+    [1, 7, this.COLORS.WHITE],
+    [1, 8, this.COLORS.WHITE],
+    [1, 9, this.COLORS.WHITE],
+  ];
+
+  public readonly FIRST_ROW: SquareToPaint[] = [
+    [2, 1, this.COLORS.ORANGE],
+    [2, 2, this.COLORS.ORANGE],
+    [2, 3, this.COLORS.ORANGE],
+    [2, 5, this.COLORS.ORANGE],
+    [3, 1, this.COLORS.GREEN],
+    [3, 2, this.COLORS.GREEN],
+    [3, 3, this.COLORS.GREEN],
+    [3, 5, this.COLORS.GREEN],
+    [4, 1, this.COLORS.RED],
+    [4, 2, this.COLORS.RED],
+    [4, 3, this.COLORS.RED],
+    [4, 5, this.COLORS.RED],
+    [5, 1, this.COLORS.BLUE],
+    [5, 2, this.COLORS.BLUE],
+    [5, 3, this.COLORS.BLUE],
+    [5, 5, this.COLORS.BLUE],
+  ];
 
   public showTopBar$: Observable<boolean>;
 
