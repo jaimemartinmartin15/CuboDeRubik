@@ -98,6 +98,21 @@ export class ComoResolverElCuboDeRubikComponent {
     [5, 5, this.COLORS.BLUE],
   ];
 
+  public readonly SECOND_ROW: SquareToPaint[] = [
+    [2, 4, this.COLORS.ORANGE],
+    [2, 5, this.COLORS.ORANGE],
+    [2, 6, this.COLORS.ORANGE],
+    [3, 4, this.COLORS.GREEN],
+    [3, 5, this.COLORS.GREEN],
+    [3, 6, this.COLORS.GREEN],
+    [4, 4, this.COLORS.RED],
+    [4, 5, this.COLORS.RED],
+    [4, 6, this.COLORS.RED],
+    [5, 4, this.COLORS.BLUE],
+    [5, 5, this.COLORS.BLUE],
+    [5, 6, this.COLORS.BLUE],
+  ];
+
   public showTopBar$: Observable<boolean>;
 
   public constructor(breakpointObserver: BreakpointObserver) {
