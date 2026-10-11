@@ -1176,100 +1176,125 @@
       </h1>
 
       <div class="section-content">
-        <div class="cube-and-description">
-          <svg
-            appCuboDeRubikSvg
-            [top_1_2]="COLORS.YELLOW"
-            [top_2_1]="COLORS.YELLOW"
-            [top_2_2]="COLORS.YELLOW"
-            [top_2_3]="COLORS.YELLOW"
-            [top_3_2]="COLORS.YELLOW"
-            [left_1_2]="COLORS.BLUE"
-            [left_1_3]="COLORS.BLUE"
-            [left_2_2]="COLORS.BLUE"
-            [left_2_3]="COLORS.BLUE"
-            [left_3_2]="COLORS.BLUE"
-            [left_3_3]="COLORS.BLUE"
-            [right_1_2]="COLORS.RED"
-            [right_1_3]="COLORS.RED"
-            [right_2_2]="COLORS.RED"
-            [right_2_3]="COLORS.RED"
-            [right_3_2]="COLORS.RED"
-            [right_3_3]="COLORS.RED"
-          ></svg>
+        <div class="description-block">
+          <h2>Objetivo</h2>
 
-          <div class="description">
-            <div class="description-block">
-              <h2>Objetivo</h2>
-              <p>
-                El objetivo de este paso es colocar los laterales amarillos en su lugar, es decir,
-                formar una cruz amarilla en la cara superior. No importa que el otro color de los
-                laterales no esté alineado con la otra cara.
-              </p>
-            </div>
-          </div>
+          <p>
+            El objetivo de este paso es colocar los laterales amarillos en la cara amarilla, es
+            decir, formar una cruz amarilla en la cara superior. No importa que los laterales no
+            estén en su posición. Solo buscamos una cruz amarilla.
+          </p>
+
+          <app-cube-picture
+            class="cube-picture--medium"
+            [squaresToPaint]="[
+              [1, 2, COLORS.YELLOW],
+              [1, 4, COLORS.YELLOW],
+              [1, 5, COLORS.YELLOW],
+              [1, 6, COLORS.YELLOW],
+              [1, 8, COLORS.YELLOW],
+              [2, 4, COLORS.ORANGE],
+              [2, 5, COLORS.ORANGE],
+              [2, 6, COLORS.ORANGE],
+              [2, 7, COLORS.ORANGE],
+              [2, 8, COLORS.ORANGE],
+              [2, 9, COLORS.ORANGE],
+              [3, 4, COLORS.BLUE],
+              [3, 5, COLORS.BLUE],
+              [3, 6, COLORS.BLUE],
+              [3, 7, COLORS.BLUE],
+              [3, 8, COLORS.BLUE],
+              [3, 9, COLORS.BLUE],
+              [4, 4, COLORS.RED],
+              [4, 5, COLORS.RED],
+              [4, 6, COLORS.RED],
+              [4, 7, COLORS.RED],
+              [4, 8, COLORS.RED],
+              [4, 9, COLORS.RED],
+              [5, 4, COLORS.GREEN],
+              [5, 5, COLORS.GREEN],
+              [5, 6, COLORS.GREEN],
+              [5, 7, COLORS.GREEN],
+              [5, 8, COLORS.GREEN],
+              [5, 9, COLORS.GREEN],
+              [6, 1, COLORS.WHITE],
+              [6, 2, COLORS.WHITE],
+              [6, 3, COLORS.WHITE],
+              [6, 4, COLORS.WHITE],
+              [6, 5, COLORS.WHITE],
+              [6, 6, COLORS.WHITE],
+              [6, 7, COLORS.WHITE],
+              [6, 8, COLORS.WHITE],
+              [6, 9, COLORS.WHITE],
+            ]"
+          ></app-cube-picture>
         </div>
 
-        <p class="bold-text">
-          Con la <span class="underlined-text">cara amarilla hacia arriba</span> y viendo la linea
-          amarilla en horizontal, sigue estos pasos hasta conseguir la cruz.
-        </p>
+        <div class="description-block">
+          <h2>Procedimiento</h2>
 
-        <ol class="moves-list" style="--moves-list-number-of-items: 6">
-          <li class="move-item side-front move-clockwise">
-            <span class="move-number">1</span>
-            <span class="move-name">Frontal</span>
-            <app-cube-rotation class="mini-cube" [sideToRotate]="'front'"></app-cube-rotation>
-            <span class="move-arrow mirror">
-              <svg appCircularArrowSvg [color]="'#9c00ff'"></svg>
-            </span>
-          </li>
+          <p>
+            Con la <span class="bold-text underlined-text">cara amarilla hacia arriba</span> y
+            viendo la <span class="bold-text">linea amarilla en horizontal</span>, sigue estos pasos
+            hasta conseguir la cruz (repetir en bucle hasta que aparezca la cruz).
+          </p>
 
-          <li class="move-item side-right move-up">
-            <span class="move-number">2</span>
-            <span class="move-name">Derecho</span>
-            <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
-            <span class="move-arrow">
-              <svg appArrowSvg [color]="'#0b9b61'"></svg>
-            </span>
-          </li>
+          <ol class="moves-list" style="--moves-list-number-of-items: 6">
+            <li class="move-item side-front move-clockwise">
+              <span class="move-number">1</span>
+              <span class="move-name">Frontal</span>
+              <app-cube-rotation class="mini-cube" [sideToRotate]="'front'"></app-cube-rotation>
+              <span class="move-arrow mirror">
+                <svg appCircularArrowSvg [color]="'#9c00ff'"></svg>
+              </span>
+            </li>
 
-          <li class="move-item side-top move-left">
-            <span class="move-number">3</span>
-            <span class="move-name">Superior</span>
-            <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
-            <span class="move-arrow">
-              <svg appArrowSvg [color]="'#ed2634'"></svg>
-            </span>
-          </li>
+            <li class="move-item side-right move-up">
+              <span class="move-number">2</span>
+              <span class="move-name">Derecho</span>
+              <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+              <span class="move-arrow">
+                <svg appArrowSvg [color]="'#0b9b61'"></svg>
+              </span>
+            </li>
 
-          <li class="move-item side-right move-down">
-            <span class="move-number">4</span>
-            <span class="move-name">Derecho</span>
-            <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
-            <span class="move-arrow">
-              <svg appArrowSvg [color]="'#0066FF'"></svg>
-            </span>
-          </li>
+            <li class="move-item side-top move-left">
+              <span class="move-number">3</span>
+              <span class="move-name">Superior</span>
+              <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
+              <span class="move-arrow">
+                <svg appArrowSvg [color]="'#ed2634'"></svg>
+              </span>
+            </li>
 
-          <li class="move-item side-top move-right">
-            <span class="move-number">5</span>
-            <span class="move-name">Superior</span>
-            <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
-            <span class="move-arrow">
-              <svg appArrowSvg [color]="'#e99b00'"></svg>
-            </span>
-          </li>
+            <li class="move-item side-right move-down">
+              <span class="move-number">4</span>
+              <span class="move-name">Derecho</span>
+              <app-cube-rotation class="mini-cube" [sideToRotate]="'right'"></app-cube-rotation>
+              <span class="move-arrow">
+                <svg appArrowSvg [color]="'#0066FF'"></svg>
+              </span>
+            </li>
 
-          <li class="move-item side-front move-counter-clockwise">
-            <span class="move-number">6</span>
-            <span class="move-name">Frontal</span>
-            <app-cube-rotation class="mini-cube" [sideToRotate]="'front'"></app-cube-rotation>
-            <span class="move-arrow">
-              <svg appCircularArrowSvg [color]="'#BD5E8C'"></svg>
-            </span>
-          </li>
-        </ol>
+            <li class="move-item side-top move-right">
+              <span class="move-number">5</span>
+              <span class="move-name">Superior</span>
+              <app-cube-rotation class="mini-cube" [sideToRotate]="'top'"></app-cube-rotation>
+              <span class="move-arrow">
+                <svg appArrowSvg [color]="'#e99b00'"></svg>
+              </span>
+            </li>
+
+            <li class="move-item side-front move-counter-clockwise">
+              <span class="move-number">6</span>
+              <span class="move-name">Frontal</span>
+              <app-cube-rotation class="mini-cube" [sideToRotate]="'front'"></app-cube-rotation>
+              <span class="move-arrow">
+                <svg appCircularArrowSvg [color]="'#BD5E8C'"></svg>
+              </span>
+            </li>
+          </ol>
+        </div>
       </div>
     </section>
 
