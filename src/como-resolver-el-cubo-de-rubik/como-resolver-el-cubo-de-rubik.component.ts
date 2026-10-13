@@ -9,6 +9,7 @@ import {
   ViewChild,
   ViewChildren,
 } from '@angular/core';
+import { intervalArray } from '@jaimemartinmartin15/jei-devkit-angular-shared';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ArrowSvgComponent } from '../svg-output/arrow.component';
@@ -65,58 +66,25 @@ export class ComoResolverElCuboDeRubikComponent {
     ORANGE: '#ffa500',
   };
 
-  public readonly WHITE_FACE: SquareToPaint[] = [
-    [1, 1, this.COLORS.WHITE],
-    [1, 2, this.COLORS.WHITE],
-    [1, 3, this.COLORS.WHITE],
-    [1, 4, this.COLORS.WHITE],
-    [1, 5, this.COLORS.WHITE],
-    [1, 6, this.COLORS.WHITE],
-    [1, 7, this.COLORS.WHITE],
-    [1, 8, this.COLORS.WHITE],
-    [1, 9, this.COLORS.WHITE],
-  ];
-
-  public readonly FIRST_ROW: SquareToPaint[] = [
-    [2, 1, this.COLORS.ORANGE],
-    [2, 2, this.COLORS.ORANGE],
-    [2, 3, this.COLORS.ORANGE],
-    [2, 5, this.COLORS.ORANGE],
-    [3, 1, this.COLORS.GREEN],
-    [3, 2, this.COLORS.GREEN],
-    [3, 3, this.COLORS.GREEN],
-    [3, 5, this.COLORS.GREEN],
-    [4, 1, this.COLORS.RED],
-    [4, 2, this.COLORS.RED],
-    [4, 3, this.COLORS.RED],
-    [4, 5, this.COLORS.RED],
-    [5, 1, this.COLORS.BLUE],
-    [5, 2, this.COLORS.BLUE],
-    [5, 3, this.COLORS.BLUE],
-    [5, 5, this.COLORS.BLUE],
-  ];
-
-  public readonly SECOND_ROW: SquareToPaint[] = [
-    [2, 4, this.COLORS.ORANGE],
-    [2, 5, this.COLORS.ORANGE],
-    [2, 6, this.COLORS.ORANGE],
-    [3, 4, this.COLORS.GREEN],
-    [3, 5, this.COLORS.GREEN],
-    [3, 6, this.COLORS.GREEN],
-    [4, 4, this.COLORS.RED],
-    [4, 5, this.COLORS.RED],
-    [4, 6, this.COLORS.RED],
-    [5, 4, this.COLORS.BLUE],
-    [5, 5, this.COLORS.BLUE],
-    [5, 6, this.COLORS.BLUE],
-  ];
-
   public showTopBar$: Observable<boolean>;
 
   public constructor(breakpointObserver: BreakpointObserver) {
     this.showTopBar$ = breakpointObserver
       .observe(`(max-width: ${this.MENU_BREAKPOINT})`)
       .pipe(map((result) => result.matches));
+  }
+
+  public paintFace(face: number, color: string): SquareToPaint[] {
+    return intervalArray(9).map((n) => [face, n, color]);
+  }
+
+  public paintRow(face: number, row: 1 | 2 | 3, color: string): SquareToPaint[] {
+    const rowsMapping = {
+      1: [1, 2, 3],
+      2: [4, 5, 6],
+      3: [7, 8, 9],
+    };
+    return rowsMapping[row].map((n) => [face, n, color]);
   }
 
   private getMostVisibleSection() {
