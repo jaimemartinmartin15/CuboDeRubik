@@ -108,7 +108,8 @@
           "builder": "@jaimemartinmartin15/jei-devkit-angular-builders:aws-deploy",
           "options": {
             "serverSegment": "como-resolver-el-cubo-de-rubik",
-            "distFolder": "dist/cuboderubik/browser"
+            "distFolder": "dist/cuboderubik/browser",
+            "noCache": ["index.html"]
           }
         }
       }
