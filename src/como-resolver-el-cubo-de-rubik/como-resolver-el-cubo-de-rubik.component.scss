@@ -8,23 +8,43 @@ $menu-break-point: 1110px;
   --top-bar-height: 55px;
 }
 
+// #region global class
 .cube-picture--small {
   width: 120px;
-  height: 120px;
+  height: 129px;
   padding: 10px;
 }
 
 .cube-picture--medium {
   width: 200px;
-  height: 200px;
+  height: 215px;
   padding: 10px;
+
+  @media (max-width: 530px) {
+    align-self: center;
+  }
 }
 
 .description-block {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
   margin-top: 10px;
+  border-radius: 16px;
+  border: 1px solid #edf2f8;
+  background: #f8faff;
+
+  h2 {
+    margin: 0;
+    color: var(--title-color);
+    font-size: 18px;
+  }
+
+  p {
+    margin: 5px 0;
+  }
 }
 
-// #region global class
 .cube-figure {
   display: flex;
   flex-direction: column;
@@ -33,10 +53,6 @@ $menu-break-point: 1110px;
   font-size: 14px;
   color: #3c3c3c;
   max-width: 140px;
-
-  svg[appCuboDeRubikSvg] {
-    width: 100%;
-  }
 
   .caption {
     text-wrap: balance;
@@ -48,6 +64,11 @@ $menu-break-point: 1110px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+
+  @media (max-width: 530px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .margin-top {
@@ -180,7 +201,7 @@ $menu-break-point: 1110px;
 }
 
 .section {
-  padding: 30px;
+  padding: 20px;
   background: #f2f6fe;
   border: 1px solid #e1e7f0;
   border-radius: 15px;
@@ -226,87 +247,22 @@ $menu-break-point: 1110px;
   }
 }
 
-// TODO delete it (I no longer want margin on the left side)
-// .section-content {
-//   // padding-left: 60px;
-
-//   @media (max-width: 880px) {
-//     padding-left: 0;
-//   }
-// }
-
-.cube-and-description {
-  display: flex;
-  align-items: start;
-  gap: 50px;
-
-  @media (max-width: 880px) {
-    flex-direction: column;
-  }
-
-  svg[appCuboDeRubikSvg] {
-    width: 200px;
-    flex-shrink: 0;
-
-    @media (max-width: 880px) {
-      align-self: center;
-    }
-  }
-}
-
-.description {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.description-block {
-  padding: 1.25rem 1.4rem;
-  border-radius: 16px;
-  border: 1px solid #edf2f8;
-  background: #f8faff;
-
-  h2 {
-    margin: 0;
-    color: var(--title-color);
-    font-size: 18px;
-  }
-
-  p {
-    margin: 5px 0;
-  }
-}
-
 .moves-list {
-  --columns: 3;
-  display: grid;
-  grid-template-rows: repeat(calc((var(--moves-list-number-of-items) + var(--columns) - 1) / var(--columns)), auto);
-  grid-auto-flow: column;
-  gap: 5px;
-  column-gap: 45px;
-  padding: 12px;
-  border: 1px solid #dce8f5;
-  border-radius: 15px;
-  background-color: #f4f9ff;
+  padding: 0;
   list-style: none;
-
-  @media (max-width: 1440px) {
-    --columns: 2;
-  }
-
-  @media (max-width: 1110px) {
-    --columns: 1;
-  }
 
   .move-item {
     display: flex;
     align-items: center;
     gap: 20px;
     padding: 8px 10px;
+    margin-top: 5px;
     border: 1px solid #e3edf8;
     border-radius: 15px;
     background: #ffffff;
     box-shadow: 0 2px 5px rgba(30, 80, 130, 0.04);
+    width: 100%;
+    max-width: 350px;
 
     &.move {
       &-down {

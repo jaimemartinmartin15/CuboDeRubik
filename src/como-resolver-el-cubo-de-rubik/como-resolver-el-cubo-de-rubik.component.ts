@@ -14,7 +14,6 @@ import { map } from 'rxjs/operators';
 import { ArrowSvgComponent } from '../svg-output/arrow.component';
 import { BurgerSvgComponent } from '../svg-output/burger.component';
 import { CircularArrowSvgComponent } from '../svg-output/circular-arrow.component';
-import { CuboDeRubikSvgComponent } from '../svg-output/cubo-de-rubik.component';
 import { CubePictureComponent, SquareToPaint } from './cube-picture/cube-picture.component';
 import { CubeRotationComponent } from './cube-rotation/cube-rotation.component';
 
@@ -26,7 +25,6 @@ import { CubeRotationComponent } from './cube-rotation/cube-rotation.component';
     ArrowSvgComponent,
     BurgerSvgComponent,
     CircularArrowSvgComponent,
-    CuboDeRubikSvgComponent,
     CubeRotationComponent,
     CubePictureComponent,
     AsyncPipe,
