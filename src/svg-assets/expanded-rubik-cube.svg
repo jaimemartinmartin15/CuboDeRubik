@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483 364">
+  <!-- <g name="cara blanca"> -->
+    <rect name="1" x="121" y="2" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face1_1" />
+    <rect name="2" x="161" y="2" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face1_2" />
+    <rect name="3" x="201" y="2" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face1_3"/>
+    <rect name="4" x="121" y="42" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face1_4"/>
+    <rect name="5" x="161" y="42" width="40" height="40" rx="0" ry="0" fill="#ffffffff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face1_5"/>
+    <rect name="6" x="201" y="42" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face1_6"/>
+    <rect name="7" x="121" y="82" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face1_7"/>
+    <rect name="8" x="161" y="82" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face1_8"/>
+    <rect name="9" x="201" y="82" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face1_9"/>
+  <!-- </g> -->
+  <!-- <g name="cara naranja"> -->
+    <rect name="1" x="1" y="122" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face2_1" />
+    <rect name="2" x="41" y="122" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face2_2" />
+    <rect name="3" x="81" y="122" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face2_3" />
+    <rect name="4" x="1" y="162" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face2_4" />
+    <rect name="5" x="41" y="162" width="40" height="40" rx="0" ry="0" fill="#ffa500ff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face2_5" />
+    <rect name="6" x="81" y="162" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face2_6" />
+    <rect name="7" x="1" y="202" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face2_7" />
+    <rect name="8" x="41" y="202" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face2_8" />
+    <rect name="9" x="81" y="202" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face2_9" />
+  <!-- </g> -->
+  <!-- <g name="cara verde"> -->
+    <rect name="1" x="121" y="122" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face3_1" />
+    <rect name="2" x="161" y="122" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face3_2" />
+    <rect name="3" x="201" y="122" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face3_3" />
+    <rect name="4" x="121" y="162" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face3_4" />
+    <rect name="5" x="161" y="162" width="40" height="40" rx="0" ry="0" fill="#4bb911ff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face3_5" />
+    <rect name="6" x="201" y="162" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face3_6" />
+    <rect name="7" x="121" y="202" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face3_7" />
+    <rect name="8" x="161" y="202" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face3_8" />
+    <rect name="9" x="201" y="202" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face3_9" />
+  <!-- </g> -->
+  <!-- <g name="cara roja"> -->
+    <rect name="1" x="241" y="122" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face4_1" />
+    <rect name="2" x="281" y="122" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face4_2" />
+    <rect name="3" x="321" y="122" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face4_3" />
+    <rect name="4" x="241" y="162" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face4_4" />
+    <rect name="5" x="281" y="162" width="40" height="40" rx="0" ry="0" fill="#ff0000ff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face4_5" />
+    <rect name="6" x="321" y="162" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face4_6" />
+    <rect name="7" x="241" y="202" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face4_7" />
+    <rect name="8" x="281" y="202" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face4_8" />
+    <rect name="9" x="321" y="202" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face4_9" />
+  <!-- </g> -->
+  <!-- <g name="cara azul"> -->
+    <rect name="1" x="361" y="122" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face5_1" />
+    <rect name="2" x="401" y="122" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face5_2" />
+    <rect name="3" x="441" y="122" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face5_3" />
+    <rect name="4" x="361" y="162" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face5_4" />
+    <rect name="5" x="401" y="162" width="40" height="40" rx="0" ry="0" fill="#0000ffff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face5_5" />
+    <rect name="6" x="441" y="162" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face5_6" />
+    <rect name="7" x="361" y="202" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face5_7" />
+    <rect name="8" x="401" y="202" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face5_8" />
+    <rect name="9" x="441" y="202" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face5_9" />
+  <!-- </g> -->
+  <!-- <g name="cara amarilla"> -->
+    <rect name="1" x="121" y="242" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face6_1"/>
+    <rect name="2" x="161" y="242" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face6_2"/>
+    <rect name="3" x="201" y="242" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face6_3"/>
+    <rect name="4" x="121" y="282" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face6_4"/>
+    <rect name="5" x="161" y="282" width="40" height="40" rx="0" ry="0" fill="#ffff00ff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face6_5"/>
+    <rect name="6" x="201" y="282" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face6_6"/>
+    <rect name="7" x="121" y="322" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face6_7"/>
+    <rect name="8" x="161" y="322" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face6_8"/>
+    <rect name="9" x="201" y="322" width="40" height="40" rx="0" ry="0" fill="#dcdcdcff" stroke="#00000000" stroke-width="0" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" data-fill-binding="face6_9"/>
+  <!-- </g> -->
+  <!-- <g name="lineas"> -->
+    <rect name="contorno_blanco" x="121" y="2" width="120" height="120" rx="0" ry="0" fill="#00000000" stroke="#000000ff" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" />
+    <path name="separacion_blanco" d="M161 2V122M201 2V122M121 42H241M121 82H241" fill="#00000000" stroke="#000000ff" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" />
+    <rect name="contorno_naranja" x="1" y="122" width="120" height="120" rx="0" ry="0" fill="#00000000" stroke="#000000ff" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" />
+    <path name="separacion_naranja" d="M41 122V242M81 122V242M1 162H121M1 202H121" fill="#00000000" stroke="#000000ff" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" />
+    <rect name="contorno_verde" x="121" y="122" width="120" height="120" rx="0" ry="0" fill="#00000000" stroke="#000000ff" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" />
+    <path name="separacion_verde" d="M161 122V242M201 122V242M121 162H241M121 202H241" fill="#00000000" stroke="#000000ff" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" />
+    <rect name="contorno_azul" x="241" y="122" width="120" height="120" rx="0" ry="0" fill="#00000000" stroke="#000000ff" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" />
+    <path name="separacion_azul" d="M281 122V242M321 122V242M241 162H361M241 202H361" fill="#00000000" stroke="#000000ff" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" />
+    <rect name="contorno_rojo" x="361" y="122" width="120" height="120" rx="0" ry="0" fill="#00000000" stroke="#000000ff" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" />
+    <path name="separacion_rojo" d="M401 122V242M441 122V242M361 162H481M361 202H481" fill="#00000000" stroke="#000000ff" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" />
+    <rect name="contorno_amarillo" x="121" y="242" width="120" height="120" rx="0" ry="0" fill="#00000000" stroke="#000000ff" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" />
+    <path name="separacion_amarillo" d="M161 242V362M201 242V362M121 282H241M121 322H241" fill="#00000000" stroke="#000000ff" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-dasharray="" />
+  <!-- </g> -->
+</svg>

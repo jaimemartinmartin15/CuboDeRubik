@@ -9,12 +9,13 @@ import {
   ViewChild,
   ViewChildren,
 } from '@angular/core';
+import { intervalArray } from '@jaimemartinmartin15/jei-devkit-angular-shared';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ArrowSvgComponent } from '../svg-output/arrow.component';
 import { BurgerSvgComponent } from '../svg-output/burger.component';
 import { CircularArrowSvgComponent } from '../svg-output/circular-arrow.component';
-import { CuboDeRubikSvgComponent } from '../svg-output/cubo-de-rubik.component';
+import { CubePictureComponent, SquareToPaint } from './cube-picture/cube-picture.component';
 import { CubeRotationComponent } from './cube-rotation/cube-rotation.component';
 
 @Component({
@@ -25,8 +26,8 @@ import { CubeRotationComponent } from './cube-rotation/cube-rotation.component';
     ArrowSvgComponent,
     BurgerSvgComponent,
     CircularArrowSvgComponent,
-    CuboDeRubikSvgComponent,
     CubeRotationComponent,
+    CubePictureComponent,
     AsyncPipe,
   ],
 })
@@ -57,12 +58,12 @@ export class ComoResolverElCuboDeRubikComponent {
   }
 
   public readonly COLORS = {
-    WHITE: '#FFFFFF',
-    YELLOW: '#FFFF00',
-    BLUE: '#0000FF',
+    WHITE: '#ffffff',
+    YELLOW: '#ffff00',
+    BLUE: '#0000ff',
     GREEN: '#4bb911',
-    RED: '#FF0000',
-    ORANGE: '#FFA500',
+    RED: '#ff0000',
+    ORANGE: '#ffa500',
   };
 
   public showTopBar$: Observable<boolean>;
@@ -71,6 +72,19 @@ export class ComoResolverElCuboDeRubikComponent {
     this.showTopBar$ = breakpointObserver
       .observe(`(max-width: ${this.MENU_BREAKPOINT})`)
       .pipe(map((result) => result.matches));
+  }
+
+  public paintFace(face: number, color: string): SquareToPaint[] {
+    return intervalArray(9).map((n) => [face, n, color]);
+  }
+
+  public paintRow(face: number, row: 1 | 2 | 3, color: string): SquareToPaint[] {
+    const rowsMapping = {
+      1: [1, 2, 3],
+      2: [4, 5, 6],
+      3: [7, 8, 9],
+    };
+    return rowsMapping[row].map((n) => [face, n, color]);
   }
 
   private getMostVisibleSection() {
